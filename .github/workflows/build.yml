@@ -15,10 +15,12 @@ jobs:
        uses: actions/checkout@v2
      
     - name: Set up Enviroment
-      run: sudo apt install texlive texlive-xetex texlive-extra-utils texlive-lang-czechslovak
+      run: |
+          sudo apt install texlive texlive-xetex texlive-extra-utils texlive-lang-czechslovak
+          sudo apt install python-pygments
 
-    - name: Run a pdfLatex build
-      run: pdflatex DP_Matějka_Jan_2020
+    - name: Run arara
+      run: arara DP_Matějka_Jan_2020
       
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
