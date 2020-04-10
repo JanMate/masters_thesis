@@ -1,4 +1,4 @@
-name: CI
+name: Build
 
 on:
   push:
@@ -8,6 +8,7 @@ on:
 
 jobs:
   build:
+    name: LaTex image
     runs-on: ubuntu-latest
 
     steps:
@@ -21,7 +22,10 @@ jobs:
         sudo apt install python-pygments
 
     - name: Run Arara
-      run: arara DP_Matějka_Jan_2020
+      run: arara main
+
+    - name: Rename output PDF file
+      run: mv main.pdf DP_Matějka_Jan_2020.pdf
       
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
