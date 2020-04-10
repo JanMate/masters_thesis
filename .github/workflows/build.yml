@@ -20,8 +20,8 @@ jobs:
         sudo apt install texlive texlive-latex-base texlive-extra-utils texlive-lang-czechslovak texlive-bibtex-extra
         sudo apt install python-pygments
 
-    - name: Run Arara
-      run: arara DP_Matějka_Jan_2020
+    - name: Run pdflatex
+      run: pdflatex DP_Matějka_Jan_2020
 
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
