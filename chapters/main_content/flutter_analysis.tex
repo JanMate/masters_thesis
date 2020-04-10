@@ -1,0 +1,44 @@
+\chapter{Analysis of Flutter}
+
+\section{General concept}
+rendering widget similar to HTML
+
+\subsection{Flutter UI}
+Flutter has a widget tree that renders widget into nested tree and these widgets are covering themselves.
+
+\section{Bloc}
+Bloc is shortcut of Business Logic Component and allows separating your application into alone layers. It means that your application consists of following layer:
+\begin{itemize}
+    \item model - data model of your domain,
+    \item UI - user graphical interface and 
+    \item controller - it controls communication between data and UI layers.
+\end{itemize}
+Bloc represents the controller layer. When your clicks on a button, it throw an event action that Bloc detects 
+%\cite{bloc}
+
+\subsection{HydratedBloc}
+HydratedBloc works as well as common Bloc. The difference is in data storage. Hydrated Bloc allow us to store data through a JSON object. So, every time when your application loads data, you must not wait and show user progress indicator, but you are able to show stored data immediatelly. And when you receive data, you will simply render it into screen.
+
+\section{Widgets}
+How the founder of Flutter say: ,,Everything in Flutter is Widget...". It is true. Each of components in Flutter UI is descendent of widget. There are many classes that inherite from widget but there are the most important descendants. They are following:
+\begin{itemize}
+    \item StatelessWidget,
+    \item StatefulWidget and
+    \item InheritedWidget.
+\end{itemize}{}
+StatelessWidget is ... and offer ... \cite{statelessWidget}
+
+StatefulWidget is ... and offer ... \cite{statefulWidget}
+
+InheritedWidget is ... and offer reducing of boilerplate if you have many widget nested in themselves. Thanks the BuildContext class and of method, you can easily get the value you add as input variable. ... \cite{inheritedWidget}
+
+
+\section{iOS specific UI widgets}
+
+\subsection{Cupertino}
+Cupertino is a library
+
+
+\section{Android specific UI widgets}
+
+\subsection{Material Design}
