@@ -18,15 +18,20 @@ jobs:
     - name: Set up Enviroment
       run: |
         sudo apt install texlive texlive-latex-base texlive-latex-extra texlive-extra-utils texlive-lang-czechslovak texlive-bibtex-extra
-        sudo apt install python-pygments
 
-    - name: Run pdflatex
+    - name: Run pdflatex - prerender .aux file
+      run: pdflatex DP_Matějka_Jan_2020
+
+    - name: Run bibtex - rendering bibliography file
+      run: bibtex DP_Matějka_Jan_2020.aux
+
+    - name: Run pdflatex - final rendering
       run: pdflatex DP_Matějka_Jan_2020
 
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
       with:
-        name: PDF Output
+        name: DP_Matějka_Jan_2020
         path: DP_Matějka_Jan_2020.pdf
 
     - name: Cat Log
