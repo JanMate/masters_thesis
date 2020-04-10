@@ -29,5 +29,5 @@ jobs:
     - name: Cat Log
       if: failure()
       run: |
-        cat main.log
+        cat DP_Matějka_Jan_2020.log
         ls -la
