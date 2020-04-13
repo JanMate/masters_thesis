@@ -1,0 +1,200 @@
+\section{Database model}\label{sec:database-model}
+Database model consists followings entities:
+\begin{itemize}
+    \item User,
+    \item Aircraft,
+    \item Device,
+    \item Flight,
+    \item Telemetry measurement,
+    \item Organization,
+    \item Fleet,
+    \item Aircraft vendor,
+    \item Aircraft model,
+    \item Airspace zone,
+    \item User preference and
+    \item Organization preference.
+\end{itemize}
+A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure\cite{fig:erd-diagram}.
+
+\subsection{User}\label{subsec:user}
+This entity represents a user who signs up and logs in to the application.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item email - represents ...
+    \item full\_name - represents
+    \item password\_hash - represents
+    \item phone\_number - represents
+    \item deleted - represents
+    \item date\_created - represents
+    \item data\_modified - represents
+    \item last\_login - represents
+    \item active - represents
+    \item country - represents
+\end{itemize}
+
+\subsection{Aircraft}\label{subsec:aircraft}
+This entity represents an aircraft that is connect with a Dronetag device.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents ...
+    \item uas\_operator\_id - represents
+    \item weight - represents
+    \item date\_created - represents
+    \item data\_modified - represents
+    \item deleted - represents
+\end{itemize}
+
+\subsection{Device}\label{subsec:device}
+This entity represents a physical device that sends live information to the Dronetag platform.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item serial\_number - represents ...
+    \item name - represents
+    \item type - represents
+    \item comm\_id - represents
+    \item date\_created - represents
+    \item date\_modified - represents
+    \item last\_battery - represents
+    \item last\_rsrp - represents
+    \item last\_message - represents
+\end{itemize}
+
+\subsection{Flight}\label{subsec:flight}
+This entity represents it represents a flight that a user has created.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item date\_planned\_start - represents ...
+    \item date\_planned\_finish - represents ...
+    \item date\_started - represents ...
+    \item date\_finished - represents ...
+    \item status - represents
+    \item distance - represents
+    \item duration - represents
+    \item region\_geojson - represents
+    \item max\_flight\_altitude - represents
+    \item takeoff\_latitude - represents
+    \item takeoff\_longitude - represents
+    \item takeoff\_geo\_alt - represents
+    \item takeoff\_pressure - represents
+    \item public - represents
+    \item date\_created - represents
+    \item date\_modified - represents
+    \item deleted - represents
+\end{itemize}
+
+\subsection{Telemetry measurement}\label{subsec:telemetry-measurement}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item time\_received - represents the unique object identificator,
+    \item time - represents ...
+    \item latitude - represents
+    \item longitude - represents
+    \item altitude - represents
+    \item geo\_altitude - represents
+    \item velocity\_x - represents
+    \item velocity\_y - represents
+    \item velocity\_z - represents
+    \item gnss\_accuracy - represents
+\end{itemize}
+
+\subsection{Organization}\label{subsec:organization}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents ...
+    \item description - represents
+    \item date\_created - represents
+    \item date\_modified - represents
+    \item deleted - represents
+\end{itemize}
+
+\subsection{Fleet}\label{subsec:fleet}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents ...
+    \item color - represents
+    \item deleted - represents
+    \item date\_created - represents
+    \item date\_modified - represents
+\end{itemize}
+
+\subsection{Aircraft vendor}\label{subsec:aircraft-vendor}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents a vendor name.
+\end{itemize}
+
+\subsection{Aircraft model}\label{subsec:aircraft-model}
+This entity represents a user who signs up and logs in to the application.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents ...
+    \item weight - represents
+    \item vendor\_id - represents a relationship to a Vendor.
+\end{itemize}
+
+\subsection{Airspace zone}\label{subsec:airspace-zone}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item id - represents the unique object identificator,
+    \item name - represents ...
+    \item country - represents
+    \item region\_geojson - represents
+    \item date\_created - represents
+    \item date\_modified - represents
+\end{itemize}
+
+\subsection{User preference}\label{subsec:user-preference}
+This entity represents a ...
+
+All attributes are described like this:
+\begin{itemize}
+    \item property - represents ...
+    \item value - represents ...
+    \item date\_modified - represents
+\end{itemize}
+
+\subsection{Organization preference}\label{subsec:organization-preference}
+This entity represents a user who signs up and logs in to the application.
+...
+
+All attributes are described like this:
+\begin{itemize}
+    \item property - represents the unique object identificator,
+    \item value - represents ...
+    \item date\_modified - represents
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3, angle=90]{assets/erd_diagram.png}
+    \caption{ERD Diagram of infrastructure}
+    \label{fig:erd-diagram}
+\end{figure}

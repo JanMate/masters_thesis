@@ -1,0 +1,25 @@
+\chapter{Dronetag backend infrastructure}\label{ch:dronetag-backend-infrastructure}
+This chapter describes all Dronetag backend infrastructure and contains a detailed description of the web Droneteg platform.
+It consists the whole technical stack that ensures data providing.
+Parts of the stack is following:
+\begin{itemize}
+    \item Backend,
+    \item Frontend,
+    \item Broker,
+    \item Live Service and
+    \item .
+\end{itemize}
+Every web application in stack is deployed and managed by Docker. %\cite{}
+It is the easiest way to develop and publish new version software.
+Thanks to docker compose tool we can have a separated parts of the infrastructure.
+In case of bigger changes, we have to change only one and others are without changes.
+
+In additional determination, this infrastructure is divided to Staging and Production environment.
+Staging is for development and testing purposes and it usually runs on the same version as Production.
+The exception is only when a new feature is establishing.
+
+\input{chapters/main_content/dronetag_backend_analysis/backend_application}
+
+\input{chapters/main_content/dronetag_backend_analysis/database_model}
+
+\input{chapters/main_content/dronetag_backend_analysis/broker}
