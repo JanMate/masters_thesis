@@ -36,7 +36,7 @@ jobs:
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
       with:
-        name: DP_Matejka_Jan_2020
+        name: DP_Matejka_Jan_2020.zip
         path: DP_Matějka_Jan_2020.pdf
 
     - name: Create Release
@@ -64,5 +64,5 @@ jobs:
     - name: Cat Log
       if: failure()
       run: |
-        cat DP_Matějka_Jan_2020.log
+        cat main.log
         ls -la
