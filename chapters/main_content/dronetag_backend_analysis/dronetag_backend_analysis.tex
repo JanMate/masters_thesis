@@ -1,29 +1,50 @@
-\chapter{Dronetag backend infrastructure}\label{ch:dronetag-backend-infrastructure}
-This chapter describes all Dronetag backend infrastructure and contains a detailed description of the web Droneteg platform.
-It consists the whole technical stack that ensures data providing.
-My co-workers had to determine the convenient and reliable way how to gradually construct a useful architecture of the infrastructure.
-It starts with an IoT module and simplified web, and it continues to implement WebSockets with alone Live Service.
-Current parts of the stack is following:
+\chapter{Dronetag web infrastructure}\label{ch:dronetag-web-infrastructure}
+This chapter describes all Dronetag web infrastructure and contains a detailed description of the web Droneteg platform.
+It consists of the whole technical stack that ensures data providing.
+Co-workers had to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
+It starts with an IoT module and frontend web client written in JavaScript, and it continues to implement WebSockets with alone Live Service based on a Kubernetes cluster.
+Current parts of the stack are the following:
 \begin{itemize}
+    \item Load Balancer,
+    \item OLP Message Broker,
+    \item Message Queue,
     \item Backend,
     \item Frontend,
-    \item OLP Message Broker,
+    \item Private API endpoint,
+    \item Public API endpoint,
+    \item Database Storage,
     \item Live Service and
     \item .
 \end{itemize}
-Every web application in stack is deployed and managed by Docker. %\cite{}
+
+\section{Docker deployment}\label{sec:docker-deployment}
+Every web application in the stack is deployed and managed by \textbf{Docker}. %\cite{}
 It is the easiest way to develop and publish new version software.
-Thanks to docker compose tool we can have a separated parts of the infrastructure.
-In case of bigger changes, we have to change only one and others are without changes.
+Thanks to the \textbf{docker-compose} tool, we can have separated parts of the infrastructure.
+In the case of more significant changes, we have to change only one module, and others are without changes.
 
-Due to security reasons, the web API is divided to Private and Public API endpoints.
+\section{Kubernetes}\label{sec:kubernetes}
+Some words about Kubernetes.
 
-In additional determination, this infrastructure is divided to Staging and Production environment.
-Staging is for development and testing purposes and it usually runs on the same version as Production.
-The exception is only when a new feature is establishing.
+Due to security reasons, the web API divides into \textbf{Private} and \textbf{Public API} endpoints.
+\textbf{Public API} is allowed to use by third-party consumers.
+
+In further determination, this infrastructure divides into the \textbf{Staging} and \textbf{Production} environment.
+Staging is for development and testing purposes, and it usually runs on the same version as Production.
+Production is like a mirror of Staging.
+The difference is that the Production environment contains a previous version of the software that is released.
 
 \input{chapters/main_content/dronetag_backend_analysis/backend_application}
 
 \input{chapters/main_content/dronetag_backend_analysis/database_model}
 
 \input{chapters/main_content/dronetag_backend_analysis/broker}
+
+\input{chapters/main_content/dronetag_backend_analysis/communication_protocols.tex}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.3, angle=90]{assets/infrastructure-diagram.png}
+    \caption{Infrastructure diagram\cite{dataInfrastructure}}
+    \label{fig:infrastracture-diagram}
+\end{figure}

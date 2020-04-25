@@ -1,0 +1,18 @@
+\section{Communication protocols}\label{sec:communication-protocols}
+The communication protocols in Dronetag infrastructure are the following:
+\begin{itemize}
+    \item OLP Protocol,
+    \item AMQP (Advanced Message Queuing Protocol) and
+    \item HTTP(S) REST.\cite{dataInfrastructure}
+\end{itemize}
+
+\subsection{OLP Protocol}\label{subsec:olp-protocol}
+OLP messages flow between Dronetag devices and a web platform.
+It is about binary messages that are transfer by UDP packets.\cite{dataInfrastructure}
+
+\subsection{Advanced Message Queuing Protocol}\label{subsec:advanced-message-queuing-protocol}
+Advanced Message Queuing Protocol is for communication with a message queue.
+It wraps Celery.\cite{dataInfrastructure}
+
+\subsection{HTTP(S) REST}\label{subsec:httpnullsnullrest}
+Clients' applications communicate to a server to fetch data from the platform via HTTPS protocol with REST architecture.\cite{dataInfrastructure}
