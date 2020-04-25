@@ -16,20 +16,22 @@ jobs:
        uses: actions/checkout@v2
 
     - name: Set up Enviroment
-      run: |
-        sudo apt install texlive texlive-latex-base texlive-latex-extra texlive-extra-utils texlive-lang-czechslovak texlive-bibtex-extra
+      run: sudo apt install texlive texlive-latex-base texlive-latex-extra texlive-extra-utils texlive-lang-czechslovak texlive-bibtex-extra
 
     - name: Run pdflatex - prerender .aux file
-      run: pdflatex DP_Matějka_Jan_2020
+      run: pdflatex main
 
     - name: Run bibtex - rendering bibliography file
-      run: bibtex DP_Matějka_Jan_2020.aux
+      run: bibtex main.aux
 
     - name: Run pdflatex - rendering for sure
-      run: pdflatex DP_Matějka_Jan_2020
+      run: pdflatex main
 
     - name: Run pdflatex - final rendering
-      run: pdflatex DP_Matějka_Jan_2020
+      run: pdflatex main
+
+    - name: Rename output PDF file
+      run: mv main.pdf DP_Matějka_Jan_2020.pdf
 
     - name: Upload Data as Artifact
       uses: actions/upload-artifact@master
