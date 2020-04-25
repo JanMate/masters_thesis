@@ -39,6 +39,13 @@ jobs:
         name: DP_Matejka_Jan_2020.zip
         path: DP_Matějka_Jan_2020.pdf
 
+    - name: Semver Release
+      uses: K-Phoen/semver-release-action@v1.0.3
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        release_branch: master
+
     - name: Upload PDF to release assets
       uses: softprops/action-gh-release@v1
       with:
