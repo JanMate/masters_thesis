@@ -30,6 +30,13 @@ jobs:
     - name: Run pdflatex - final rendering
       run: pdflatex main
 
+    - name: Cat Log
+      if: failure()
+      run: |
+        cat main.log
+        ls -la
+
+  release:
     - name: Rename output PDF file
       run: mv main.pdf DP_Matějka_Jan_2020.pdf
 
@@ -38,6 +45,14 @@ jobs:
       with:
         name: DP_Matejka_Jan_2020.zip
         path: DP_Matějka_Jan_2020.pdf
+
+    - name: Release from Artifacts to Releases
+      uses: fnkr/github-action-ghr@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      env:
+        GHR_COMPRESS: zip
+        GHR_PATH: ./
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Cat Log
       if: failure()
