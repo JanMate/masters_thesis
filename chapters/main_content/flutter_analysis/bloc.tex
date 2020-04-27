@@ -1,0 +1,47 @@
+\section{Bloc}\label{sec:bloc}
+Bloc is an abbreviation of Business Logic Component and allows separating an application into separate layers.\cite{bloc}
+
+"The goal of this package is to make it easy to implement the BLoC Design Pattern (Business Logic Component).
+
+This design pattern helps to separate presentation from business logic.
+Following the BLoC pattern facilitates testability and reusability.
+This package abstracts reactive aspects of the pattern allowing developers to focus on converting events into states."\cite{bloc}
+
+Also, Bloc is library written by Felix Angelov, and the concept bases on Reactive Programming.\cite{bloc}
+In a nutshell, a structure of the concept consists of the following layer:
+\begin{itemize}
+    \item model - data model of your domain,
+    \item UI - user graphical interface and
+    \item controller - it controls communication between data and UI layers.
+\end{itemize}
+Bloc represents the controller layer.
+When a user clicks on a button, it throws an event action that Bloc detects it and generate a new state.
+
+There are the followings parts in Bloc:
+\begin{itemize}
+    \item \textbf{Events} are the input to a Bloc.
+    They are commonly UI events such as button presses.
+    Events are added to the Bloc and then converted to States.
+    \item \textbf{States} are the output of a Bloc.
+    Presentation components can listen to the stream of states and redraw portions of themselves based on the given state (see BlocBuilder for more details).
+    \item \textbf{Transitions} occur when an Event is added after mapEventToState has been called but before the Bloc's state has been updated.
+    A Transition consists of the currentState, the event which was added, and the nextState.
+    \item \textbf{BlocSupervisor} oversees Blocs and delegates to BlocDelegate.
+    \item \textbf{BlocDelegate} handles events from all Blocs which are delegated by the BlocSupervisor.
+    Can be used to intercept all Bloc events, transitions, and errors.
+    \textbf{It is a great way to handle logging/analytics as well as error handling universally.}\cite{bloc}
+\end{itemize}
+
+\begin{figure}
+    \centering
+    \includegraphics[scale=0.4]{assets/bloc_architecture.png}
+    \caption{Bloc architecture\cite{bloc}}
+    \label{fig:bloc-architecture}
+\end{figure}
+
+\subsection{HydratedBloc}\label{subsec:hydratedbloc}
+HydratedBloc works as well as common Bloc.
+The difference is in data storage.
+Hydrated Bloc allow us to store data through a JSON object.
+So, every time when your application loads data, you must not wait and show user progress indicator, but you are able to show stored data immediately.
+When you receive data, you will simply render it into a screen.

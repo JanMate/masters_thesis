@@ -12,19 +12,18 @@ Current parts of the stack are the following:
     \item Frontend,
     \item Private API endpoint,
     \item Public API endpoint,
-    \item Database Storage,
-    \item Live Service and
-    \item .
+    \item Database Storage and
+    \item Live Service.
 \end{itemize}
 
 \section{Docker deployment}\label{sec:docker-deployment}
-Every web application in the stack is deployed and managed by \textbf{Docker}. %\cite{}
+Every web application in the stack is deployed and managed by \textbf{Docker}. %\cite{} TODO
 It is the easiest way to develop and publish new version software.
 Thanks to the \textbf{docker-compose} tool, we can have separated parts of the infrastructure.
 In the case of more significant changes, we have to change only one module, and others are without changes.
 
 \section{Kubernetes}\label{sec:kubernetes}
-Some words about Kubernetes.
+Some words about Kubernetes. %TODO
 
 Due to security reasons, the web API divides into \textbf{Private} and \textbf{Public API} endpoints.
 \textbf{Public API} is allowed to use by third-party consumers.
