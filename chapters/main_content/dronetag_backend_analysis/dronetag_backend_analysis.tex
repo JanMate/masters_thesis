@@ -16,6 +16,15 @@ Current parts of the stack are the following:
     \item Live Service.
 \end{itemize}
 
+\section{API separation}\label{sec:api-separation}
+Due to security reasons, the web API divides into \textbf{Private} and \textbf{Public API} endpoints.
+\textbf{Public API} is allowed to use by third-party consumers.
+
+In further determination, this infrastructure divides into the \textbf{Staging} and \textbf{Production} environment.
+Staging is for development and testing purposes, and it usually runs on the same version as Production.
+Production is like a mirror of Staging.
+The difference is that the Production environment contains a previous version of the software that is released.
+
 \section{Docker deployment}\label{sec:docker-deployment}
 Every web application in the stack is deployed and managed by \textbf{Docker}. %\cite{} TODO
 It is the easiest way to develop and publish new version software.
@@ -25,13 +34,6 @@ In the case of more significant changes, we have to change only one module, and 
 \section{Kubernetes}\label{sec:kubernetes}
 Some words about Kubernetes. %TODO
 
-Due to security reasons, the web API divides into \textbf{Private} and \textbf{Public API} endpoints.
-\textbf{Public API} is allowed to use by third-party consumers.
-
-In further determination, this infrastructure divides into the \textbf{Staging} and \textbf{Production} environment.
-Staging is for development and testing purposes, and it usually runs on the same version as Production.
-Production is like a mirror of Staging.
-The difference is that the Production environment contains a previous version of the software that is released.
 
 \input{chapters/main_content/dronetag_backend_analysis/backend_application}
 
