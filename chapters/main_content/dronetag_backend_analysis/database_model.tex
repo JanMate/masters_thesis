@@ -1,5 +1,6 @@
 \section{Database model}\label{sec:database-model}
-Database model consists followings entities:
+There is a database model figure in Dronetag backend.
+The database model consists followings entities:
 \begin{itemize}
     \item User,
     \item Aircraft,
@@ -14,7 +15,7 @@ Database model consists followings entities:
     \item User preference and
     \item Organization preference.
 \end{itemize}
-A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure in this picture\cite{fig:erd-diagram}.
+A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure in this picture.%\cite{fig:erd-diagram}
 
 \subsection{User}\label{subsec:user}
 This entity represents a user who signs up and logs in to the application.
@@ -198,3 +199,16 @@ All attributes are described like this:
     \caption{ERD Diagram of data model\cite{dataModel}}
     \label{fig:erd-diagram}
 \end{figure}
+
+\subsection{Live Service database model}\label{subsec:live-service-database-model}
+In additional, during the development we had found out the current backend is not sufficient for our needs, so we decided to divide the backend model into backend one and Live Service model.
+Because there are only live real time temporary data, so we deployed a Redis database.
+
+"Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
+It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.
+Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."\cite{redis}
+It means that the Redis is a real-time storage that persists data only for very short time.
+That is the reason, why it is suitable for this purpose.
+
+The Live Service database model consists of \textbf{Device} and \textbf{Telemetry} entity.
+
