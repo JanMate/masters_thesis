@@ -1,0 +1,14 @@
+\section{Docker deployment}\label{sec:docker-deployment}
+Every web application in the stack is deployed and managed by \textbf{Docker}.
+It is the easiest way to develop and publish new version software.
+But at the beginning, let is clarify what the Docker is.
+"Docker is a tool designed to make it easier to create, deploy, and run applications by using containers.
+Containers allow a developer to package up an application with all of the parts it needs, such as libraries and other dependencies, and deploy it as one package.
+By doing so, thanks to the container, the developer can rest assured that the application will run on any other Linux machine regardless of any customized settings that machine might have that could differ from the machine used for writing and testing the code."\cite{dockerDescription}
+
+To read about what a Container is and how useful can be for your business you can on their official websites~\cite{dockerContainer} or here~\cite{dockerDescription}.
+
+Thanks to the \textbf{Docker Compose} tool, we can have separated parts of the infrastructure.
+In the case of more significant changes, we have to change only one module, and others are without changes.
+In a nutshell, we have more containers that each of them contains alone responsibility for their processing and \textbf{Docker Compose} joins them together.
+If I simplify it, \textbf{Docker Compose} works like a composer that takes separated containers, where each of them can launch different technology, and compose it together into one whole infrastructure.\cite{dockerCompose}

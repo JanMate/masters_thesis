@@ -1,7 +1,7 @@
 \chapter{Dronetag web infrastructure}\label{ch:dronetag-web-infrastructure}
 This chapter describes all Dronetag web infrastructure and contains a detailed description of the web Dronetag platform.
-It consists of the whole technical stack that ensures data providing.
-Co-workers had to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
+It consists of the all technical stack that ensures data providing.
+We had to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
 It starts with an IoT module and frontend web client written in JavaScript, and it continues to implement WebSockets with alone Live Service based on a Kubernetes cluster.
 Current parts of the stack are the following:
 \begin{itemize}
@@ -15,6 +15,8 @@ Current parts of the stack are the following:
     \item Database Storage and
     \item Live Service.
 \end{itemize}
+The components and their relations are showed on the infrastructure diagram~\ref{fig:infrastracture-diagram}.
+I must note the stack is being still involved anytime when we find out it is insufficient and complexity of the all system increasing.
 
 \section{API separation}\label{sec:api-separation}
 Due to security reasons, the web API divides into \textbf{Private} and \textbf{Public API} endpoints.
@@ -25,15 +27,9 @@ Staging is for development and testing purposes, and it usually runs on the same
 Production is like a mirror of Staging.
 The difference is that the Production environment contains a previous version of the software that is released.
 
-\section{Docker deployment}\label{sec:docker-deployment}
-Every web application in the stack is deployed and managed by \textbf{Docker}. %\cite{} TODO
-It is the easiest way to develop and publish new version software.
-Thanks to the \textbf{docker-compose} tool, we can have separated parts of the infrastructure.
-In the case of more significant changes, we have to change only one module, and others are without changes.
+\input{chapters/main_content/dronetag_backend_analysis/docker}
 
-\section{Kubernetes}\label{sec:kubernetes}
-Some words about Kubernetes. %TODO
-
+\input{chapters/main_content/dronetag_backend_analysis/kubernetes}
 
 \input{chapters/main_content/dronetag_backend_analysis/backend_application}
 
@@ -46,6 +42,6 @@ Some words about Kubernetes. %TODO
 \begin{figure}
     \centering
     \includegraphics[scale=0.29, angle=90]{assets/infrastructure-diagram.png}
-    \caption{Infrastructure diagram\cite{dataInfrastructure}}
+    \caption{Infrastructure diagram~\cite{dataInfrastructure}}
     \label{fig:infrastracture-diagram}
 \end{figure}
