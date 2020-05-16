@@ -1,14 +1,27 @@
 \section{Widgets}\label{sec:widgets}
-How the founder of Flutter say: ,,Everything in Flutter is Widget...".
-It is true. % TODO: describe Widget
-Each of components in Flutter UI is descendent of widget.
+How the founders of Flutter say: ,,Everything's a Widget".
+In following part, we will clarify this statement.
+
+"Widgets are the basic building blocks of a Flutter app's user interface.
+Each widget is an immutable declaration of part of the user interface.
+Unlike other frameworks that separate views, view controllers, layouts, and other properties, Flutter has a consistent, unified object model: the widget.
+A~widget can define:
+\begin{itemize}
+    \item a structural element (like a button or menu),
+    \item a stylistic element (like a font or color scheme),
+    \item an aspect of layout (like padding)
+    \item and so on\ldots"\cite{flutterTechnicalOverview}
+\end{itemize}
+
+So each of components of UI in Flutter is descendent of widget.
 Many classes that inherit from a widget, but there are the essential descendants.
 They are following:
 \begin{itemize}
     \item StatelessWidget,
     \item StatefulWidget and
     \item InheritedWidget.
-\end{itemize}{}
+\end{itemize}
+
 
 \subsection{StatelessWidget}\label{subsec:statelesswidget}
 "A widget that does not require mutable state.
@@ -16,18 +29,26 @@ They are following:
 A stateless widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
 The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of
 \textit{RenderObjectWidgets}\cite{renderObjectWidget}, which describe concrete \textit{RenderObjects}\cite{renderObject})."\cite{statelessWidget}
-It means StatelessWidget is a useful component to render graphics elements that do not change themselves during they exist.
-StatelessWidget offers ...  % TODO: Performance considerations
+It means StatelessWidget is a useful component to render graphics elements that do not change themselves during their existation.
+StatelessWidget is class with constructor and build method.
+When the widget tree is built, it calls the build method.
 
 "Stateless widget are useful when the part of the user interface you are describing does not depend on anything other than the configuration information in the object itself and the BuildContext in which the widget is inflated.
 For compositions that can change dynamically, e.g. due to having an internal clock-driven state, or depending on some system state, consider using StatefulWidget."\cite{statelessWidget}
+
 
 \subsection{StatefulWidget}\label{subsec:statefulwidget}
 "A widget that has mutable state.
 
 State is information that (1) can be read synchronously when the widget is built and (2) might change during the lifetime of the widget.
 It is the responsibility of the widget implementer to ensure that the \textit{State}\cite{state} is promptly notified when such state changes, using \textit{State.setState}\cite{setState}."\cite{statefulWidget}
-StatefulWidget is ... and offer ... % TODO: Performance considerations
+It means StatefulWidget is a useful component to render graphics elements that change themselves until they are disposed.
+StatefulWidget initializes its state which represent a space for storing data.
+The State is class with Constructor, initState and build method.
+The constructor is called when the State is created, the initState method is called before widget tree is rendered and the build method is called when the tree renders itself.
+
+Due to this fact, the Stateful widget has worse performance than Stateless widget and often it is difficult to keep a sustainable design of a component.
+On the other hand, it offers a convenient way to create widget with only few state that will not be changed in development cycle in the future.
 
 "A stateful widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
 The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of

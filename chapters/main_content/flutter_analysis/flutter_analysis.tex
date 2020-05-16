@@ -1,6 +1,9 @@
 \chapter{Analysis of Flutter}\label{ch:analysis-of-flutter}
 
 This chapter describes the key reasons why Dronetag chose Flutter for the mobile application development.
+
+Nowadays, many companies have more teams to maintain their application that ensure the companies' business.
+Thanks that the costs are higher than could be and this is the reason why cross-platform frameworks were created.
 There are many cross-platform mobile application platforms to develop an application like this.
 The name of the main used frameworks are:
 \begin{itemize}
@@ -9,15 +12,63 @@ The name of the main used frameworks are:
     \item Xamarin.
 \end{itemize}
 
+Flutter is a framework and was established by Google Inc., in 2017 and since that time, its popularity is still increasing.
+
+React Native looks like the main competitor and is based on JavaScript.\cite{flutterVsReactNativeNevercodeIo}
+Ionic has not a such good performance like Flutter and React Native.
+Xamarin is based on C\# from Microsoft and thus we avoided it.
+Flutter is based on Dart which was introduced by Google Inc., in 2011.
+It is type safe and object oriented programming language similar to Java.\cite{dartTypeSystem}
+Between advantages of Flutter belong:
+\begin{itemize}
+    \item Hot Reload, i.e., allows fast coding,
+    \item One codebase: Development for two mobile platforms,
+    \item Up to 50\% less testing,
+    \item Faster app development,
+    \item User-friendly designs,
+    \item Perfect for MVPs and
+    \item Less Code.\cite{flutterVsReactNativeHackrIo}
+\end{itemize}
+
 \section{General concept}\label{sec:general-concept}
-rendering widget similar to HTML %TODO
+"Flutter is an app SDK for building high-performance, high-fidelity apps for iOS, Android, web (beta), and desktop (technical preview) from a single codebase."\cite{flutterTechnicalOverview}
+It means you need only one development team to reach an application for all platform in a single codebase.
+
+"The goal is to enable developers to deliver high-performance apps that feel natural on different platforms.
+We embrace differences in scrolling behaviors, typography, icons, and more."\cite{flutterTechnicalOverview}
+
+%TODO: add some words of mine
+
+\begin{figure}
+    \centering
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=.7\linewidth]{assets/hero-shrine-ios.png}
+        \caption{Flutter demo app on iOS \cite{flutterTechnicalOverview}}
+        \label{fig:flutter-demo-app-ios}
+    \end{minipage}%
+    \hspace{.05\linewidth}
+    \begin{minipage}{.45\textwidth}
+        \centering
+        \includegraphics[width=.7\linewidth]{assets/hero-shrine-android.png}
+        \caption{Flutter demo app on Android \cite{flutterTechnicalOverview}}
+        \label{fig:flutter-demo-app-android}
+    \end{minipage}
+    \label{fig:flutter-demo-app}
+\end{figure}
+
 
 \subsection{Flutter UI}\label{subsec:flutter-ui}
-Flutter has a widget tree that renders widget into nested tree, and these widgets are covering themselves. %TODO
-
-\input{chapters/main_content/flutter_analysis/bloc}
+"Flutter includes a modern react-style framework, a 2D rendering engine, ready-made widgets, and development tools.
+These components work together to help you design, build, test, and debug apps.
+Everything is organized around a few core principles."\cite{flutterTechnicalOverview}
+Flutter has a widget tree that renders widget into nested tree, and these widgets are covering themselves.
+It does not matter if a widget from the widget tree is Container, List View, Image, Text, Animation or anything else.
+Everything is represented by a widget or its descendents.
 
 \input{chapters/main_content/flutter_analysis/widgets}
+
+\input{chapters/main_content/flutter_analysis/bloc}
 
 \section{iOS specific UI widgets - Cupertino library}\label{sec:ios-specific-ui-widgets}
 Cupertino is a library ...

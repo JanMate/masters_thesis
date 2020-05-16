@@ -7,9 +7,9 @@ These parts should meet the encapsulation and comprehensive rule.
 The libraries offering generics classes that include already implemented logic help to simplify and do code more readable thanks to the standards.
 For better understanding, I will describe it on the following example.
 The architecture usually means a division into bigger self-driven parts.
-Typically, there are the concepts like MVC (Model-View-Controller) or their extended descendents like MVP (Model-View-Presenter) or MVVM (Model-View-ModelView).
+Typically, there are the concepts like MVC (Model-View-Controller) or their extended descendents like MVP (Model-View-Presenter) or MVVM (Model-View-ViewModel).
 The newer famous concept in Flutter is Bloc.
-I have already explained what the Bloc is in the chapter Flutter Analysis so I will not clarify it anymore. %\cite{ch:analysis-of-flutter}
+I have already explained what the Bloc is in the chapter~\ref{ch:analysis-of-flutter} Flutter Analysis so I will not clarify it anymore.
 On the other hand, I would like to devote to talk about the difference between common Bloc and its extended class Hydrated Bloc.
 Both of them using the sink and the stream concept working on the stream subscription principle.
 The Hydrated bloc offers a persistent storage storing and loading with fromJson and toJson methods.
@@ -18,7 +18,90 @@ It helps to have an application working more fluently than alone loading data vi
 In opposite, Software design means the division of the code into parts that describe implementation details closely.
 
 \section{Dependencies}\label{sec:dependencies}
-TODO
+Flutter has a huge database of dependencies that are maintained by various developers.
+The database is called \textbf{pub.dev}~\cite{pubDev} and offers to their users a summary for every dependency with the score analysis.
+This analysis consists of Popularity, Health, Maintenance and final Overall.
+The dependencies used in this mobile application are separated into following categories:
+\begin{itemize}
+    \item Icons,
+    \item State management,
+    \item NoSQL storage,
+    \item Tools,
+    \item Firebase,
+    \item API,
+    \item UI,
+    \item Map and
+    \item Generator.
+\end{itemize}
+
+\subsection{Icons}\label{subsec:icons}
+Icons contains \textbf{cupertino\_icons} that provides iOS Cupertino Icons by Apple Inc.
+\textbf{Material Design icons} are already part of the \textbf{Flutter SDK} library.
+
+\subsection{State management}\label{subsec:state-management}
+State management consists of \textbf{flutter\_bloc} and \textbf{hydrated\_bloc}.
+
+\subsection{NoSQL storage}\label{subsec:nosql-storage}
+NoSQL storage contains \textbf{hive} and \textbf{hive\_flutter}.
+These dependecies ensure .%TODO
+
+\subsection{Tools}\label{subsec:tools}
+Tools consist of: %TODO:
+\begin{itemize}
+    \item \textbf{intl} - it ensures internationalization,
+    \item \textbf{equatable} - it ensures that object extending it can be easily comparable by properties of that object,
+    \item \textbf{flutter\_svg} - it ensures drawing SVG image as a widget,
+    \item \textbf{flutter\_i18n} - it ensures ,
+    \item \textbf{path\_provider} - it ensures ,
+    \item \textbf{print\_lumberdash} - it ensures a beautify debug printing of an error message,
+    \item \textbf{get\_it} - it allows using of Dependency Injection in code,
+    \item \textbf{dartz} - it ensures ,
+    \item \textbf{url\_launcher} - it ensures ,
+\end{itemize}
+
+\subsection{Firebase}\label{subsec:firebase}
+Firebase contains \textbf{firebase\_core} and \textbf{firebase\_messaging}.
+These dependecies ensure connecting to Firebase Cloud and allowing push notifications.
+
+\subsection{API}\label{subsec:api}
+API consists of:
+\begin{itemize}
+    \item \textbf{http} - it ensures ,
+    \item \textbf{json\_annotation} - it ensures ,
+    \item \textbf{data\_connection\_checker} - it ensures ,
+    \item \textbf{retrofit} - it ensures ,
+    \item \textbf{pretty\_dio\_logger} - it ensures ,
+    \item \textbf{dio} - it ensures ,
+    \item \textbf{flutter\_screenutil} - it ensures ,
+\end{itemize}
+
+\subsection{UI}\label{subsec:ui}
+UI consists of:
+\begin{itemize}
+    \item \textbf{sliding\_up\_panel} - it ensures ,
+    \item \textbf{animations} - it ensures ,
+    \item \textbf{flutter\_sfsymbols} - it ensures ,
+\end{itemize}
+
+\subsection{Map}\label{subsec:map}
+Map consists of:
+\begin{itemize}
+    \item \textbf{google\_maps\_flutter} - it ensures ,
+    \item \textbf{location} - it ensures ,
+    \item \textbf{google\_maps\_webservice} - it ensures ,
+\end{itemize}
+
+\subsection{Generator}\label{subsec:generator}
+Generator consists of:
+\begin{itemize}
+    \item \textbf{hive\_generator} - it ensures ,
+    \item \textbf{retrofit\_generator} - it ensures ,
+    \item \textbf{bloc\_test} - it ensures ,
+    \item \textbf{mockito} - it ensures ,
+    \item \textbf{pedantic} - it ensures ,
+    \item \textbf{build\_runner} - it ensures ,
+    \item \textbf{json\_serializable} - it ensures .
+\end{itemize}
 
 \section{Bloc and Hydrated Bloc}\label{sec:bloc-and-hydrated-bloc}
 In the beginning, we counted on all of BLoCs will be the classic one.
