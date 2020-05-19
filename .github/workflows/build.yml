@@ -36,7 +36,7 @@ jobs:
     - name: Upload PDF as Artifact
       uses: actions/upload-artifact@master
       with:
-        name: DP_Matejka_Jan_2020.zip
+        name: DP_Matejka_Jan_2020
         path: DP_Matějka_Jan_2020.pdf
 
     - name: Cat Log

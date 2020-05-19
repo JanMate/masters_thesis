@@ -9,16 +9,9 @@ Following the BLoC pattern facilitates testability and reusability.
 This package abstracts reactive aspects of the pattern allowing developers to focus on converting events into states."\cite{bloc}
 
 Bloc is library written by Felix Angelov, and the concept bases on Reactive Programming.\cite{bloc}
-In a nutshell, a structure of the concept consists of the following layer:
-\begin{itemize}
-    \item model - data model of your domain,
-    \item UI - user graphical interface and
-    \item controller - it controls communication between data and UI layers.
-\end{itemize}
-Bloc represents the controller layer.
-When a user clicks on a button, it throws an event action that Bloc detects it and generate a new state.
-
-There are the followings parts in Bloc:
+Bloc represents a control unit what is responsible for passing data from state into UI.
+When a user clicks on a button, it throws an event action that Bloc detects and generate a new state.
+In a nutshell, a structure of the concept consists of the following parts in Bloc:
 \begin{itemize}
     \item \textbf{Events} are the input to a Bloc.
     They are commonly UI events such as button presses.

@@ -43,20 +43,20 @@ State management consists of \textbf{flutter\_bloc} and \textbf{hydrated\_bloc}.
 
 \subsection{NoSQL storage}\label{subsec:nosql-storage}
 NoSQL storage contains \textbf{hive} and \textbf{hive\_flutter}.
-These dependecies ensure .%TODO
+These dependecies ensure NoSQL storage that are for persitent data in offline mode and store things like JWT token.\cite{jwtToken} %TODO: add cite
 
 \subsection{Tools}\label{subsec:tools}
-Tools consist of: %TODO:
+Tools consist of:
 \begin{itemize}
     \item \textbf{intl} - it ensures internationalization,
     \item \textbf{equatable} - it ensures that object extending it can be easily comparable by properties of that object,
     \item \textbf{flutter\_svg} - it ensures drawing SVG image as a widget,
-    \item \textbf{flutter\_i18n} - it ensures ,
-    \item \textbf{path\_provider} - it ensures ,
-    \item \textbf{print\_lumberdash} - it ensures a beautify debug printing of an error message,
-    \item \textbf{get\_it} - it allows using of Dependency Injection in code,
-    \item \textbf{dartz} - it ensures ,
-    \item \textbf{url\_launcher} - it ensures ,
+    \item \textbf{flutter\_i18n} - it ensures Internationalization by the user phone settings,
+    \item \textbf{path\_provider} - it ensures finding commonly used locations on the filesystem,
+    \item \textbf{print\_lumberdash} - it ensures a convenient debug printing of an error message,
+    \item \textbf{get\_it} - it allows using of Dependency Injection in code - it supports IoC principle,\cite{iocPrinciple}
+    \item \textbf{dartz} - it allows using functional programming in Dart,
+    \item \textbf{url\_launcher} - it ensures launching a URL in the mobile platform,
 \end{itemize}
 
 \subsection{Firebase}\label{subsec:firebase}
@@ -66,61 +66,71 @@ These dependecies ensure connecting to Firebase Cloud and allowing push notifica
 \subsection{API}\label{subsec:api}
 API consists of:
 \begin{itemize}
-    \item \textbf{http} - it ensures ,
-    \item \textbf{json\_annotation} - it ensures ,
-    \item \textbf{data\_connection\_checker} - it ensures ,
-    \item \textbf{retrofit} - it ensures ,
-    \item \textbf{pretty\_dio\_logger} - it ensures ,
-    \item \textbf{dio} - it ensures ,
-    \item \textbf{flutter\_screenutil} - it ensures ,
+    \item \textbf{http} - it ensures making HTTP requests,
+    \item \textbf{json\_annotation} - it ensures definition of annotations used by JSON serialization and deserialization,
+    \item \textbf{data\_connection\_checker} - it checks for an internet connection by opening a socket,
+    \item \textbf{retrofit} - it ensures type conversion \textbf{dio} client generator to create HTTP requests,
+    \item \textbf{pretty\_dio\_logger} - it ensures a convenient debug printing of HTTP requests and responses,
+    \item \textbf{dio} - it offers support of Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout etc.,
+    \item \textbf{flutter\_screenutil} - it ensures adapting screen and font size.
 \end{itemize}
 
 \subsection{UI}\label{subsec:ui}
 UI consists of:
 \begin{itemize}
-    \item \textbf{sliding\_up\_panel} - it ensures ,
-    \item \textbf{animations} - it ensures ,
-    \item \textbf{flutter\_sfsymbols} - it ensures ,
+    \item \textbf{sliding\_up\_panel} - it offers using done Sliding up panel,
+    \item \textbf{animations} - it contains pre-canned animations for commonly-desired effects,
+    \item \textbf{flutter\_sfsymbols} - it supports all iOS and Android devices.
 \end{itemize}
 
 \subsection{Map}\label{subsec:map}
 Map consists of:
 \begin{itemize}
-    \item \textbf{google\_maps\_flutter} - it ensures ,
-    \item \textbf{location} - it ensures ,
-    \item \textbf{google\_maps\_webservice} - it ensures ,
+    \item \textbf{google\_maps\_flutter} - it provides a Google Maps widget,
+    \item \textbf{location} - it handles getting location on Android and iOS,
+    \item \textbf{google\_maps\_webservice} - it offers using Google Web Service API that including Geocoding, Places, Directions, and so on.
 \end{itemize}
 
 \subsection{Generator}\label{subsec:generator}
 Generator consists of:
 \begin{itemize}
-    \item \textbf{hive\_generator} - it ensures ,
-    \item \textbf{retrofit\_generator} - it ensures ,
-    \item \textbf{bloc\_test} - it ensures ,
-    \item \textbf{mockito} - it ensures ,
-    \item \textbf{pedantic} - it ensures ,
-    \item \textbf{build\_runner} - it ensures ,
-    \item \textbf{json\_serializable} - it ensures .
+    \item \textbf{hive\_generator} - it generates storable object by Hive annotations,
+    \item \textbf{retrofit\_generator} - it generates implementation of HTTP requests due to set annotations,
+    \item \textbf{bloc\_test} - it generates testing blocs for unit testing,
+    \item \textbf{mockito} - it generates Mocks for unit testing,
+    \item \textbf{pedantic} - it ensures a linter that looking after to meet best practices,
+    \item \textbf{build\_runner} - it provides a concrete way of generating files using Dart code,
+    \item \textbf{json\_serializable} - it generates serializable object by JSON annotation.
 \end{itemize}
 
 \section{Bloc and Hydrated Bloc}\label{sec:bloc-and-hydrated-bloc}
 In the beginning, we counted on all of BLoCs will be the classic one.
 After short time, we have found out the storable concept is more convenient for this purpose.
-So, some following are HydratedBloc.
+So, some following we changed to descendants of HydratedBloc.
 
 \subsection{User Profile Bloc}\label{subsec:user-profile-bloc}
 At the beginning, User Profile Bloc had extended from common Bloc but after increasing data traffic we decided to change it to Hydrated Bloc.
-
+The reason is simple.
+User properties do not change so often.
+Due to it better to store the data in phone and update them when it changes.
 
 \subsection{Aircraft Operation Bloc}\label{subsec:aircraft-operation-bloc}
-
+%TODO
 \subsection{Device Operation Bloc}\label{subsec:device-operation-bloc}
-
-
+%TODO
+\subsection{Flight OperationBloc}\label{subsec:flight-operationbloc}
+%TODO
 
 \section{JsonSerializable classes}\label{sec:jsonserializable-classes}
+Json Serializable interface offers generating of  methods for serialization and deserialization classes that are annotated by Json Annotation.
+These classes are converted and created the methods via the \textbf{build runner} library.
+The advantage is a developer must not code these methods by hand, and he can re-generated every time it is needed to change the class structure.
 
+\subsection{Request classes}\label{subsec:request-classes}
+%TODO
+\subsection{Response classes}\label{subsec:response-classes}
+%TODO
 
 \section{Dio class}\label{sec:dio-class}
-
-TODO
+Due to need of using Interception and fill prepared HTTP requests with Authentication Bearer we defined our a custom \textbf{Dronetag Dio} class.
+It initializes \textbf{Pretty Dio Logger} to make clear debug printing and Token Interceptor that extends \textbf{Interceptors Wrapper}.

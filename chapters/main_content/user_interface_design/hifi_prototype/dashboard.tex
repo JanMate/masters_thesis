@@ -1,22 +1,56 @@
 \subsection{Dashboard}\label{subsec:dashboard2}
-This screen contains:
-\begin{itemize}
-    \item Map canvas with Drones, Zones and Place pins,
-    \item Search button,
-    \item Profile button that represents Menu,
-    \item My location button,
-    \item Map layer button and
-    \item Fly now button with Login dialog.
-\end{itemize}
-In addition, for a logged user it contains:
-\begin{itemize}
-    \item Device status (if the user has already added some) and
-    \item Fly now button with Fly now and Plan a flight option.
-\end{itemize}
-The difference you can see on the picture~\ref{fig:dashboard} and~\ref{fig:dashboard_guest}.
 
-%todo: describe the other dashboard subscreens
-% alone paragraph for every subscreen
+\textbf{Dashboard screen} is immediately after \textbf{Splash screen}.
+It is counted on the fact a user will spend the most of the time on \textbf{Dashboard screen} and so it contains the most of the functionalities.
+This screen is divided to:
+\begin{itemize}
+    \item Top panel,
+    \item Map controls and
+    \item Fly now button.
+\end{itemize}
+These elements are in higher stack layer below the map where are placed flying drones, place pins and restricted areas.
+In addition, it allows displaying without wasteful \textbf{POIs} (Point of Interest)\cite{poi}, satellite map or common map which contains POIs, exactly like \textbf{Google Maps} application.
+
+Top panel is consists of:
+\begin{itemize}
+    \item Device status - it contains current information about default device,
+    \item Search button - it is for searching of places, devices, aircrafts and zones and
+    \item Profile button - it represents the main menu of all application.
+\end{itemize}
+If a user has already logged in and planned a flight, Profile button contains a light blue circle with the number of planned flights in the top right on the circuit of that circle button.
+The key difference you can see on the picture~\ref{fig:dashboard} and~\ref{fig:dashboard_guest}.
+
+Map controls are consists of:
+\begin{itemize}
+    \item My location button - it redirects to his position due to his location by GPS coordinates,
+    \item Map layers button - it is an offer allowing to choose a map style and
+    \item Fly now button - this button disappears options Fly now and Plan a flight for already logged in user and Log in and sign up button for unauthorized user. (Figure \ref{fig:dashboard_menu_open} and \ref{fig:dashboard_menu_open_login})
+\end{itemize}
+These are additional elements showing on \textbf{Dashboardu screen}:
+\begin{itemize}
+    \item Drone detail panel, (Figure \ref{fig:dashboard_drone_detail})
+    \item Place detail panel, (Figure \ref{fig:dashboard_place_detail} and \ref{fig:dashboard_place_detail_pinned} )
+    \item Zone detail panel, (Figure \ref{fig:dashboard_zone_detail})
+    \item Zone selection panel, (Figure \ref{fig:dashboard_zone_detail_selection}) and
+    \item Map layer panel. (Figure \ref{fig:dashboard_map_layers})
+\end{itemize}
+
+\textbf{Drone detail panel} is for showing basic information and a flying drone and its flight parameters.
+In addition, it contains the button to redirection to Full drone detail screen, where a user can see all information about live flight right now.
+
+\textbf{Place detail panel} contains basic information about the place.
+In addition, in case that a user would like to plan a flight from this place, it allows to pin this place until the user unpin it from the map and Plan a flight button.
+Pinning of place into the map is demonstrated by color change of the pin and color change of the icon in the panel.
+
+\textbf{Zone detail panel} contains basic information about given zone like a lower altitude level, upper altitude level, name of the zone, valid from and zone status.
+
+\textbf{Zone selection} is used for select a zone, if a user clicks to a place in the map where is an intersection of more zones.
+Simultaneously, when this selection is shown, the selected zones are highlighted.
+If a user choose a zone, the zone will show Zone detail panel and will highlight only one certain zone instead of the intersection.
+
+We focused on the main purpose what is to inform a user about drones and restricted areas around him.
+So, we decided to keep a minimalistic design because of the user needs to emphasize to what is important to him.
+
 
 \begin{figure}
     \centering

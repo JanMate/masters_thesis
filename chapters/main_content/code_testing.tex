@@ -1,11 +1,30 @@
 \chapter{Code testing}\label{ch:code-testing}
-TODO
+Testing má v SW develpment zásadní využití.
+Pokud Development probíhá v rámci agilní metodiky, znamená to, že se jedná o menší dodávky sw, které obvykle zahrnují konkrétní funkcionalitu nebo bug fixing.
+V případně takovýchto zásahů do již nasazené aplikace je nutné alespoň částečně otestovat jejich správnou funkcionalitu, abychom předešli budoucím problémům.
+Největší problém nastává tam, kde vznikají závislosti.
+Tedy pokud funkcionalita už na začátku pracuje špatně, bude i dalším fukcionalitám postavených na ní dávat špatné výsledky a může to způsobit dokonce nestabilitu application.
+Výhodou je že tyto testy lze spouštět opakovaně a při změnách v kódu jednoduše upravovat.
+Testing je tedy fáze součástí SW develpmentu, kteŕa lze provozovat automatizovaně v rámci CI a CD.
+
+Tato kapitola dále popisuje typy testů a funkcionality v aplikace, které jsou těmito testy pokryté včetně popisu, jak se mají dané funkcionality chovat v konkŕetnich situacích.
 
 \section{Unit testing}\label{sec:unit-testing}
-TODO
+Tato sekce se věnuje  UnIT testům.
+Unit testy ve Flutteru lze spouštět příkazem z console prompt a díky tomu je lze snadno včlenit do fáze v CI a CD, kde se spustí automaticky.
+Pro UnIT testing se ve Flutteru používání následující knihovny:
+UnIT test
+Mockito
+Bloc\_test
+And so on.
+
+%TODO:
 
 \section{Integration testing}\label{sec:integration-testing}
-TODO
+%TODO:
 
 \section{Mocker}\label{sec:mocker}
 Mocker for flight drone simulations.
+Mocker is written in Python a slouží k zasílání CoAP messages to backend endpoint.
+Mocker přijímá parametry se serial number and allows to specify a take off position.
+It allows to mock more drones concurrent, too.
