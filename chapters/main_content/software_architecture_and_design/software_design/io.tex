@@ -1,0 +1,61 @@
+\subsection{IO}\label{subsec:io}
+IO directory obsahuje componenty, které zajišťují načítání dat z vzdálených zdrojů.
+Zde byl kladen důraz na encapsulaci a comprehensition, proto jsme pro to vytvořili samostatné directory.
+Tento directory je rozdělen na:
+\begin{itemize}
+    \item Model,
+    \item Repositories and
+    \item Services.
+\end{itemize}
+Tyto vnořené directories jsou detailněji popsány v dálších odstavcích.
+
+\textbf{Model}~directory~contains objects that~are produced by~API endpoint of~Dronetag backend.
+It is divided to \textbf{request} and \textbf{response} classes.
+Model obsahuje takzvané entity, které slouží jako datové objecty.
+Jejich hlavní účel je tedy držet data konsistentním způsobem.
+Pro usnadnění práce pro mapování na data, která aplikace obdrží ze vzdálených datových zdrojů se stará Serializace.
+Serializaci zajišťuje rozhraní JsonSerialization, která generuje serializované objecty podle zadané konfigurace.
+Tato konfigurace se provádí prostřednictvím Json Annotation interface ve stejnojmenné knihovně.
+
+\textbf{Repositories} consists of a repository for each of functional part.
+Každá část obsahuje metody pro práci s jednotlivými entitami a zprostředkovává předávání dat ze vzdálených zdrojů.
+Součástí každého repository je služba, která zajišťuje příslušné operace, které se mají provést s danou entitou z Model directory.
+Služby jsou blíže popsané v dalším odstavci této sekce.
+Repositories obsahuje následující třídy:
+\begin{itemize}
+    \item User Repository,
+    \item Aircraft Repository,
+    \item Device Repository,
+    \item Flight Repository,
+    \item
+\end{itemize}
+%todo
+
+\textbf{Services} directory obsahuje podadresář \textbf{api}.
+Tento podadresář obsahuje třídy, které zajišťují přijímání a odesílání dat na API endpointy, které jsou součástí Dronetag infrastruktury.
+API rozhraní v této infrastruktuře zajišťuje Backend instance a Live Service.
+Proto je také \textbf{api} directory rozdělen na:
+\begin{itemize}
+    \item Dronetag Web Rest Client,
+    \item Dronetag Live Service Client,
+    \item Auth Config,
+    \item Google API Key Reader and
+    \item Dronetag Dio.
+\end{itemize}
+Dronetag Web Rest Client slouží k načítání a posílání dat do webové platformy, konkrétně tedy backendu.
+Obsahuje metody:
+\begin{itemize}
+    \item TODO
+\end{itemize}
+
+Dronetag Live Service Client slouží k načítání live dat z Live Service.
+Důvodem rozdělení rozdělení na two clients je zpřehlednění a důvod, proč je i webová infrastruktura rozdělena na tyto 2 služby je popsán v kapitole Dronetag web infrastructure \ref{ch:dronetag-web-infrastructure}.
+Teto client obsahuje metody:
+\begin{itemize}
+    \item TODO
+\end{itemize}
+
+Auth Config, Google API Key Reader and Dronetag Dio zajišťují jiný mechanismus a neslouží k přímému poskytování dat ze vzdálených zdrojů.
+Avšak se nám hodilo ponechat tyto třídy pohromadě spolu s Rest clienty, jelikož spolu úzce souvisí.
+Auth config obsahuje metody ...
+Google API Key Reader obsahuje metody ...

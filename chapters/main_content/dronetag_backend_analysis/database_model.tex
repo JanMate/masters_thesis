@@ -15,7 +15,7 @@ The database model consists followings entities:
     \item User preference and
     \item Organization preference.
 \end{itemize}
-A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure in the picture~\ref{fig:erd-diagram}.
+%A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure in the picture~\ref{fig:erd-diagram}.
 
 \subsection{User}\label{subsec:user}
 This entity represents a user who signs up and logs in to the application.
@@ -23,16 +23,10 @@ It consists of user credentials and identification information.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item email - represents the e-mail that a user will be log in to the system and receive notifications,
     \item full\_name - represents optional full name of the user,
     \item password\_hash - represents a hashed password,
-    \item phone\_number - represents a phone number that a user will be able to contact in case of emergency,
-    \item deleted - represents a boolean flag that will be set if a user want to delete his account,
-    \item date\_created - represents a date of registration,
-    \item date\_modified - represents a date of modification,
-    \item last\_login - represents a date of last log in,
-    \item active - represents a boolean flag if a user is active and
+    \item phone\_number - represents a phone number that a user will be able to contact in case of emergency, and
     \item country - represents a country where a user is used to be flying.
 \end{itemize}
 
@@ -41,13 +35,9 @@ This entity represents an aircraft that is connect with a Dronetag device.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item name - represents an aircraft name for easier recognition in My aircraft list,
-    \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft,
-    \item weight - represents a weight of the aircraft,
-    \item date\_created - represents a date when an aircraft was added,
-    \item data\_modified - represents a date when an aircraft was changed,
-    \item deleted - represents a boolean flag if an aircraft was deleted.
+    \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft, and
+    \item weight - represents a weight of the aircraft.
 \end{itemize}
 
 \subsection{Device}\label{subsec:device}
@@ -55,16 +45,11 @@ This entity represents a physical device that sends live information to the Dron
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item serial\_number - represents a serial number of a device,
     \item name - represents a device name for easier recognition in My aircraft list,
     \item type - represents
-    \item comm\_id - represents a communication identificator via CoAP,
-    \item date\_created - represents a date when a device was added,
-    \item date\_modified - represents a date when a device was changed,
-    \item last\_battery - represents a last battery value in Volts,
-    \item last\_rsrp - represents a RSRP (Reference Signal Receive Power) value and
-    \item last\_message - represents a received CoAP message.
+    \item last\_battery - represents a last battery value in Volts, and
+    \item last\_rsrp - represents a RSRP (Reference Signal Receive Power) value.
 \end{itemize}
 
 \subsection{Flight}\label{subsec:flight}
@@ -72,7 +57,6 @@ This entity represents it represents a flight that a user has created.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item date\_planned\_start - represents a start date of planned flight,
     \item date\_planned\_finish - represents a finish data of planned flight,
     \item date\_started - represents a real start date of flight,
@@ -85,11 +69,8 @@ All attributes are described like this:
     \item takeoff\_latitude - represents a latitude of take off position,
     \item takeoff\_longitude - represents a longitude of take off position,
     \item takeoff\_geo\_alt - represents a geological altitude of take off position,
-    \item takeoff\_pressure - represents a take off pressure,
-    \item public - represents a boolean flag if a flight is public (visible for everyone),
-    \item date\_created - represents a date when a flight was added,
-    \item date\_modified - represents a date when a flight was changed and
-    \item deleted - represents a boolean flag if a flight was deleted.
+    \item takeoff\_pressure - represents a take off pressure, and
+    \item public - represents a boolean flag if a flight is public (visible for everyone).
 \end{itemize}
 
 \subsection{Telemetry measurement}\label{subsec:telemetry-measurement}
@@ -97,16 +78,14 @@ This entity represents a telemetry measurement that the system receives and than
 
 All attributes are described like this:
 \begin{itemize}
-    \item time\_received - represents the unique object identificator,
     \item time - represents a date with time of measurement,
     \item latitude - represents a measured latitude of a flying drone,
     \item longitude - represents a measured longitude of a flying drone,
     \item altitude - represents a measured altitude of a flying drone,
     \item geo\_altitude - represents a measured geological altitude of a flying drone,
     \item velocity\_x - represents a measured velocity in X axis,
-    \item velocity\_y - represents a measured velocity in Y axis,
-    \item velocity\_z - represents a measured velocity in Z axis and
-    \item gnss\_accuracy - represents a (GNSS) Global Navigation Satellite System accuracy.
+    \item velocity\_y - represents a measured velocity in Y axis, and
+    \item velocity\_z - represents a measured velocity in Z axis.
 \end{itemize}
 
 \subsection{Organization}\label{subsec:organization}
@@ -114,12 +93,8 @@ This entity represents an Organization for maintenance of fleet management.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
-    \item name - represents a name of an organization,
-    \item description - represents a text descripton of an organization
-    \item date\_created - represents a date when an organization was added,
-    \item date\_modified - represents a date when an organization was changed and
-    \item deleted - represents a boolean flag if an organization was deleted.
+    \item name - represents a name of an organization, and
+    \item description - represents a text descripton of an organization.
 \end{itemize}
 
 \subsection{Fleet}\label{subsec:fleet}
@@ -127,31 +102,22 @@ This entity represents an organization's fleet management properties.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item name - represents a name of a fleet,
-    \item color - represents a shown color of a fleet,
-    \item deleted - represents a boolean flag if a fleet was deleted,
-    \item date\_created - represents a date when a fleet was added and
-    \item date\_modified - represents a date when a fleet was changed.
+    \item color - represents a shown color of a fleet, and
+    \item deleted - represents a boolean flag if a fleet was deleted.
 \end{itemize}
 
 \subsection{Aircraft vendor}\label{subsec:aircraft-vendor}
 This entity represents an aircraft vendor who manufactures drones.
-
-All attributes are described like this:
-\begin{itemize}
-    \item id - represents the unique object identificator,
-    \item name - represents a vendor name.
-\end{itemize}
+It contains only the one attribute name that represents a vendor name.
 
 \subsection{Aircraft model}\label{subsec:aircraft-model}
 This entity represents an aircraft model that belongs to a vendor.
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item name - represents a model name,
-    \item weight - represents a weight of a model and
+    \item weight - represents a weight of a model, and
     \item vendor\_id - represents a relationship to a Vendor.
 \end{itemize}
 
@@ -160,12 +126,9 @@ This entity represents an airspace zone
 
 All attributes are described like this:
 \begin{itemize}
-    \item id - represents the unique object identificator,
     \item name - represents a name of a zone,
-    \item country - represents a country where a zone belongs,
-    \item region\_geojson - represents a region in GeoJSON format \cite{geoJson},
-    \item date\_created - represents a date when a fleet was added and
-    \item date\_modified - represents a date when a fleet was changed.
+    \item country - represents a country where a zone belongs, and
+    \item region\_geojson - represents a region in GeoJSON format \cite{geoJson}.
 \end{itemize}
 
 \subsection{User preference}\label{subsec:user-preference}
@@ -173,9 +136,8 @@ This entity represents a user preference that is needed to store and share among
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents an identificator of property,
-    \item value - represents a preference value and
-    \item date\_modified - represents a date when a preference was changed.
+    \item property - represents an identificator of property, and
+    \item value - represents a preference value.
 \end{itemize}
 
 \subsection{Organization preference}\label{subsec:organization-preference}
@@ -183,17 +145,9 @@ This entity represents an organization preference that is neede to store and sha
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents the identificator of property,
-    \item value - represents a preference value and
-    \item date\_modified - represents a date when a preference was changed.
+    \item property - represents the identificator of property, and
+    \item value - represents a preference value.
 \end{itemize}
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.31, angle=90]{assets/erd_diagram.png}
-    \caption{ERD Diagram of data model\cite{dataModel}}
-    \label{fig:erd-diagram}
-\end{figure}
 
 \subsection{Live Service database model}\label{subsec:live-service-database-model}
 In addition, during the development we had found out the current backend is not sufficient for our needs, so we decided to divide the backend model into backend one and Live Service model.

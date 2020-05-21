@@ -6,8 +6,6 @@ It starts with an IoT module and frontend web client written in JavaScript, and 
 Current parts of the stack are the following:
 \begin{itemize}
     \item Load Balancer - it ensures load balancing of received requests (It redirects the requests to available node in cluster.),
-    \item OLP Message Broker - it ensures processing of OLP messages that are sent by a Dronetag device,
-    \item Message Queue - it ensures receiving and storing received data until the backend instance or Live Service instance subscribes it,
     \item Backend - it ensures communication with Database storage of data and provides API endpoint to allow drone security operation,
     \item Frontend - it ensures managing and watching drones activity via web browser,
     \item Private API endpoint - it ensures API endpoint to give into or get private data from Dronetag platform (It is a part of Backend.),
@@ -15,7 +13,7 @@ Current parts of the stack are the following:
     \item Database Storage that ensures persistent storing of data and
     \item Live Service - it ensures quick providing of Live data from airspace by given viewport.
 \end{itemize}
-The components and their relations are shown on the infrastructure diagram~\ref{fig:infrastracture-diagram}.
+%The components and their relations are shown on the infrastructure diagram~\ref{fig:infrastracture-diagram}.
 I must note the stack is being still involved anytime when we find out it is insufficient and complexity of the all system is increasing.
 In this case we need determine the cause and ensure load balancing among the parts of the stack.
 
@@ -33,17 +31,11 @@ The difference is that the Production environment contains a previous version of
 
 \input{chapters/main_content/dronetag_backend_analysis/kubernetes}
 
-\input{chapters/main_content/dronetag_backend_analysis/backend_application}
-
 \input{chapters/main_content/dronetag_backend_analysis/database_model}
-
-\input{chapters/main_content/dronetag_backend_analysis/broker}
-
-\input{chapters/main_content/dronetag_backend_analysis/communication_protocols.tex}
-
-\begin{figure}
-    \centering
-    \includegraphics[scale=0.29, angle=90]{assets/infrastructure-diagram.png}
-    \caption{Infrastructure diagram~\cite{dataInfrastructure}}
-    \label{fig:infrastracture-diagram}
-\end{figure}
+%
+%\begin{figure}
+%    \centering
+%    \includegraphics[scale=0.29, angle=90]{assets/infrastructure-diagram.png}
+%    \caption{Infrastructure diagram~\cite{dataInfrastructure}}
+%    \label{fig:infrastracture-diagram}
+%\end{figure}

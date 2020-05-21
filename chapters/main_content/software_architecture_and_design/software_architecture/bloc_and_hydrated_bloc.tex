@@ -1,0 +1,63 @@
+\subsection{Bloc and Hydrated Bloc}\label{subsec:bloc-and-hydrated-bloc}
+In the beginning, we counted on all of BLoCs will be the classic one.
+After short time, we have found out the storable concept is more convenient for this purpose.
+So, some following we changed to descendants of HydratedBloc.
+We have created a list of the following Bloc classes:
+\begin{itemize}
+    \item User Profile Bloc,
+    \item Aircraft Operation Bloc,
+    \item Device Operation Bloc,
+    \item Flight Operation Bloc,
+    \item TODO
+\end{itemize}
+
+At the beginning, \textbf{User Profile Bloc} had extended from common Bloc but after increasing data traffic we decided to change it to Hydrated Bloc.
+The reason is simple.
+User properties do not change so often.
+Due to it better to store the data in phone and update them when it changes.
+User Profile bloc ensures:
+\begin{itemize}
+    \item fetching user data,
+    \item log in user,
+    \item sign up user,
+    \item saving JWT token,
+    \item
+\end{itemize}
+
+\textbf{Aircraft Operation Bloc}
+%TODO: add description
+Bloc ensures:
+\begin{itemize}
+    \item
+\end{itemize}
+
+\textbf{Device Operation Bloc}
+%TODO: add description
+Bloc ensures:
+\begin{itemize}
+    \item
+\end{itemize}
+
+\textbf{Flight OperationBloc}
+%TODO: add description
+Bloc ensures:
+\begin{itemize}
+    \item
+\end{itemize}
+
+
+\subsection{JsonSerializable classes}\label{subsec:jsonserializable-classes}
+Json Serializable interface offers generating of  methods for serialization and deserialization classes that are annotated by Json Annotation.
+These classes are converted and created the methods via the \textbf{build runner} library.
+The advantage is a developer must not code these methods by hand, and he can re-generated every time it is needed to change the class structure.
+
+\textbf{Request classes}
+%TODO
+
+\textbf{Response classes}
+%TODO
+
+
+\subsection{Dio class}\label{subsec:dio-class}
+Due to need of using Interception and fill prepared HTTP requests with Authentication Bearer we defined our a custom \textbf{Dronetag Dio} class.
+It initializes \textbf{Pretty Dio Logger} to make clear debug printing and Token Interceptor that extends \textbf{Interceptors Wrapper}.

@@ -1,4 +1,4 @@
-\chapter{Code testing}\label{ch:code-testing}
+\section{Code testing}\label{sec:code-testing}
 Testing má v SW develpment zásadní využití.
 Pokud Development probíhá v rámci agilní metodiky, znamená to, že se jedná o menší dodávky sw, které obvykle zahrnují konkrétní funkcionalitu nebo bug fixing.
 V případně takovýchto zásahů do již nasazené aplikace je nutné alespoň částečně otestovat jejich správnou funkcionalitu, abychom předešli budoucím problémům.
@@ -9,7 +9,7 @@ Testing je tedy fáze součástí SW develpmentu, kteŕa lze provozovat automati
 
 Tato kapitola dále popisuje typy testů a funkcionality v aplikace, které jsou těmito testy pokryté včetně popisu, jak se mají dané funkcionality chovat v konkŕetnich situacích.
 
-\section{Unit testing}\label{sec:unit-testing}
+\subsection{Unit testing}\label{subsec:unit-testing}
 Tato sekce se věnuje  UnIT testům.
 Unit testy ve Flutteru lze spouštět příkazem z console prompt a díky tomu je lze snadno včlenit do fáze v CI a CD, kde se spustí automaticky.
 Pro UnIT testing se ve Flutteru používání následující knihovny:
@@ -18,13 +18,23 @@ Mockito
 Bloc\_test
 And so on.
 
+Unit testy v této aplikaci pokrývají následující funkcionality:
+\begin{itemize}
+    \item
+\end{itemize}
 %TODO:
 
-\section{Integration testing}\label{sec:integration-testing}
+\subsection{Integration testing}\label{subsec:integration-testing}
 %TODO:
 
-\section{Mocker}\label{sec:mocker}
+Integrační testy v této aplikaci pokrývají následující funkcionality:
+\begin{itemize}
+    \item
+\end{itemize}
+
+\subsection{Mocker}\label{subsec:mocker}
 Mocker for flight drone simulations.
-Mocker is written in Python a slouží k zasílání CoAP messages to backend endpoint.
+Mocker is written in Python a slouží k zasílání messages to backend endpoint for testing purpose.
 Mocker přijímá parametry se serial number and allows to specify a take off position.
 It allows to mock more drones concurrent, too.
+Výhodou tohoto Mockeru je, že při vývoji nepotřebujeme mít dron se zařízením přímo ve vzduchu, ale pro testovací účely nám pro nasimulování chování stačí právě tento Mocker.

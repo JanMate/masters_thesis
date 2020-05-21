@@ -1,20 +1,3 @@
-\chapter{Mobile application implementation}\label{ch:mobile-application-implementation}
-
-Words about the implementation
-
-\section{Build instructions}\label{sec:build-instructions}
-Build is divided to main 3 steps:
-\begin{enumerate}
-    \item downloading dependencies via \textit{flutter pub upgrade} command,
-    \item launching generating of the classes that creates themselves by the annotation settings via \textit{flutter build --runner} command
-    \item launching generating APK file for Android via \textit{flutter build release} command and
-    \item launching generating APP file for iOS in ios/Runner bundle.
-\end{enumerate}
-The last two steps can be run concurrently, because they are independent of each other.
-All this build process allows to be fully autonomous and connected to \textbf{Continuous Integration} (CI) and \textbf{Continuous Delivery} (CD).
-Thanks this fact, the development speed up all software process and it do not need any Operators.
-The development like this is called \textbf{DevOps} (abbreaviation of Development and information technology Operations) and now its popularity is increasing, because of saving time and money.
-
 \section{Configuration files}\label{sec:configuration-files}
 
 For using \textbf{Continuous Integration} and \textbf{Continuous Delivery} is needed to set right configuration.
@@ -30,7 +13,7 @@ A typical example could be differentiate setting of Google Maps widget, where is
 Although, these platforms have different architecture, so its configuration is different.
 
 Immediately at the beginning of the development phase, when a new member joins the team, he must to clone \textbf{mobile-app} folder from the git repository on BitBucket server.
-After that, it must add files \textbf{auth\_config.json} and \textbf{google\_map\_api\_key.json} in directory \textbf{assets/config}.
+After that, it must be added files \textbf{auth\_config.json} and \textbf{google\_map\_api\_key.json} in directory \textbf{assets/config}.
 
 \textbf{auth\_config.json} file in the format:
 % @formatter:off

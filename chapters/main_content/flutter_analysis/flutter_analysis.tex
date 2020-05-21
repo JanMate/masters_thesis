@@ -11,6 +11,7 @@ The name of the main used frameworks are:
     \item Ionic and
     \item Xamarin.
 \end{itemize}
+%TODO: přidat srovnání všech 4 frameworků
 
 Flutter is a framework and was established by Google Inc., in 2017 and since that time, its popularity is still increasing.
 
@@ -38,6 +39,7 @@ It means you need only one development team to reach an application for all plat
 We embrace differences in scrolling behaviors, typography, icons, and more."\cite{flutterTechnicalOverview}
 
 %TODO: add some words of mine
+Thanks this, we can style our application user interface on demand.
 
 \begin{figure}
     \centering
@@ -58,21 +60,78 @@ We embrace differences in scrolling behaviors, typography, icons, and more."\cit
 \end{figure}
 
 
-\subsection{Flutter UI}\label{subsec:flutter-ui}
+\section{Flutter User Interface}\label{subsec:flutter-ui}
 "Flutter includes a modern react-style framework, a 2D rendering engine, ready-made widgets, and development tools.
 These components work together to help you design, build, test, and debug apps.
 Everything is organized around a few core principles."\cite{flutterTechnicalOverview}
 Flutter has a widget tree that renders widget into nested tree, and these widgets are covering themselves.
 It does not matter if a widget from the widget tree is Container, List View, Image, Text, Animation or anything else.
 Everything is represented by a widget or its descendents.
+Addition important classes for User Interface are MaterialApp and Scaffold.
+MaterialApp and Scaffold we will describe in Android specific UI widgets - Material Design \ref{sec:android-specific-ui-widgets} section.
+
 
 \input{chapters/main_content/flutter_analysis/widgets}
 
 \input{chapters/main_content/flutter_analysis/bloc}
 
 \section{iOS specific UI widgets - Cupertino library}\label{sec:ios-specific-ui-widgets}
-Cupertino is a library ...%TODO
+%TODO: Cupertino is a library ...
+Pro využití prvků určených pro platformu iOS se Flutter vývojáři rozhodli včlenit typické prvky pro tuto platformu ve formě knihovny.
+The reason is, aby se dali snadno používat pro vývoj zaměřený na iOS devices.
+Tato knihovna se nazývá \textbf{Cupertino} a název vznikl podle názvu sídla společnosti Apple Inc., in Silicon Valley.
+%TODO: přeformulovat
+Součástí knihovny jsou prvky, se kterými jsou uživatelé iOS devices zvyklý pracovat.
+Tato knihovna obsahuje prvky:
+\begin{itemize}
+    \item Cupertino Action Sheet,
+    \item Cupertino Activity Indicator,
+    \item Cupertino Alert Dialog,
+    \item Cupertino Button,
+    \item Cupertino Context Menu,
+    \item Cupertino Date Picker,
+    \item Cupertino Dialog,
+    \item Cupertino Navigation Bar,
+    \item Cupertino Page Scaffold,
+    \item Cupertino Picker,
+    \item Cupertino Slider,
+    \item Cupertino Switch and
+    \item Cupertino Tab Scaffold.\cite{cupertino}
+\end{itemize}
 
 
 \section{Android specific UI widgets - Material Design}\label{sec:android-specific-ui-widgets}
-Material Design is a concept that was introduced by Google company ...%TODO
+\textbf{Material Design} is a concept that was introduced by Google company in 2014.\cite{materialDesignArticle}
+Na tomto konceptu je postavené celé Flutter User Interface.
+Material Design contains components that interactively builds blocks for creating a user interface.
+The components are following:
+\begin{itemize}
+    \item App bar,
+    \item Bottom navigation,
+    \item Buttons,
+    \item Floating Action button,
+    \item Cards,
+    \item Chips,
+    \item Dialogs,
+    \item Lists,
+    \item Pickers,
+    \item Progress indicators,
+    \item Sliders and
+    \item Tabs.\cite{materialDesign}
+\end{itemize}
+
+\textbf{Scaffold} represents a new rendered screen which allows to place various elements.
+\textbf{Scaffold} is possibly fully customize and change by the requirements.
+Pokud dbáme na jednoduchost, můžeme využít stávající rozhraní a definovat:
+\begin{itemize}
+    \item AppBar,
+    \item floatingActionButton, and
+    \item bottomNavigationBar.
+\end{itemize}
+\textbf{AppBar} represents header of the screen and usually contains a title and action buttons.
+\textbf{FloatingActionButton} je koncept tlačítek, která uživatel nejvíce používá a proto jsou v palcové zoně.
+\textbf{BottomNavigationBar} je koncept horizontálního menu ktere je také v palcové zoně in foooter of the screen and umožňuje vytvořit hlavní přehledné menu.
+
+Tyto dvě knihovny jsou pro naší aplikaci zajímávé z toho důvodu, protože v User interface používáme tyto prvky podle platformy, na které je applikace spouštěna.
+Důvod je jednoduchý.
+Uživatel by měl dostat to, s čím je zvyklý pracovat.
