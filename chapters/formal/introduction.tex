@@ -1,29 +1,19 @@
 \setsecnumdepth{part}
 \chapter{Introduction}\label{ch:introduction}
 This thesis is focused on ... zajištění bezpečnosti provozu dronů.
-
-%Since 2017, RLP is solving a problem with managing of flight drone operations.
-%It is the reason why this thesis was established.
-
 V roce 2012 se začali v ČR rozmáhat drony.
 V té době to byly spíše hračky, které si hobby piloti sestavovali sami doma.
 Proto je provázeli obvykle technické problémy.
-Po určité době v nich začali vidět potenciál velské firmy a začali na nich stavět svou vizi.
-Například společnost Amazon představila svůj koncept autonomních dronů schopných doručovat zboží z logistických skladů přímo k zákazníkům domů.
 
-%TODO: todo
-At first, I would like to talk about the solutions in the world especially using of drones in the industry.
-For example, Amazon Inc., company is working on a proof of concept which can use drones to delivery a package ordered by a customer.
+Po určité době v nich začali vidět potenciál velké firmy a začali na nich stavět svou vizi budoucnosti.
+Například společnost Amazon představila svůj koncept autonomních dronů schopných doručovat zboží z logistických skladů přímo k zákazníkům domů.
 This news was published in Forbes magazine by Jillian D'Onfro.\cite{amazonArticle}
 The customer could be more satisfied with this shopping because the time of delivering can be cut on as the tiny part of the time as now.
 Even Amazon has decided to produce their own drone products.
 One of them is Prime Air delivery drone.
 
 To make the delivery process easier, Amazon is developing autonomous drones application to minimize costs.
-Amazon using/usage/application
-
-autonomous drones application
-
+Proto můžeme v blízké budoucnosti očekávat výrazný rozmach (rozšíření) autonomních letounů.
 Potentially, it could be possible to use drones to delivery the medical materials in case of big accident.
 Especially, after a hurricane, fight conflict, or even during epidemic diseases like Coronavirus.
 
@@ -31,58 +21,40 @@ Zvýšením počtů majitelů dronů začali vznikat problémy.
 Většina hobby pilotů při létech porušovala zákon a ohrožovala bezpečnost leteckého provozu.
 Důvodem byla neznalost patřičných zákonů, které do té doby museli znát pouze piloty posádkových letounů.
 Proto se postupem času začal tento problém řešit.
-Přestože se na piloty bezpilotních letounů vztahují i ty posádkových letounů.
+Přestože se na piloty bezpilotních letounů částečně vztahují i ty posádkových letounů.
 Na druhou stranu, pilotům dronů stačí znát značení zón and restricted areas a nemusí být zatížení kompletní instruktáží jako jsou piloti posádkových letounů.
 
 Pro bezpečný provoz je nutné znát základní typy a značení zón.
 Tyto zóny se dělí na několik typů.
-Jsou to CTR, TMA, airports, R, D, A.
+Jsou to FIS (Flight Information Region), CTR (Control Zone), TMA (Terminal Maneuvering Area), ATZ (Aerodrome Traffic Zone), airports, P (Prohibited Area), R (Restricted Area), D (Dangerous Area), TRA (Temporary Reserved Area) and TSA (Temporary Segregated Area).\cite{airspace}
+
 Dále je u těchto zón důležitý parametr lower and upper altitude level.
-Tyto hladiny (levels) je dělí do několika skupin.
-Jsou to
+Tyto hladiny (levels) se dělí do několika skupin podle altitude uváděných v feet units.
+Dále je nutné si uvědomit, že uvedená výška může být dvojího typu.
+AMSL (Above Mean Sea Level) nad AGL (Above Ground Level).
+To znamená, že si musíte na tyto jednotky dát pozor a a v případě AMSL si uvědomit v jaké aktuální výšce se nacházíte, aby jste při letu nevletěli do zakázané zóny.
 
+Dále se vzdušný prostor dělí na třídy A-G.\cite{airspace}
+Pro třídy A-E platí nutnost svůj let hlásit a Air Navigation Service of the Czech Republic letům přiřazuje povolení.
+Třídy F a G jsou v nižšší letové hladině a není v nich nutné žádat o povolení Air Navigation Service of the Czech Republic.
 
-%TODO
-Drones problematics and advisories (rules)
+Air Navigation Service of the Czech Republic připravilo webovou stránku L{\' e}tejte zodpov{\v e}dn{\v e} (Fly carefully) about Drones problematics and sepsala advisories (rules) pro hobby piloty dronů srozumitelný způsobem.
+Tato webová stránka je blíže popsaná v kapitole Related projects \ref{sec:fly-carefully}.
 
-%\cite{} http://www.laacr.cz/SiteCollectionDocuments/rozdeleni-vp/p03-%20nakolenik%202019%20vnejsek%20rez%20D2.jpg
-Popsat letové hladiny a zóny
-
-
-!!! Použito v abstraktu !!!
-Tato práce se zabývá celým vývojem multiplatformní mobilní aplikace ve frameworku Flutter pro plánování a sledování letů.
-Tento vývoj zahrnuje kompletní analýzu, návrh a samotnou implementaci.
-
-V analýze je kladen důraz na rozbor existující webové platformy a celé infrastuktury, která poskytuje data klientským aplikacím a vystavuje API endpoint aplikacím třetích stran.
-
-Návrh se dělí na architekturu a design mobilní aplikace z pohledu softwaru.
-Zde je popsána celá struktura aplikace a využité architektonické patterny frameworku Flutter.
-
-Implementace popisuje detaily o realizaci a obsahuje podrobný návod pro spuštění ve vývojovém, testovacím a produkčním prostředí.
-Zároveň obsahuje popis důležitých konfiguračních souborů, které se liší napříč různými prostředími a mají bezpečnostní charakter.
 
 \section{Motivation}\label{sec:motivation}
 Motivací podílet se na této práci pro mě byla v tom, že se mohu realizovat ve vývoji mobilních applikací.
+Důvodem byl můj zájem si vyzkoušet něco nového, jelikož mám zatím pouze zkušenosti z webového vývoje.
 Dalším důvodem byly úspěchy v soutěží dvou zakládajících členů společnosti Dronetag Luk{\' a}{\v s} Brchl and Marian Hlav{\' a}{\v c}.
 Nejenže vyhráli hackathon, ale dokonce se umístili v soutěžích na evropské a světové úrovni.
-Motivící pro mě bylo také možnost podílet se na produktu budoucnosti, který bude mít v velké využití a už nyní má velký potenciál.
-Má svůj důvod, proč se trhu s drony říká exponenciální.
-%TODO
-využití dronů v průmyslu + trochu historie
-Exponenciální trh
-
-úspěchy Dronetagu v soutěžích, Hackathonech
+Motivací pro mě bylo také možnost podílet se na produktu, který má velký potenciál a můžeme ho nazvat produktem budoucnosti.
+Má svůj důvod, proč je trhu s drony exponenciální.
 
 
 \section{Objectives}\label{sec:objectives}
-%TODO
 Cílem této práce je vyvinou cross-platform mobile application pro zajištění bezpečnosti dronů.
 Aplikace bude implementovaná podle best-practice principů ve frameworku Flutter.
 Zároveň tato práce obsahuje popis základních konceptů frameworku Flutter v kapitole Analysis of Flutter.
 Implementace zahrnuje i částečné otestování unit testy a integrační testy a deployment specification.
 Aplikace bude splňovat všechny funkční požadavky.
 Těmi jsou vykreslování zón v mapě, zobrazování létajících dronů opatřených Dronetag zařízením v reálném čase, plánování letů a management vlastních letounů, zařízení a historie letů.
-
-%\section{Problem statement}\label{sec:problem-statement}
-%Drones using in industry increasing every year.
-%Nowadays,

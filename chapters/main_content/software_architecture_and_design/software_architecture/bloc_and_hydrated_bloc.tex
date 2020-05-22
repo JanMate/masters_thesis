@@ -5,59 +5,127 @@ So, some following we changed to descendants of HydratedBloc.
 We have created a list of the following Bloc classes:
 \begin{itemize}
     \item User Profile Bloc,
+    \item Authentication Bloc,
     \item Aircraft Operation Bloc,
     \item Device Operation Bloc,
     \item Flight Operation Bloc,
-    \item TODO
+    \item Device Detail Bloc,
+    \item Location Bloc,
+    \item Map Bloc,
+    \item Map Zone Bloc,
+    \item Map Drone Bloc and
+    \item Map Place Bloc.
 \end{itemize}
 
-At the beginning, \textbf{User Profile Bloc} had extended from common Bloc but after increasing data traffic we decided to change it to Hydrated Bloc.
+At the beginning, \textbf{User Profile Bloc} had extended common Bloc but after increasing data traffic we decided to change it to Hydrated Bloc.
 The reason is simple.
 User properties do not change so often.
 Due to it better to store the data in phone and update them when it changes.
-User Profile bloc ensures:
+User Profile bloc ensures loading and updating user data.
+
+\textbf{Authentication Bloc} extends Bloc.
+%TODO: add description - it ensures authentication of the application
+Authentication Bloc ensures:
 \begin{itemize}
-    \item fetching user data,
-    \item log in user,
-    \item sign up user,
-    \item saving JWT token,
-    \item
+    \item logging in user,
+    \item logging out user and
+    \item finding out if a user is logged in.
 \end{itemize}
 
-\textbf{Aircraft Operation Bloc}
+\textbf{Aircraft Operation Bloc} extends Hydrated Bloc.
+%TODO: add description - acts with aircraft data
+Aircraft Operation Bloc ensures:
+\begin{itemize}
+    \item loading aircraft data,
+    \item adding new aircraft,
+    \item updating an aircraft and
+    \item deleting an aircraft.
+\end{itemize}
+
+\textbf{Device Operation Bloc} extends Hydrated Bloc.
+%TODO: add description - acts with device data
+Device Operation Bloc ensures:
+\begin{itemize}
+    \item loading device data,
+    \item registration of a device to user,
+    \item updating a device and
+    \item deleting a device.
+\end{itemize}
+
+\textbf{Flight Operation Bloc} extends Hydrated Bloc.
+%TODO: add description - shows data in My Flights screen and live flight data
+Flight Operation Bloc ensures:
+\begin{itemize}
+    \item loading flight statistics data,
+    \item loading my flights data,
+    \item loading a flight data,
+    \item updating a flight and
+    \item deleting a flight.
+\end{itemize}
+
+\textbf{Device Detail Bloc} extends Bloc.
+%TODO: add description - is for switching icons on Device Detail screen
+Device Detail Bloc ensures:
+\begin{itemize}
+    \item switching Battery icon,
+    \item switching LTE icon and
+    \item switching Bluetooth icon.
+\end{itemize}
+
+\textbf{Location Bloc} extends Hydrated Bloc.
 %TODO: add description
-Bloc ensures:
-\begin{itemize}
-    \item
-\end{itemize}
+Location Bloc ensures focusing to a user location by GPS coordinates in the map in Dashboard.
 
-\textbf{Device Operation Bloc}
+\textbf{Map Bloc} extends Bloc.
+Map Bloc is the most complex component in all project so far.
+It looks after all user interaction with the map in Dashboard.
+Map Bloc mediates:
+\begin{itemize}
+    \item loading zones,
+    \item finding all zones covering a given point,
+    \item showing and closing zone selection,
+    \item showing and closing zone detail,
+    \item loading flying drones,
+    \item showing and closing drone detail,
+    \item focusing to a drone location,
+    \item showing and closing place detail,
+    \item focusing to a place location,
+    \item pinning and unpinning place marker into the map and
+    \item storing map object like Markers, Circles, Polygons and Polylines.
+\end{itemize}
+In addition, it has nested Blocs that listen the State changes.
+These Blocs are the following:
+\begin{itemize}
+    \item Map Zone Bloc,
+    \item Map Drone Bloc and
+    \item Map Place Bloc.
+\end{itemize}
+These Blocs reacts on the Map Bloc State changes that means when a new State is created a nested Bloc catches it and generate its new Event.
+The Event ensures the real action on the level of the nested Bloc thanks to mapping.
+
+\textbf{Map Zone Bloc} extends Bloc.
 %TODO: add description
-Bloc ensures:
+Map Zone Bloc ensures:
 \begin{itemize}
-    \item
+    \item loading zones,
+    \item finding all zones covering a given point,
+    \item showing and closing zone selection and
+    \item showing and closing zone detail.
 \end{itemize}
 
-\textbf{Flight OperationBloc}
+\textbf{Map Drone Bloc} extends Bloc.
+Map Drone Bloc ensures:
+\begin{itemize}
+    \item loading flying drones,
+    \item showing and closing drone detail and
+    \item focusing to a drone location.
+\end{itemize}
+
+\textbf{Map Place Bloc} extends Bloc.
 %TODO: add description
-Bloc ensures:
+Map Place Bloc ensures:
 \begin{itemize}
-    \item
+    \item showing and closing place detail,
+    \item focusing to a place location and
+    \item pinning and unpinning place marker into the map.
 \end{itemize}
-
-
-\subsection{JsonSerializable classes}\label{subsec:jsonserializable-classes}
-Json Serializable interface offers generating of  methods for serialization and deserialization classes that are annotated by Json Annotation.
-These classes are converted and created the methods via the \textbf{build runner} library.
-The advantage is a developer must not code these methods by hand, and he can re-generated every time it is needed to change the class structure.
-
-\textbf{Request classes}
-%TODO
-
-\textbf{Response classes}
-%TODO
-
-
-\subsection{Dio class}\label{subsec:dio-class}
-Due to need of using Interception and fill prepared HTTP requests with Authentication Bearer we defined our a custom \textbf{Dronetag Dio} class.
-It initializes \textbf{Pretty Dio Logger} to make clear debug printing and Token Interceptor that extends \textbf{Interceptors Wrapper}.

@@ -1,10 +1,28 @@
 \subsection{Util}\label{subsec:util}
-%todo
+This part contains utilities, that facilitate work in the codebase.
+It is separated into:
+\begin{itemize}
+    \item Error directory,
+    \item Extensions directory,
+    \item Preferences directory,
+    \item Bloc Delegate class - it extends generic Bloc Delegate, and it logs all actions on every Bloc (on every Hydrated Bloc, too),
+    \item Network Info class - it checks internet connection (it uses DataConnectionChecker class) and
+    \item Validator class - it defines validation rules for e-mail address, password and full name.
+\end{itemize}
 
-\subsection{Error}\label{subsec:error}
-%todo
 
-\subsection{Extensions}\label{subsec:extensions}
+\subsubsection{Error}\label{subsubsec:error}
+This directory contains classes:
+\begin{itemize}
+    \item error\_handling - it contains a method that map an error to action,
+    \item Server Exception - it extends the general exception and
+    \item Server Failure - it represents a returned fail message with the HTTP status code.
+\end{itemize}
+
+
+\subsubsection{Extensions}\label{subsubsec:extensions}
+Extension is a feature that can add a functionality without the base class changes.
+In addition, it helps to the codebase facilitation and Extension is able to use even in cases where is really needed.
 The Extensions directory contains:
 \begin{itemize}
     \item Polygon Extension,
@@ -12,24 +30,62 @@ The Extensions directory contains:
     \item Number Extension and
     \item String Extension.
 \end{itemize}
-\textbf{Polygon Extension} offers to find out if a \textbf{Point}~\cite{} consisted of latitude and longitude is lying in the given \textbf{Polygon}~\cite{}.
+\textbf{Polygon Extension} offers to find out if a \textbf{point} consisted of latitude and longitude is lying in the given \textbf{Polygon}~\cite{googleMapsPolygon}.
 It is based on the mathematical problem when we looking for the result if a y-axis of a point goes through an even number of border lines of the given polygon.
 To solve how find out if the y-axis goes through is based on the problem which deals with two lines go through each other.
-All the problem is described in this paper~\cite{}.
-%todo \cite{}: http://www.dcs.gla.ac.uk/~pat/52233/slides/Geometry1x1.pdf
+All the problem is described in this paper~\cite{geometricAlgorithms}.
 
-\textbf{Circle Extension} offers to find out if a \textbf{Point}~\cite{} consisted of latitude and longitude is lying in the given \textbf{Circle}~\cite{}.
-It is based on the \textbf{Pythagorian theorem} that solves a computation of the longest line in a .
+\textbf{Circle Extension} offers to find out if a \textbf{point} consisted of latitude and longitude is lying in the given \textbf{Circle}~\cite{googleMapsCircles}.
+It is based on the \textbf{Pythagorian theorem} that solves a computation of the longest line in a right triangle consisting of the spoken line and x and y-axis lines.
 
-\textbf{String Extension}
+\textbf{Viewport Extension} contains \textit{isOutOf(Viewport viewport)} method, that extends the base interface of \textbf{LatLngBounds}~\cite{latLngBounds} class for the comparison if this viewport is out of the bounds of given viewport.
+The implementation is simple.
+It compares all coordinates of these viewports each other.
+If this viewport is out of the bounds of the given, it returns true, otherwise it returns false.
 
-\textbf{Number Extension}
-Only notes:
-A component with interesting logic could be the Polygon Extension.
-It is for finding out if a given point lies in the Polygon.
+\textbf{String Extension} contains methods for simplified work with Strings.
+These methods are:
+\begin{itemize}
+    \item isValidEmail() - it checks if a given e-mail meets set Regular Expression,
+    \item isValidPassword() - it checks if a given password meets set Regular Expression,
+    \item isBlank() - it checks if a given string is empty or equal empty string and
+    \item isValidFullName() - it checks if a given full name meets set Regular Expression.
+\end{itemize}
 
-%todo
-And computation of distance and transform it on lat long coordinates !
+\textbf{Number Extension} contains methods for the precision setting.
+The methods are:
+\begin{itemize}
+    \item halfSize() - returns half of this number,
+    \item toLatLonPrecision() - returns string of this number with precision on 6 decimal digits,
+    \item toAltitudePrecision() - returns string of this number with precision on 4 decimal digits,
+    \item addLatitudeDistance(double distance) - adds a given distance to this in latitude axis and
+    \item addLongitudeDistance(double distance, double latitude) - adds a given distance to this in longitude axis.
+\end{itemize}
 
-\subsection{Preferences}\label{subsec:preferences}
-%todo
+\textbf{Date Extension} extends the base interface of the \textbf{Date} class and contains the get method \textit{suffix}, that returns a suffix in English for the number of the day in the given date.
+
+\textbf{Translation Extension} extends the base interface of the \textbf{BuildContext} class and contains \textit{translate(String key)} method, that mediates call of \textit{Flutteri18n.translate(key)} method with key parameter.
+It returns a translation by phone setting properties, where the application is running, by the key in  \textbf{en.json} and \textbf{cs.json} file in \textbf{assets/i18n} directory.
+
+
+\subsubsection{Preferences}\label{subsubsec:preferences}
+This directory contains AppPreferences class, that encapsulates Box class from Hive library, that provides NoSQL persistent data storage.
+The Hive library has a simple interface for work with the nested Box class, and in addition, it allows using Hive Annotations and define the objects for storing via an entity.
+AppPreferences class contains public methods:
+\begin{itemize}
+    \item saveTokens(String apiToken, String refreshToken) - it calls \_putToken(String token) and \_putRefreshToken(String token) methods,
+    \item destroyTokens() - it calls \_deleteToken() and \_deleteRefreshToken() methods,
+    \item getToken() - it gets a value by API\_TOKEN constant,
+    \item getRefreshToken() - it gets a value by API\_REFRESH\_TOKEN constant,
+    \item isUserLoggedIn() - it checks if getToken() and getRefreshToken() return not empty string (If so, user is still logged in, otherwise logged out.),
+    \item getRecentSearchResult() - it returns stored user search recent results and
+    \item updateRecentSearchResult(SearchObject currentSearchedResult) - it updates stored user search recent results.
+\end{itemize}
+AppPreferences class contains private methods:
+\begin{itemize}
+    \item \_put(String key, value) - it puts a value by the given key into Box object storage,
+    \item \_putToken(String token) - it calls \_put(String key, value) where key is API\_TOKEN constant,
+    \item \_putRefreshToken(String token) - it calls \_put(String key, value) where key is API\_REFRESH\_TOKEN constant,
+    \item \_deleteToken() - it deletes a value by API\_TOKEN constant and
+    \item \_deleteRefreshToken() - it deletes a value by API\_REFRESH\_TOKEN constant.
+\end{itemize}
