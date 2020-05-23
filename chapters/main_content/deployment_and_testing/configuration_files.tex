@@ -42,6 +42,7 @@ In our project, we use Google Maps API for downloaing map styles, data about a s
 
 All mentioned files meet the JSON format standard specification.
 
+
 \subsection{Develop environment}\label{subsec:develop-environment}
 The configuration files in this project contains setting for local running platform, that is launched as Kubernetes cluster.
 The part of the cluster is a docker container with the backend implementation.
@@ -52,6 +53,7 @@ More information about platform you can find in the chapter Dronetag web infrast
 Test environment is called Staging and is used for testing and debugging new functionalities and feature, and \textbf{Software Quality Assurance}.\cite{sqa}
 In this environment, we can simulate arbitrary model situation and check how the application behaves in these edge case situations, and if it is stable in each of the scenario.
 In addition, it is posible to verify the fact if a fault occours, that the clients can adequately respond to this situation and catch created exceptions.
+
 
 \subsection{Production environment}\label{subsec:production-environment}
 Production environment is used for real application operations and it should contain no errors created during development phase.

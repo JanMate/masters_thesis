@@ -1,40 +1,45 @@
 \section{Code testing}\label{sec:code-testing}
-Testing má v SW develpment zásadní využití.
-Pokud Development probíhá v rámci agilní metodiky, znamená to, že se jedná o menší dodávky sw, které obvykle zahrnují konkrétní funkcionalitu nebo bug fixing.
-V případně takovýchto zásahů do již nasazené aplikace je nutné alespoň částečně otestovat jejich správnou funkcionalitu, abychom předešli budoucím problémům.
-Největší problém nastává tam, kde vznikají závislosti.
-Tedy pokud funkcionalita už na začátku pracuje špatně, bude i dalším fukcionalitám postavených na ní dávat špatné výsledky a může to způsobit dokonce nestabilitu application.
-Výhodou je že tyto testy lze spouštět opakovaně a při změnách v kódu jednoduše upravovat.
-Testing je tedy fáze součástí SW develpmentu, kteŕa lze provozovat automatizovaně v rámci CI a CD.
+Testing has in the Software development the key usage.
+If the development runs according to an agile methodology, it means that it is about small regular deliveries of software pieces that includes the certain functionality or bug fixing.
+In case of these interferences of the already deployed application is needed at least to partly test its correct functionality to prevent potential problems in the future.
+The biggest problem occurs where dependencies creates.
+So, if the functionality falls down at the beginning, the functionalities depending on the root functionality will give a bad results, and it can cause even instability of the application.
+The advantages is the tests are able to run repeatedly and in case of changes we can easily change them.
+So, the testing is a phase in the Software development that is allow to automation in the Continuous Integration and Continuous Delivery.
 
-Tato kapitola dále popisuje typy testů a funkcionality v aplikace, které jsou těmito testy pokryté včetně popisu, jak se mají dané funkcionality chovat v konkŕetnich situacích.
+In addition, this chapter describes kinds of tests and functionalities in the application, which are covered by these tests.
+It includes a description how the given functions should behave in the certain situations.
+
 
 \subsection{Unit testing}\label{subsec:unit-testing}
-Tato sekce se věnuje  UnIT testům.
-Unit testy ve Flutteru lze spouštět příkazem z console prompt a díky tomu je lze snadno včlenit do fáze v CI a CD, kde se spustí automaticky.
-Pro UnIT testing se ve Flutteru používání následující knihovny:
-UnIT test
-Mockito
-Bloc\_test
-And so on.
-
-Unit testy v této aplikaci pokrývají následující funkcionality:
+This section emphasizes to Unit tests.
+In Flutter, Unit tests are able to run by \textit{flutter test} command from the console prompt.
+Thanks this, it is easy to incorporate them into Continuous Integration and Continuous Delivery phase where the test care run automatically.
+There are libraries used for Unit testing in Flutter:
 \begin{itemize}
-    \item
+    \item test,
+    \item flutter\_test,
+    \item Mockito,
+    \item Bloc\_test and
+    \item others.
 \end{itemize}
-%TODO:
+
+Unit tests covers the following functionalities in the application:
+\begin{itemize}
+    \item %TODO:
+\end{itemize}
+
 
 \subsection{Integration testing}\label{subsec:integration-testing}
-%TODO:
+This section emphasizes to Integration test.
+These tests verify if the alone parts tested by unit tests can cooperate together and work well as a whole.
+We have implemented on integration test because we had no time to deal with this kind of tests.
 
-Integrační testy v této aplikaci pokrývají následující funkcionality:
-\begin{itemize}
-    \item
-\end{itemize}
 
 \subsection{Mocker}\label{subsec:mocker}
-Mocker for flight drone simulations.
-Mocker is written in Python a slouží k zasílání messages to backend endpoint for testing purpose.
-Mocker přijímá parametry se serial number and allows to specify a take off position.
-It allows to mock more drones concurrent, too.
-Výhodou tohoto Mockeru je, že při vývoji nepotřebujeme mít dron se zařízením přímo ve vzduchu, ale pro testovací účely nám pro nasimulování chování stačí právě tento Mocker.
+Mocker is used for flight drone simulations.
+Mocker is written in Python and sends messages to backend endpoint for testing purpose.
+Mocker expects parameters serial number and allows to specify a take off position (optional parameter).
+It allows to mock more drones concurrently, too.
+The advantages of this Mocker is I do not need to have a flying physical drone with attached Dronetag device in the air during the development.
+For a simulated behavior is enough to run this Mocker.
