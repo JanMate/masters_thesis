@@ -8,9 +8,9 @@ This design pattern helps to separate presentation from business logic.
 Following the BLoC pattern facilitates testability and reusability.
 This package abstracts reactive aspects of the pattern allowing developers to focus on converting events into states."\cite{bloc}
 
-Bloc is library written by Felix Angelov, and the concept bases on Reactive Programming.\cite{bloc}
-Bloc represents a control unit what is responsible for passing data from state into UI.
-When a user clicks on a button, it throws an event action that Bloc detects and generate a new state.
+Bloc is a library written by Felix Angelov and the concept bases on Reactive Programming.\cite{bloc}
+Bloc represents a control unit that is responsible for passing data from state into UI.
+When a user clicks on a button, it throws an event action that Bloc detects and generates a new state.
 In a nutshell, a structure of the concept consists of the following parts in Bloc:
 \begin{itemize}
     \item \textbf{Events} are the input to a Bloc.
@@ -45,9 +45,9 @@ The out-of-the-box storage implementation reads/writes to file using the \textbf
 
 HydratedBloc works as well as common Bloc.
 The difference is in data storage.
-Hydrated Bloc allow us to store data through a JSON object.
-So, every time when your application loads data, you must not wait and show user progress indicator, but you are able to show stored data immediately.
-When you receive data, you will simply render it into a screen.
+Hydrated Bloc allows us to store data through a JSON object.
+So, whenever an application loads data, it is necessary to wait and show the user progress indicator, but it can show stored data immediately.
+When it receives data, it will simply render it into a screen.
 
 "\textbf{HydratedBlocStorage} is an implementation of \textit{HydratedStorage} which uses \textit{PathProvider} and \textit{dart.io} to persist and retrieve state changes from the local device."\cite{hydratedBlocStorage}
 So, it is a part of Hydrated Bloc implementation.

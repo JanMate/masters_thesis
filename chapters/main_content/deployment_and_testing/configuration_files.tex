@@ -1,19 +1,19 @@
 \section{Configuration files}\label{sec:configuration-files}
 
-For using \textbf{Continuous Integration} and \textbf{Continuous Delivery} is needed to set right configuration.
-Therefore, there is a need to create alone configuration files for every environment.
-For this purpose we used \textbf{environment\_config} Flutter library, that allows easy management and provides the generator.
-This generator allows to use these settingsin the codebase by the given parameters.
-The setting of these variables is kept by the configuration YAML file, where you choose required configuration and the generator makes available it for you via an interface in the codebase.
-Here I have to notice, that the cross-platform frameworks like Flutter allow to set separate configuration for every platforms alone - iOS and Android.
-Unfortunetely, there are even cases when the setting applies as similar as on the both of the platforms.
-For example, it can be URL (Uniform Resource Locator) addresses, client ID, client secrets and a path to log file.
-If you need to distinguish a configuration for each of the platform alone, you will perform this change in the specific bundle.
-A typical example could be differentiate setting of Google Maps widget, where is needed to set activated Google Maps API key.
-Although, these platforms have different architecture, so its configuration is different.
+For using \textbf{Continuous Integration} and \textbf{Continuous Delivery} is needed to set the right configuration.
+Therefore, there is a need to create single configuration files for every environment.
+For this purpose, we used the \textbf{environment\_config} Flutter library that allows easy management and provides the generator.
+This generator allows us to use these settings in the codebase by the given parameters.
+The configuration YAML file keeps the setting of these variables, where we choose the required configuration, and the generator makes available it for us via an interface in the codebase.
+Here we have to notice that the cross-platform frameworks like Flutter allow us to set the separate configuration for every platform on iOS and Android.
+Unfortunately, there are even cases when the setting applies as similar as on both of the platforms.
+For example, it can be a URL (Uniform Resource Locator) addresses, client ID, client secrets, and a path to a log file.
+We will perform this change in the specific bundle if we need to distinguish a configuration for each of the platforms alone.
+A typical example could be differentiate setting of Google Maps widget, where it is needed to set activated Google Maps API key.
+Although these platforms have different architecture, so its configuration is different.
 
-Immediately at the beginning of the development phase, when a new member joins the team, he must to clone \textbf{mobile-app} folder from the git repository on BitBucket server.
-After that, it must be added files \textbf{auth\_config.json} and \textbf{google\_map\_api\_key.json} in directory \textbf{assets/config}.
+Immediately at the beginning of the development phase, when a new member joins the team, he must clone \textbf{mobile-app} folder from the git repository on BitBucket server.
+After that, he must add files \textbf{auth\_config.json} and \textbf{google\_map\_api\_key.json} in directory \textbf{assets/config}.
 
 \textbf{auth\_config.json} file in the format:
 % @formatter:off
@@ -37,25 +37,25 @@ This file is used for the security of the client access and in case it would be 
 \end{verbatim}
 % @formatter:on
 
-This file is for the access to the information, which are provided by \textbf{Google Cloud Platform API}.
-In our project, we use Google Maps API for downloaing map styles, data about a searching place, and the Autocomplete function that suggests close result by the given substring.
+This file is for access to the information, which are provided by \textbf{Google Cloud Platform API}.
+In our project, we use Google Maps API for downloading map styles, data about a searching place, and the Autocomplete function that suggests close result by the given substring.
 
 All mentioned files meet the JSON format standard specification.
 
 
 \subsection{Develop environment}\label{subsec:develop-environment}
-The configuration files in this project contains setting for local running platform, that is launched as Kubernetes cluster.
+The configuration files in this project contain setting for the local running platform launched as the Kubernetes cluster.
 The part of the cluster is a docker container with the backend implementation.
-More information about platform you can find in the chapter Dronetag web infrastructure \ref{ch:dronetag-web-infrastructure}.
+More information about the platform we can find in the Dronetag web infrastructure chapter~\ref{ch:dronetag-web-infrastructure}.
 
 
 \subsection{Test environment (Staging)}\label{subsec:test-environment}
-Test environment is called Staging and is used for testing and debugging new functionalities and feature, and \textbf{Software Quality Assurance}.\cite{sqa}
-In this environment, we can simulate arbitrary model situation and check how the application behaves in these edge case situations, and if it is stable in each of the scenario.
-In addition, it is posible to verify the fact if a fault occours, that the clients can adequately respond to this situation and catch created exceptions.
+The test environment is called Staging and is used for testing and debugging new functionalities, features, and \textbf{Software Quality Assurance}.\cite{sqa}
+In this environment, we can simulate the arbitrary model situation and check how the application behaves in these edge case situations and if it is stable in each scenario.
+Also, it is possible to verify the fact if a fault occurs, that the clients can adequately respond to this situation and catch created exceptions.
 
 
 \subsection{Production environment}\label{subsec:production-environment}
-Production environment is used for real application operations and it should contain no errors created during development phase.
-This environment is crucial for the Dronetag company business and the customers using the product have the feeling about flawless application any time when they will use it.
-Configuration files in this environment contain the connection settings to Production server, where is operating the cluster with the backend instance.
+The production environment is used for real application operations, and it should contain no errors created during the development phase.
+This environment is crucial for the Dronetag company business, and the customers who use the product have the feeling about flawless application whenever they use it.
+Configuration files in this environment contain the connection settings to the production server, operating the cluster with the backend instance.

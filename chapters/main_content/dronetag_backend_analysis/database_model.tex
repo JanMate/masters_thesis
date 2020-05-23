@@ -1,6 +1,6 @@
 \section{Database model}\label{sec:database-model}
 There is a database model to store data in Dronetag backend.
-The database model consists followings entities:
+The database model consists of followings entities:
 \begin{itemize}
     \item User,
     \item Aircraft,
@@ -31,13 +31,13 @@ All attributes are described like this:
 \end{itemize}
 
 \subsection{Aircraft}\label{subsec:aircraft}
-This entity represents an aircraft that is connect with a Dronetag device.
+This entity represents an aircraft that is connected with a Dronetag device.
 
 All attributes are described like this:
 \begin{itemize}
     \item name - represents an aircraft name for easier recognition in My aircraft list,
     \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft, and
-    \item weight - represents a weight of the aircraft.
+    \item weight - represents the weight of the aircraft.
 \end{itemize}
 
 \subsection{Device}\label{subsec:device}
@@ -48,8 +48,8 @@ All attributes are described like this:
     \item serial\_number - represents a serial number of a device,
     \item name - represents a device name for easier recognition in My aircraft list,
     \item type - represents
-    \item last\_battery - represents a last battery value in Volts, and
-    \item last\_rsrp - represents a RSRP (Reference Signal Receive Power) value.
+    \item last\_battery - represents the last battery value in Volts, and
+    \item last\_rsrp - represents the RSRP (Reference Signal Receive Power) value.
 \end{itemize}
 
 \subsection{Flight}\label{subsec:flight}
@@ -66,35 +66,35 @@ All attributes are described like this:
     \item duration - represents a duration of flight,
     \item region\_geojson - represents a reservation region in GeoJSON format \cite{geoJson},
     \item max\_flight\_altitude - represents a maximum flight altitude,
-    \item takeoff\_latitude - represents a latitude of take off position,
-    \item takeoff\_longitude - represents a longitude of take off position,
-    \item takeoff\_geo\_alt - represents a geological altitude of take off position,
-    \item takeoff\_pressure - represents a take off pressure, and
+    \item takeoff\_latitude - represents a latitude of taking off position,
+    \item takeoff\_longitude - represents a longitude of taking off position,
+    \item takeoff\_geo\_alt - represents a geological altitude of taking off position,
+    \item takeoff\_pressure - represents a taking off pressure, and
     \item public - represents a boolean flag if a flight is public (visible for everyone).
 \end{itemize}
 
 \subsection{Telemetry measurement}\label{subsec:telemetry-measurement}
-This entity represents a telemetry measurement that the system receives and thanks that we are able to draw a flight trajectory.
+This entity represents a telemetry measurement that the system receives and thanks so that we can draw a flight trajectory.
 
 All attributes are described like this:
 \begin{itemize}
-    \item time - represents a date with time of measurement,
+    \item time - represents a date with the time of measurement,
     \item latitude - represents a measured latitude of a flying drone,
     \item longitude - represents a measured longitude of a flying drone,
     \item altitude - represents a measured altitude of a flying drone,
     \item geo\_altitude - represents a measured geological altitude of a flying drone,
-    \item velocity\_x - represents a measured velocity in X axis,
-    \item velocity\_y - represents a measured velocity in Y axis, and
-    \item velocity\_z - represents a measured velocity in Z axis.
+    \item velocity\_x - represents a measured velocity in X-axis,
+    \item velocity\_y - represents a measured velocity in Y-axis, and
+    \item velocity\_z - represents a measured velocity in Z-axis.
 \end{itemize}
 
 \subsection{Organization}\label{subsec:organization}
-This entity represents an Organization for maintenance of fleet management.
+This entity represents an Organization for the maintenance of fleet management.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents a name of an organization, and
-    \item description - represents a text descripton of an organization.
+    \item name - represents the name of an organization, and
+    \item description - represents a text description of an organization.
 \end{itemize}
 
 \subsection{Fleet}\label{subsec:fleet}
@@ -117,12 +117,12 @@ This entity represents an aircraft model that belongs to a vendor.
 All attributes are described like this:
 \begin{itemize}
     \item name - represents a model name,
-    \item weight - represents a weight of a model, and
+    \item weight - represents the weight of a model, and
     \item vendor\_id - represents a relationship to a Vendor.
 \end{itemize}
 
 \subsection{Airspace zone}\label{subsec:airspace-zone}
-This entity represents an airspace zone
+This entity represents an airspace zone.
 
 All attributes are described like this:
 \begin{itemize}
@@ -136,28 +136,28 @@ This entity represents a user preference that is needed to store and share among
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents an identificator of property, and
+    \item property - represents an identification of the property, and
     \item value - represents a preference value.
 \end{itemize}
 
 \subsection{Organization preference}\label{subsec:organization-preference}
-This entity represents an organization preference that is neede to store and share among various clients.
+This entity represents an organization preference that needs to store and share among various clients.
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents the identificator of property, and
+    \item property - represents the identification of the property, and
     \item value - represents a preference value.
 \end{itemize}
 
 \subsection{Live Service database model}\label{subsec:live-service-database-model}
-In addition, during the development we had found out the current backend is not sufficient for our needs, so we decided to divide the backend model into backend one and Live Service model.
-Because there are only live real time temporary data, so we deployed a Redis database.
+Besides, during the development, we had found out the current Backend is not sufficient for our needs, so we decided to divide the backend model into the Backend one and Live Service model.
+Because there are only live real-time temporary data, so we deployed a Redis database.
 
 "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.
 Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."\cite{redis}
-It means that the Redis is a real-time storage that persists data only for very short time.
-That is the reason, why it is suitable for this purpose.
+It means that the Redis is real-time storage that persists data only for a short time.
+That is the reason why it is suitable for this purpose.
 
-The Live Service database model consists of \textbf{Device} and \textbf{Telemetry} entity.
+The Live Service database model consists of a \textbf{Device} and \textbf{Telemetry} entity.
 

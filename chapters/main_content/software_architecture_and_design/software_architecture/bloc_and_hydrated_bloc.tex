@@ -1,7 +1,7 @@
 \subsection{Bloc and Hydrated Bloc}\label{subsec:bloc-and-hydrated-bloc}
 In the beginning, we counted on all of BLoCs will be the classic one.
-After short time, we have found out the storable concept is more convenient for this purpose.
-So, some following we changed to descendants of HydratedBloc.
+After a short time, we have found out that the storable concept is more convenient for this purpose.
+So, some following, we changed to descendants of HydratedBloc.
 We have created a list of the following Bloc classes:
 \begin{itemize}
     \item User Profile Bloc,
@@ -17,16 +17,16 @@ We have created a list of the following Bloc classes:
     \item Map Place Bloc.
 \end{itemize}
 
-At the beginning, \textbf{User Profile Bloc} had extended common Bloc but after increasing data traffic we decided to change it to Hydrated Bloc.
+In the beginning, \textbf{User Profile Bloc} had extended common Bloc, but after increasing data traffic, we decided to change it to Hydrated Bloc.
 The reason is simple.
 User properties do not change so often.
-Due to it better to store the data in phone and update them when it changes.
+Due to it better to store the data on the phone and update them when it changes.
 User Profile bloc ensures loading and updating user data.
 
 \textbf{Authentication Bloc} extends Bloc.
 Authentication Bloc ensures:
 \begin{itemize}
-    \item logging in user,
+    \item logging in a user,
     \item logging out user and
     \item finding out if a user is logged in.
 \end{itemize}
@@ -44,7 +44,7 @@ Aircraft Operation Bloc ensures:
 Device Operation Bloc ensures:
 \begin{itemize}
     \item loading device data,
-    \item registration of a device to user,
+    \item registration of a device to a user,
     \item updating a device and
     \item deleting a device.
 \end{itemize}
@@ -53,8 +53,8 @@ Device Operation Bloc ensures:
 Flight Operation Bloc ensures:
 \begin{itemize}
     \item loading flight statistics data,
-    \item loading my flights data,
-    \item loading a flight data,
+    \item loading flights data,
+    \item loading flight data,
     \item updating a flight and
     \item deleting a flight.
 \end{itemize}
@@ -71,8 +71,8 @@ Device Detail Bloc ensures:
 Location Bloc ensures focusing to a user location by GPS coordinates in the map in Dashboard.
 
 \textbf{Map Bloc} extends Bloc.
-Map Bloc is the most complex component in all project so far.
-It looks after all user interaction with the map in Dashboard.
+Map Bloc is the most complex component in th whole project so far.
+It looks after all user interaction with the map in the Dashboard.
 Map Bloc mediates:
 \begin{itemize}
     \item loading zones,
@@ -81,7 +81,7 @@ Map Bloc mediates:
     \item showing and closing zone detail,
     \item loading flying drones,
     \item showing and closing drone detail,
-    \item focusing to a drone location,
+    \item focusing on a drone location,
     \item showing and closing place detail,
     \item focusing to a place location,
     \item pinning and unpinning place marker into the map and
@@ -94,7 +94,7 @@ These Blocs are the following:
     \item Map Drone Bloc and
     \item Map Place Bloc.
 \end{itemize}
-These Blocs reacts on the Map Bloc State changes that means when a new State is created a nested Bloc catches it and generate its new Event.
+These Blocs react on the Map Bloc State changes, which means when a new State is created, a nested Bloc catches it and generate its new Event.
 The Event ensures the real action on the level of the nested Bloc thanks to mapping.
 
 \textbf{Map Zone Bloc} extends Bloc.
@@ -111,13 +111,13 @@ Map Drone Bloc ensures:
 \begin{itemize}
     \item loading flying drones,
     \item showing and closing drone detail and
-    \item focusing to a drone location.
+    \item focusing on a drone location.
 \end{itemize}
 
 \textbf{Map Place Bloc} extends Bloc.
 Map Place Bloc ensures:
 \begin{itemize}
     \item showing and closing place detail,
-    \item focusing to a place location and
+    \item focusing on a place location and
     \item pinning and unpinning place marker into the map.
 \end{itemize}

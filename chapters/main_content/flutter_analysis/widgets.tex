@@ -1,6 +1,6 @@
 \section{Widgets}\label{sec:widgets}
-How the founders of Flutter say: ,,Everything's a Widget".
-In following part, we will clarify this statement.
+How the founders of Flutter say: "Everything is a Widget".
+In the following part, we will clarify this statement.
 
 "Widgets are the basic building blocks of a Flutter app's user interface.
 Each widget is an immutable declaration of part of the user interface.
@@ -13,9 +13,9 @@ A~widget can define:
     \item and so on\ldots"\cite{flutterTechnicalOverview}
 \end{itemize}
 
-So each of components of UI in Flutter is descendent of widget.
+So each component of UI in Flutter is a descendent of the widget.
 Many classes that inherit from a widget, but there are the essential descendants.
-They are following:
+They are the following:
 \begin{itemize}
     \item StatelessWidget,
     \item StatefulWidget and
@@ -29,8 +29,8 @@ They are following:
 A stateless widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
 The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of
 \textit{RenderObjectWidgets}\cite{renderObjectWidget}, which describe concrete \textit{RenderObjects}\cite{renderObject})."\cite{statelessWidget}
-It means StatelessWidget is a useful component to render graphics elements that do not change themselves during their existation.
-StatelessWidget is class with constructor and build method.
+It means that StatelessWidget is a useful component to render graphics elements that do not change during their lives.
+StatelessWidget is class with Constructor and build method.
 When the widget tree is built, it calls the build method.
 
 "Stateless widget are useful when the part of the user interface you are describing does not depend on anything other than the configuration information in the object itself and the BuildContext in which the widget is inflated.
@@ -42,13 +42,14 @@ For compositions that can change dynamically, e.g. due to having an internal clo
 
 State is information that (1) can be read synchronously when the widget is built and (2) might change during the lifetime of the widget.
 It is the responsibility of the widget implementer to ensure that the \textit{State}\cite{state} is promptly notified when such state changes, using \textit{State.setState}\cite{setState}."\cite{statefulWidget}
-It means StatefulWidget is a useful component to render graphics elements that change themselves until they are disposed.
-StatefulWidget initializes its state which represent a space for storing data.
+It means that StatefulWidget is a useful component to render graphics elements that change until they are disposed of.
+StatefulWidget initializes its state, which represents a space for storing data.
 The State is class with Constructor, initState and build method.
-The constructor is called when the State is created, the initState method is called before widget tree is rendered and the build method is called when the tree renders itself.
+The Constructor is called when the State is created.
+The initState method is called before the widget tree is rendered, and the build method is called when the tree renders itself.
 
-Due to this fact, the Stateful widget has worse performance than Stateless widget and often it is difficult to keep a sustainable design of a component.
-On the other hand, it offers a convenient way to create widget with only few state that will not be changed in development cycle in the future.
+Due to this fact, the Stateful widget has worse performance than StatelessWidget, and often it is difficult to keep a sustainable design of a component.
+On the other hand, it offers a convenient way to create a widget with few states that will not be changed in the future development cycle.
 
 "A stateful widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
 The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of
@@ -65,7 +66,6 @@ For compositions that depend only on the configuration information in the object
 To obtain the nearest instance of a particular type of inherited widget from a build context, use \textit{BuildContext.dependOnInheritedWidgetOfExactType}\cite{dependOnInheritedWidgetOfExactType}.
 
 Inherited widgets, when referenced in this way, will cause the consumer to rebuild when the inherited widget itself changes state."\cite{inheritedWidget}
-It means InheritedWidget is a useful component to pass data and offer reducing of boilerplate if you have many widgets nested in themselves.
-Thanks the BuildContext class and of method, you can easily get the value you add as input variable.
-So it means the widget is suitable for passing a huge amount of data.
-It loses a need of copy many parameters in a big tree structure.
+It means that InheritedWidget is a useful component to pass data and offer to reduce boilerplate if there are many widgets nested in themselves.
+Thanks to the BuildContext class and of a method, you can easily get the value you add as an input variable.
+So it means the widget is suitable for passing a huge amount of data. It loses a need to copy many parameters in a large tree structure.

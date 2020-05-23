@@ -1,26 +1,26 @@
 \chapter{Dronetag web infrastructure}\label{ch:dronetag-web-infrastructure}
 This chapter describes all Dronetag web infrastructure and contains a detailed description of the web Dronetag platform.
 It consists of the all technical stack that ensures data providing and processing.
-We had to determine a convenient and reliable way how to construct a useful architecture of infrastructure gradually.
+We had to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
 It starts with an IoT module and frontend web client written in JavaScript, and it continues to implement WebSockets in Live Service implementation based on a Kubernetes cluster.
 Current parts of the stack are the following:
 \begin{itemize}
-    \item Load Balancer - it ensures load balancing of received requests (It redirects the requests to available node in cluster.),
+    \item Load Balancer - it ensures load balancing of received requests (It redirects the requests to an available node in cluster.),
     \item Backend - it ensures communication with Database storage of data and provides API endpoint to allow drone security operation,
-    \item Frontend - it ensures managing and watching drones activity via web browser,
+    \item Frontend - it ensures managing and watching drones activity via a web browser,
     \item Private API endpoint - it ensures API endpoint to give into or get private data from Dronetag platform (It is a part of Backend.),
     \item Public API endpoint - it ensures API endpoint to give into or get public data from Dronetag platform (It is also a part of Backend.),
     \item Database Storage that ensures persistent storing of data and
-    \item Live Service - it ensures quick providing of Live data from airspace by given viewport.
+    \item Live Service - it ensures quick providing of Live data from airspace by the given viewport.
 \end{itemize}
 %The components and their relations are shown on the infrastructure diagram~\ref{fig:infrastracture-diagram}.
-I must note the stack is being still involved anytime when we find out it is insufficient and complexity of the all system is increasing.
-In this case we need determine the cause and ensure load balancing among the parts of the stack.
+I must note the stack is still involved anytime when we find out it is insufficient and the complexity of the all system is increasing.
+In this case, we need to determine the cause and ensure load balancing among the parts of the stack.
 
 \section{API separation}\label{sec:api-separation}
 Due to security reasons, the web API divides itself into \textbf{Private} and \textbf{Public API} endpoints.
 \textbf{Public API} is allowed to use by third-party consumers.
-It can be anyone who would like using our data, to ensure drone operation security.
+It can be anyone who would like using our data to ensure drone operation security.
 
 In further determination, this infrastructure divides into the \textbf{Staging} and \textbf{Production} environment.
 Staging is for development and testing purposes, and it usually runs on the same version as Production.

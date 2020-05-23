@@ -1,21 +1,21 @@
 \section{Code testing}\label{sec:code-testing}
-Testing has in the Software development the key usage.
-If the development runs according to an agile methodology, it means that it is about small regular deliveries of software pieces that includes the certain functionality or bug fixing.
-In case of these interferences of the already deployed application is needed at least to partly test its correct functionality to prevent potential problems in the future.
-The biggest problem occurs where dependencies creates.
-So, if the functionality falls down at the beginning, the functionalities depending on the root functionality will give a bad results, and it can cause even instability of the application.
-The advantages is the tests are able to run repeatedly and in case of changes we can easily change them.
-So, the testing is a phase in the Software development that is allow to automation in the Continuous Integration and Continuous Delivery.
+The testing has in the Software development the critical usage.
+If the development runs according to an agile methodology, it means that it is about small regular deliveries of software pieces that include certain functionality or bug fixing.
+In the case of these interferences, the already deployed application is needed to partly test its correct functionality to prevent potential problems in the future.
+The biggest problem occurs where dependencies create.
+So, if the functionality breaks down at the beginning, the functionalities depending on the root functionality will give us bad results, causing even instability of the application.
+The advantage is the tests can repeatedly run, and in case of changes, we can easily change them.
+So, the testing is a phase in the Software development that allows us to automation in the Continuous Integration and Continuous Delivery.
 
-In addition, this chapter describes kinds of tests and functionalities in the application, which are covered by these tests.
-It includes a description how the given functions should behave in the certain situations.
+Besides, this chapter describes kinds of tests and functionalities in the application, which are covered by these tests.
+It includes a description of how the given functions should behave in certain situations.
 
 
 \subsection{Unit testing}\label{subsec:unit-testing}
-This section emphasizes to Unit tests.
-In Flutter, Unit tests are able to run by \textit{flutter test} command from the console prompt.
-Thanks this, it is easy to incorporate them into Continuous Integration and Continuous Delivery phase where the test care run automatically.
-There are libraries used for Unit testing in Flutter:
+This section emphasizes to unit tests.
+In Flutter, unit tests run with~\textbf{flutter test} command from the console prompt.
+Thanks to this, it is easy to incorporate them into Continuous Integration and Continuous Delivery phase, where the test care run automatically.
+There are libraries used for unit testing in Flutter:
 \begin{itemize}
     \item test,
     \item flutter\_test,
@@ -24,22 +24,22 @@ There are libraries used for Unit testing in Flutter:
     \item others.
 \end{itemize}
 
-Unit tests covers the following functionalities in the application:
+Unit tests cover the following functionalities in the application:
 \begin{itemize}
     \item %TODO:
 \end{itemize}
 
 
 \subsection{Integration testing}\label{subsec:integration-testing}
-This section emphasizes to Integration test.
-These tests verify if the alone parts tested by unit tests can cooperate together and work well as a whole.
-We have implemented on integration test because we had no time to deal with this kind of tests.
+This section emphasizes to Integration tests.
+These tests verify whether the individual parts tested by unit tests can cooperate and work well as a whole.
+We have implemented no integration test because we had no time to deal with these tests.
 
 
 \subsection{Mocker}\label{subsec:mocker}
 Mocker is used for flight drone simulations.
 Mocker is written in Python and sends messages to backend endpoint for testing purpose.
-Mocker expects parameters serial number and allows to specify a take off position (optional parameter).
-It allows to mock more drones concurrently, too.
-The advantages of this Mocker is I do not need to have a flying physical drone with attached Dronetag device in the air during the development.
-For a simulated behavior is enough to run this Mocker.
+Mocker expects parameter serial number and allows to specify a take-off position (optional parameter).
+It allows us to mock more drones concurrently, too.
+The advantage of this Mocker is that we do not need to have a flying physical drone with an attached Dronetag device in the air during the development.
+It is enough to run this Mocker for a simulated behavior.

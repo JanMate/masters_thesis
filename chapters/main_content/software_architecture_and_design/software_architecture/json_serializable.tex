@@ -1,26 +1,28 @@
 \subsection{JsonSerializable classes}\label{subsec:jsonserializable-classes}
-\textbf{Json Serializable} interface offers generating of methods for serialization and deserialization classes that are annotated by \textbf{Json Annotation}.
-These classes are converted and the process creates the methods via the \textbf{build runner} library.
-The advantage is a developer must not code these methods by hand, and he can re-generated every time it is needed to change the class structure.
+\textbf{Json Serializable} interface offers generating methods for serialization and deserialization classes.
+\textbf{Json Annotation} annotates these classes.
+These classes are converted, and the process creates the methods via the \textbf{build runner} library.
+The advantage is that a developer must not code these methods by hand.
+He can re-generated every time it is needed to change the class structure.
 
-\textbf{Request classes} is used for store and serialization of data before it will be sent by Rest client.
+\textbf{Request classes} are used for store and serialization of data before the Rest client will send it.
 This directory contains only \textbf{Login Request} and \textbf{Register Request} classes.
 
-\textbf{Response classes} is used for store and deserialization of data after it has been received by Rest client.
+\textbf{Response classes} are used for store and deserialization of data after the Rest client has received it.
 This directory contains:
 \begin{itemize}
     \item Aircraft Detail Response - is used for passing aircraft data in Aircraft Repository,
-    \item Aircraft Overview Response - is used for nested object in Flight Info Response in Flight Repository,
+    \item Aircraft Overview Response - is used for a nested object in Flight Info Response in Flight Repository,
     \item Api Error - is used for processing of API error message in each of Repositories,
     \item Device Detail Response - is used for passing device data in Device Repository,
     \item Device Live Response - is used for passing device live data in Device Repository,
     \item Device Telemetry Response - is used for passing device telemetry live data in Device Repository,
-    \item Dronetag Overview Response - is used for nested object in Flight Info Response in Flight Repository,
+    \item Dronetag Overview Response - is used for a nested object in Flight Info Response in Flight Repository,
     \item Flight Info Response - is used for passing flight data in Flight Repository,
     \item Flight Statistics Response - is used for flight statistics data in Flight Repository,
     \item Location - is used for passing latitude and longitude data in almost each of Repositories,
-    \item Region Response - is used for nested object in Zone Response and Flight Info Response,
-    \item Take Off Response - is used for nested object in Flight Info Response in Flight Repository,
+    \item Region Response - is used for a nested object in Zone Response and Flight Info Response,
+    \item Take Off Response - is used for a nested object in Flight Info Response in Flight Repository,
     \item Telemetry Response - is used for passing telemetry data in Device Repository,
     \item User Profile Response - is used for passing user data in User Repository and
     \item Zone Response - is used for passing zone data in Zone Repository.

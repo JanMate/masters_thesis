@@ -1,6 +1,7 @@
 \subsection{IO}\label{subsec:io}
-IO directory contains components, that ensures loading data from remote sources.
-Here we emphasizes to the encapsulation and comprehension, thus we have created alone directory..
+IO directory contains components that ensure loading data from remote sources.
+Here we emphasize to the encapsulation and comprehension.
+Thus, we have created a single directory
 This directory is divided to:
 \begin{itemize}
     \item Model,
@@ -10,17 +11,17 @@ This directory is divided to:
 These nested directories are described in more detail in the following paragraphs.
 
 \textbf{Model}~directory~contains objects that~are produced by~API endpoint of~Dronetag backend.
-It is divided to \textbf{request} and \textbf{response} classes.
-Model contains entities, that are used for data objects.
-So, their main purpose is keep data in the consistent way.
-Serialization ensures the facility mapping data to objects, that the application gets from the remote data sources.
-Serialization ensures the interface \textbf{JsonSerialization}, that generates serialized objects by the given configuration.
+It is divided into \textbf{request} and \textbf{response} classes.
+Model contains entities that are used for data objects.
+So, their primary purpose is to keep data consistently.
+Serialization ensures the facility mapping data to objects that the application gets from the remote data sources.
+Serialization ensures the interface \textbf{JsonSerialization} that generates serialized objects by the given configuration.
 This configuration is processed via \textbf{Json Annotation} interface in the library with the same name.
 
-\textbf{Repositories} consists of a repository for each of functional part.
+\textbf{Repositories} directory consists of a repository for each functional part.
 Every part contains methods for laboring with individual entities and mediates passing data from remote sources.
-The part of every repository is a service that ensures relevant operations, that will process with the given entity from Model directory.
-The services are closely described in the next paragraph in this seciton.
+The part of every repository is a service that ensures proper operations that will process with the given entity from the Model directory.
+The services are closely described in the next paragraph in this section.
 The Repositories directory contains the following classes:
 \begin{itemize}
     \item User Repository,
@@ -32,8 +33,8 @@ The Repositories directory contains the following classes:
 \end{itemize}
 
 \textbf{Services} directory contains a subdirectory \textbf{api}.
-This subdirectory contains classes that ensures receiving from and sending data to API endpoints, that are the part of the Dronetag infrastructure.
-The API interface in this infrastructure is ensured by the Backend instance and Live Service.
+This subdirectory contains classes that ensure receiving from and sending data to API endpoints that are part of the Dronetag infrastructure.
+The Backend instance and Live Service ensure the API interface in this infrastructure.
 Thus, \textbf{api} directory is divided into:
 \begin{itemize}
     \item Dronetag Web Rest Client,
@@ -42,7 +43,7 @@ Thus, \textbf{api} directory is divided into:
     \item Google API Key Reader and
     \item Dronetag Dio.
 \end{itemize}
-\textbf{Dronetag Web Rest Client} is used for laoding and sending data o the web platform, specifically the backend.
+\textbf{Dronetag Web Rest Client} is used for loading and sending data o the web platform, specifically the backend.
 This client contains methods:
 \begin{itemize}
     \item fetchMyUserProfile() - it returns a user profile data,
@@ -67,22 +68,23 @@ This client contains methods:
 \end{itemize}
 
 \textbf{Dronetag Live Service Client} is used for loading live data from Live Service.
-The reason to divide Rest client into two clients is well-arrangement, and the reason why is the web infrastructure is separated into these two services, is described in the Dronetag web infrastructure chapter~\ref{ch:dronetag-web-infrastructure}.
+The reason to divide the Rest client into two clients is well-arrangement.
+The reason is that the web infrastructure is separated into these two services, as described in the Dronetag web infrastructure chapter~\ref{ch:dronetag-web-infrastructure}.
 This client contains methods:
 \begin{itemize}
-    \item fetchAllTelemetries() - it returns all last live telemetries about all Drones in airspace,
+    \item fetchAllTelemetries() - it returns all last live telemetries about all Drones in the airspace,
     \item fetchDeviceDetail(String serialNumber) - it returns a device detail by a given serial number and
     \item fetchTelemetryDetail(String serialNumber) - it returns all live telemetries about a drone by a given serial number.
 \end{itemize}
 
-\textbf{Auth Config}, \textbf{Google API Key Reader} and \textbf{Dronetag Dio} ensures another mechanism and is used for the direct providing data from the remote sources.
-However, it was suitable to keep these classes together with the Rest clients, because they are closely related each other.
+\textbf{Auth Config}, \textbf{Google API Key Reader} and \textbf{Dronetag Dio} ensure another mechanism and are used to provide data from the remote sources directly.
+However, it was suitable to keep these classes together with the Rest clients, because they are closely related to each other.
 Auth config contains methods:
 \begin{itemize}
-    \item initialize() - it loads auth\_config.json configuration file and store the values from it by the clientId and clientSecret keys in the Map<String, String> (data container as similar as List),
+    \item initialize() - it loads auth\_config.json configuration file and stores the values from it by the clientId and clientSecret keys in~the~Map (data container as similar as List),
     \item getClientId() - it returns a value from the Map container by the \textit{clientId} key and
-    \item getClientSecrete() - it returns a value from the Map container by the \textit{clientSecret} key.
+    \item getClientSecret() - it returns a value from the Map container by the \textit{clientSecret} key.
 \end{itemize}
 \textbf{Google API Key Reader} contains methods \textit{initialize()} and \textit{getApiKey()}.
-\textit{initialize()} loads auth\_config.json configuration file and store the values from it by the clientId and clientSecret keys in the Map<String, String> (data container as similar as List).
-\textit{getApiKey()} it returns a value from the Map container by the \textit{apiKey} key.
+\textit{initialize()} loads auth\_config.json configuration file and store the values from it by the clientId and clientSecret keys in~the~Map (data container as similar as List).
+\textit{getApiKey()} returns a value from the Map container by the \textit{apiKey} key.
