@@ -1,22 +1,16 @@
 \subsection{IO}\label{subsec:io}
 IO directory contains components that ensure loading data from remote sources.
 Here it is emphasized to the encapsulation and comprehension.
-Thus, it has been created a single directory
-This directory is divided into:
-\begin{itemize}
-    \item Model,
-    \item Repositories,
-    \item Services.
-\end{itemize}
+Thus, it has been created a single directory that is divided into, Model, Repositories and Services directories.
 These nested directories are described in more detail in the following paragraphs.
 
-\textbf{Model}~directory~contains objects that~are produced by~API endpoint of~Dronetag backend.
-It is divided into \textbf{request} and \textbf{response} classes.
-Model contains entities that are used for data objects.
+\textbf{Model} directory contains objects that are produced by API endpoint of Dronetag backend.
+It is divided into request and response classes.
+Model contains entities that are used for data objects
 So, their primary purpose is to keep data consistently.
 Serialization ensures the facility mapping data to objects that the application gets from the remote data sources.
-Serialization ensures the interface \textbf{JsonSerialization} that generates serialized objects by the given configuration.
-This configuration is processed via \textbf{Json Annotation} interface in the library with the same name.
+Serialization ensures the interface JsonSerialization that generates serialized objects by the given configuration.
+This configuration is processed via JsonAnnotation interface in the library with the same name.
 
 \textbf{Repositories} directory consists of a repository for each functional part.
 Every part contains methods for laboring with individual entities and mediates passing data from remote sources.
@@ -43,28 +37,29 @@ Thus, \textbf{api} directory is divided into:
     \item Google API Key Reader,
     \item Dronetag Dio.
 \end{itemize}
+\newpage
 \textbf{Dronetag Web Rest Client} is used for loading and sending data o the web platform, specifically the backend.
 This client contains methods:
 \begin{itemize}
-    \item fetchMyUserProfile() - it returns a user profile data,
-    \item authorize(String email, String password) - it authorizes a user via a JWT token endpoint,
-    \item registerUser(RegisterRequest request) - it registers a new user,
-    \item fetchFlightInfo(String id) - it returns a flight data by the given id,
-    \item fetchAircrafts() - it returns all aircrafts that a user has granted access to see them,
-    \item fetchAircraft(String uuid) - it returns an aircraft detail by the given id,
-    \item addAircraft(String name, String uasOperatorID, String modelID, double weight) - it adds a new aircraft by the given parameters,
-    \item updateAircraft(String uuid, String name, String modelID, double weight) - it updates an aircraft detail by the given uuid,
-    \item deleteAircraft(String uuid) - it deletes an aircraft by the given uuid,
-    \item fetchDevices() - it returns all devices that a user has granted access to see them,
-    \item fetchDevice(String uuid) - it returns a device detail by the given uuid,
-    \item addDevice(String name, String serialNumber) - it adds a new device with the given parameters,
-    \item deleteDevice(String uuid) - it deletes a device by the given uuid,
-    \item updateUserProfile(String uuid, UserProfile user) - it updates a user detail by the given uuid with the user parameter,
-    \item fetchMyFlightStat() - it returns user's flight statistics,
-    \item deleteFlight(String uuid) - it deletes a flight by the given uuid,
-    \item fetchZones(String viewport) - it returns all zones by the given viewport,
-    \item fetchZone(String uuid) - it returns a zone detail by the given uuid,
-    \item passwordReset(String email) - it resets a user's password by the given e-mail address.
+    \item \textbf{fetchMyUserProfile()} - it returns a user profile data,
+    \item \textbf{authorize(String email, String password)} - it authorizes a user via a JWT token endpoint,
+    \item \textbf{registerUser(RegisterRequest request)} - it registers a new user,
+    \item \textbf{fetchFlightInfo(String id)} - it returns a flight data by the given id,
+    \item \textbf{fetchAircrafts()} - it returns all aircrafts that a user has granted access to see them,
+    \item \textbf{fetchAircraft(String uuid)} - it returns an aircraft detail by the given id,
+    \item \textbf{addAircraft(String name, String uasOperatorID, String modelID, double weight)} - it adds a new aircraft by the given parameters,
+    \item \textbf{updateAircraft(String uuid, String name, String modelID, double weight)} - it updates an aircraft detail by the given uuid,
+    \item \textbf{deleteAircraft(String uuid)} - it deletes an aircraft by the given uuid,
+    \item \textbf{fetchDevices()} - it returns all devices that a user has granted access to see them,
+    \item \textbf{fetchDevice(String uuid)} - it returns a device detail by the given uuid,
+    \item \textbf{addDevice(String name, String serialNumber)} - it adds a new device with the given parameters,
+    \item \textbf{deleteDevice(String uuid)} - it deletes a device by the given uuid,
+    \item \textbf{updateUserProfile(String uuid, UserProfile user)} - it updates a user detail by the given uuid with the user parameter,
+    \item \textbf{fetchMyFlightStat()} - it returns user's flight statistics,
+    \item \textbf{deleteFlight(String uuid)} - it deletes a flight by the given uuid,
+    \item \textbf{fetchZones(String viewport)} - it returns all zones by the given viewport,
+    \item \textbf{fetchZone(String uuid)} - it returns a zone detail by the given uuid,
+    \item \textbf{passwordReset(String email)} - it resets a user's password by the given e-mail address.
 \end{itemize}
 
 \textbf{Dronetag Live Service Client} is used for loading live data from Live Service.
@@ -72,19 +67,19 @@ The reason to divide the Rest client into two clients is well-arrangement.
 The reason is that the web infrastructure is separated into these two services, as described in the Dronetag web infrastructure chapter~\ref{ch:dronetag-web-infrastructure}.
 This client contains methods:
 \begin{itemize}
-    \item fetchAllTelemetries() - it returns all last live telemetries about all Drones in the airspace,
-    \item fetchDeviceDetail(String serialNumber) - it returns a device detail by a given serial number,
-    \item fetchTelemetryDetail(String serialNumber) - it returns all live telemetries about a drone by a given serial number.
+    \item \textbf{fetchAllTelemetries()} - it returns all last live telemetries about all Drones in the airspace,
+    \item \textbf{fetchDeviceDetail(String serialNumber)} - it returns a device detail by a given serial number,
+    \item \textbf{fetchTelemetryDetail(String serialNumber)} - it returns all live telemetries about a drone by a given serial number.
 \end{itemize}
 
 \textbf{Auth Config}, \textbf{Google API Key Reader} and \textbf{Dronetag Dio} ensure another mechanism and are used to provide data from the remote sources directly.
 However, it was suitable to keep these classes together with the Rest clients, because they are closely related to each other.
 Auth config contains methods:
 \begin{itemize}
-    \item initialize() - it loads auth\_config.json configuration file and stores the values from it by the clientId and clientSecret keys in~the~Map (data container as similar as List),
-    \item getClientId() - it returns a value from the Map container by the \textit{clientId} key,
-    \item getClientSecret() - it returns a value from the Map container by the \textit{clientSecret} key.
+    \item \textbf{initialize()} - it loads auth\_config.json configuration file and stores the values from it by the clientId and clientSecret keys in the Map (data container as similar as List),
+    \item \textbf{getClientId()} - it returns a value from the Map container by the \textit{clientId} key,
+    \item \textbf{getClientSecret()} - it returns a value from the Map container by the \textit{clientSecret} key.
 \end{itemize}
 \textbf{Google API Key Reader} contains methods \textit{initialize()} and \textit{getApiKey()}.
-\textit{initialize()} loads auth\_config.json configuration file and store the values from it by the clientId and clientSecret keys in~the~Map (data container as similar as List).
+\textit{initialize()} loads auth\_config.json configuration file and store the values from it by the clientId and clientSecret keys in the Map (data container as similar as List).
 \textit{getApiKey()} returns a value from the Map container by the \textit{apiKey} key.

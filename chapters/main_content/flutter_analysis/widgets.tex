@@ -7,12 +7,11 @@ Each widget is an immutable declaration of part of the user interface.
 Unlike other frameworks that separate views, view controllers, layouts, and other properties, Flutter has a consistent, unified object model: the widget.
 A~widget can define:
 \begin{itemize}
-    \item a structural element (like a button or menu),
-    \item a stylistic element (like a font or color scheme),
-    \item an aspect of layout (like padding),
-    \item and so on \textellipsis"~\cite{flutterTechnicalOverview}
+    \item A structural element (like a button or menu),
+    \item A stylistic element (like a font or color scheme),
+    \item An aspect of layout (like padding),
+    \item And so on \textellipsis"~\cite{flutterTechnicalOverview}
 \end{itemize}
-
 So each component of UI in Flutter is a descendent of the widget.
 Many classes that inherit from a widget, but there are the essential descendants.
 They are the following:
@@ -44,8 +43,8 @@ State is information that (1) can be read synchronously when the widget is built
 It is the responsibility of the widget implementer to ensure that the \textit{State}~\cite{state} is promptly notified when such state changes, using \textit{State.setState}~\cite{setState}."~\cite{statefulWidget}
 It means that StatefulWidget is a useful component to render graphics elements that change until they are disposed of.
 StatefulWidget initializes its state, which represents a space for storing data.
-The State is class with Constructor, initState and build method.
-The Constructor is called when the State is created.
+The State is class with constructor, initState and build method.
+The constructor is called when the State is created.
 The initState method is called before the widget tree is rendered, and the build method is called when the tree renders itself.
 
 Due to this fact, the Stateful widget has worse performance than StatelessWidget, and often it is difficult to keep a sustainable design of a component.

@@ -1,13 +1,13 @@
 \section{Software Architecture}\label{sec:software-architecture}
 This section focuses on the architecture of this application implementation.
-Because the definition of Software Architecture has been already clarified, it will be emphasized to certain components that were used in the implementation.
+Because the definition of software architecture has been already clarified, it will be emphasized to certain components that were used in the implementation.
 
-In Software Architecture has been proven a pattern of using libraries that offer generic classes that include already implemented logic that help to simplify and do code more readable thanks to the standards.
+In software architecture has been proven a pattern of using libraries that offer generic classes that include already implemented logic that help to simplify and do code more readable thanks to the standards.
 For better understanding, it will be described in the Bloc and Hydrated Bloc section~\ref{subsec:bloc-and-hydrated-bloc} of this chapter.
-
-There would be useful to discuss the difference between common \textbf{Bloc} and its extended class \textbf{Hydrated Bloc}.
+\newpage
+There would be useful to discuss the difference between common Bloc and its extended class Hydrated Bloc.
 Both of them using the sink, and the stream concept is working on the stream subscription principle.
-The Hydrated Bloc offers persistent storage storing and loading with \textit{fromJson} and \textit{toJson} methods.
+The Hydrated Bloc offers persistent storage storing and loading with \textbf{fromJson} and \textbf{toJson} methods.
 It helps to have an application working more smoothly thank to storing of data in phone than alone continuous loading data via the network whenever a user needs them.
 
 

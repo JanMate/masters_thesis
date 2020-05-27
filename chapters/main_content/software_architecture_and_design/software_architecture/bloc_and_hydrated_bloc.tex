@@ -23,67 +23,65 @@ Due to it is better to store the data on the phone and update them when it chang
 User Profile bloc ensures loading and updating user data.
 \newline
 \newline
-\textbf{Authentication Bloc} extends Bloc.
-Authentication Bloc ensures:
+\newline
+\textbf{Authentication Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item logging in a user,
-    \item logging out user,
-    \item finding out if a user is logged in.
+    \item Logging in a user,
+    \item Logging out user,
+    \item Finding out if a user is logged in.
 \end{itemize}
-\textbf{Aircraft Operation Bloc} extends Hydrated Bloc.
-Aircraft Operation Bloc ensures:
+\textbf{Aircraft Operation Bloc} extends Hydrated Bloc and ensures:
 \begin{itemize}
-    \item loading aircraft data,
-    \item adding new aircraft,
-    \item updating an aircraft,
-    \item deleting an aircraft.
+    \item Loading aircraft data,
+    \item Adding new aircraft,
+    \item Updating an aircraft,
+    \item Deleting an aircraft.
 \end{itemize}
-\textbf{Device Operation Bloc} extends Hydrated Bloc.
-Device Operation Bloc ensures:
+\textbf{Device Operation Bloc} extends Hydrated Bloc and ensures:
 \begin{itemize}
-    \item loading device data,
-    \item registration of a device to a user,
-    \item updating a device,
-    \item deleting a device.
+    \item Loading device data,
+    \item Registration of a device to a user,
+    \item Updating a device,
+    \item Deleting a device.
 \end{itemize}
-\textbf{Flight Operation Bloc} extends Hydrated Bloc.
-Flight Operation Bloc ensures:
+\textbf{Flight Operation Bloc} extends Hydrated Bloc and ensures:
 \begin{itemize}
-    \item loading flight statistics data,
-    \item loading flights data,
-    \item loading flight data,
-    \item updating a flight,
-    \item deleting a flight.
+    \item Loading flight statistics data,
+    \item Loading flights data,
+    \item Loading flight data,
+    \item Updating a flight,
+    \item Deleting a flight.
 \end{itemize}
-\textbf{Device Detail Bloc} extends Bloc.
-Device Detail Bloc ensures:
+\textbf{Device Detail Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item switching Battery icon,
-    \item switching LTE icon,
-    \item switching Bluetooth icon.
+    \item Switching Battery icon,
+    \item Switching LTE icon,
+    \item Switching Bluetooth icon.
 \end{itemize}
 This Bloc is used for switching of icons in the Device detail screen.
 
-\textbf{Location Bloc} extends Hydrated Bloc.
-Location Bloc ensures focusing to a user location by GPS coordinates in the Dashboard map.
+\textbf{Location Bloc} extends Hydrated Bloc and ensures focusing to a user location by GPS coordinates in the Dashboard map.
 
 \textbf{Map Bloc} extends Bloc.
 Map Bloc is the most complex component in the whole project.
 It looks after all user interaction with the Dashboard map.
 Map Bloc mediates:
 \begin{itemize}
-    \item loading zones,
-    \item finding all zones covering a given point,
-    \item showing and closing zone selection,
-    \item showing and closing zone detail,
-    \item loading flying drones,
-    \item showing and closing drone detail,
-    \item focusing on a drone location,
-    \item showing and closing place detail,
-    \item focusing to a place location,
-    \item pinning and unpinning place marker into the map,
-    \item storing map object like Markers, Circles, Polygons and Polylines.
+    \item Loading zones,
+    \item Finding all zones covering a given point,
+    \item Showing and closing zone selection,
+    \item Showing and closing zone detail,
+    \item Loading flying drones,
+    \item Showing and closing drone detail,
+    \item Focusing on a drone location,
+    \item Showing and closing place detail,
+    \item Focusing to a place location,
+    \item Pinning and unpinning place marker into the map,
+    \item Storing map object like Markers, Circles, Polygons and Polylines.
 \end{itemize}
+
+\newpage
+
 In addition, it has nested Blocs that listen the State changes.
 These Blocs are the following:
 \begin{itemize}
@@ -95,25 +93,22 @@ These Blocs react on the Map Bloc State changes, which means when a new State is
 The Event ensures the real action on the level of the nested Bloc thanks to mapping methods.
 \newline
 \newline
-\textbf{Map Zone Bloc} extends Bloc.
-Map Zone Bloc ensures:
+\textbf{Map Zone Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item loading zones,
-    \item finding all zones covering a given point,
-    \item showing and closing zone selection,
-    \item showing and closing zone detail.
+    \item Loading zones,
+    \item Finding all zones covering a given point,
+    \item Showing and closing zone selection,
+    \item Showing and closing zone detail.
 \end{itemize}
-\textbf{Map Drone Bloc} extends Bloc.
-Map Drone Bloc ensures:
+\textbf{Map Drone Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item loading flying drones,
-    \item showing and closing drone detail,
-    \item focusing on a drone location.
+    \item Loading flying drones,
+    \item Showing and closing drone detail,
+    \item Focusing on a drone location.
 \end{itemize}
-\textbf{Map Place Bloc} extends Bloc.
-Map Place Bloc ensures:
+\textbf{Map Place Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item showing and closing place detail,
-    \item focusing on a place location,
-    \item pinning and unpinning place marker into the map.
+    \item Showing and closing place detail,
+    \item Focusing on a place location,
+    \item Pinning and unpinning place marker into the map.
 \end{itemize}

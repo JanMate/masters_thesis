@@ -1,5 +1,5 @@
 \section{Database Model}\label{sec:database-model}
-There is a database model to store data in \textbf{Dronetag Backend}.
+There is a database model to store data in Dronetag Backend.
 The database model consists of followings entities:
 \begin{itemize}
     \item User,
@@ -12,98 +12,90 @@ The database model consists of followings entities:
     \item Aircraft vendor,
     \item Aircraft model,
     \item Airspace zone,
-    \item User preference,
-    \item Organization preference.
+    \item User preference.
 \end{itemize}
 
 \subsection{User}\label{subsec:user}
 This entity represents a user who signs up and logs in to the application.
 It consists of user credentials and identification information.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item email - represents the e-mail that the user will be log in to the system and receive notifications,
-    \item full\_name - represents optional full name of the user,
-    \item password\_hash - represents a hashed password,
-    \item phone\_number - represents a phone number that the user will be able to contact in case of emergency,
-    \item country - represents a country where the user is used to fly.
+    \item \textbf{E-mail} - represents the e-mail that the user will be log in to the system and receive notifications,
+    \item \textbf{Full name} - represents optional full name of the user,
+    \item \textbf{Password hash} - represents a hashed password,
+    \item \textbf{Phone number} - represents a phone number that the user will be able to contact in case of emergency,
+    \item \textbf{Country} - represents a country where the user is used to fly.
 \end{itemize}
 
 \subsection{Aircraft}\label{subsec:aircraft}
 This entity represents an aircraft that is connected with a Dronetag device.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item name - represents the aircraft name for easier recognition in My aircraft list,
-    \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft,
-    \item weight - represents the weight of the aircraft.
+    \item \textbf{Name} - represents the aircraft name for easier recognition in My aircraft list,
+    \item \textbf{UAS Operator ID} - represents a unique code identifying a pilot who registered this aircraft in the UAS (Unmanned aircraft systems)~\cite{uas},
+    \item \textbf{Weight} - represents the weight of the aircraft.
 \end{itemize}
 
 \subsection{Device}\label{subsec:device}
 This entity represents a physical device that sends live information to the Dronetag platform.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item serial\_number - represents a serial number of the device,
-    \item name - represents the device name for easier recognition in My aircraft list,
-    \item type - represents the model type of the device,
-    \item last\_battery - represents the last battery value in Volts,
-    \item last\_rsrp - represents the RSRP (Reference Signal Receive Power) value.
+    \item \textbf{Serial number} - represents a serial number of the device,
+    \item \textbf{Name} - represents the device name for easier recognition in My aircraft list,
+    \item \textbf{Type} - represents the model type of the device,
+    \item \textbf{Last battery} - represents the last battery value in Volts,
+    \item \textbf{Last RSRP} - represents the RSRP (Reference Signal Receive Power) value.
 \end{itemize}
 
 \subsection{Flight}\label{subsec:flight}
 This entity represents it represents a flight that a user has created.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item date\_planned\_start - represents a start date of planned the flight,
-    \item date\_planned\_finish - represents a finish data of planned the flight,
-    \item date\_started - represents a real start date of the flight,
-    \item date\_finished - represents a real finish date of the flight,
-    \item status - represents a flight status - values can be "planned", "current", "finished" and "canceled",
-    \item distance - represents a distance of the flight,
-    \item duration - represents a duration of the flight,
-    \item region\_geojson - represents a reservation region in GeoJSON format~\cite{geoJson},
-    \item max\_flight\_altitude - represents a maximum flight altitude,
-    \item takeoff\_latitude - represents a latitude of a taking off position,
-    \item takeoff\_longitude - represents a longitude of a taking off position,
-    \item takeoff\_geo\_alt - represents a geological altitude of a taking off position,
-    \item takeoff\_pressure - represents a taking off pressure,
-    \item public - represents a boolean flag if the flight is public (visible for everyone).
+    \item \textbf{Date planned start} - represents a start date of planned the flight,
+    \item \textbf{Date planned finish} - represents a finish data of planned the flight,
+    \item \textbf{Date started} - represents a real start date of the flight,
+    \item \textbf{Date finished} - represents a real finish date of the flight,
+    \item \textbf{Status} - represents a flight status - values can be planned, current, finished and canceled,
+    \item \textbf{Distance} - represents a distance of the flight,
+    \item \textbf{Duration} - represents a duration of the flight,
+    \item \textbf{Region GeoJSON} - represents a reservation region in GeoJSON format~\cite{geoJson},
+    \item \textbf{Max flight altitude} - represents a maximum flight altitude,
+    \item \textbf{Takeoff latitude} - represents a latitude of a taking off position,
+    \item \textbf{Takeoff longitude} - represents a longitude of a taking off position,
+    \item \textbf{Takeoff Geo altitude} - represents a geological altitude of a taking off position,
+    \item \textbf{Takeoff pressure} - represents a taking off pressure,
+    \item \textbf{Public} - represents a boolean flag if the flight is public (visible for everyone).
 \end{itemize}
 
 \subsection{Telemetry Measurement}\label{subsec:telemetry-measurement}
 This entity represents a telemetry measurement that the system receives and thanks so that a flight trajectory can be drawn.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item time - represents a date with the time of measurement,
-    \item latitude - represents a measured latitude of a flying drone,
-    \item longitude - represents a measured longitude of a flying drone,
-    \item altitude - represents a measured altitude of a flying drone,
-    \item geo\_altitude - represents a measured geological altitude of a flying drone,
-    \item velocity\_x - represents a measured velocity in X-axis,
-    \item velocity\_y - represents a measured velocity in Y-axis,
-    \item velocity\_z - represents a measured velocity in Z-axis.
+    \item \textbf{Time} - represents a date with the time of measurement,
+    \item \textbf{Latitude} - represents a measured latitude of a flying drone,
+    \item \textbf{Longitude} - represents a measured longitude of a flying drone,
+    \item \textbf{Altitude} - represents a measured altitude of a flying drone,
+    \item \textbf{Geo altitude} - represents a measured geological altitude of a flying drone,
+    \item \textbf{Velocity X} - represents a measured velocity in X-axis,
+    \item \textbf{Velocity Y} - represents a measured velocity in Y-axis,
+    \item \textbf{Velocity Z} - represents a measured velocity in Z-axis.
 \end{itemize}
 
 \subsection{Organization}\label{subsec:organization}
 This entity represents an Organization for the maintenance of fleet management.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item name - represents the name of the organization,
-    \item description - represents a text description of the organization.
+    \item \textbf{Name} - represents the name of the organization,
+    \item \textbf{Description} - represents a text description of the organization.
 \end{itemize}
 
 \subsection{Fleet}\label{subsec:fleet}
 This entity represents an organization's fleet management properties.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item name - represents a name of the fleet,
-    \item color - represents a shown color of the fleet,
-    \item deleted - represents a boolean flag if the fleet was deleted.
+    \item \textbf{Name} - represents a name of the fleet,
+    \item \textbf{Color} - represents a shown color of the fleet,
+    \item \textbf{Deleted} - represents a boolean flag if the fleet was deleted.
 \end{itemize}
 
 \subsection{Aircraft Vendor}\label{subsec:aircraft-vendor}
@@ -112,45 +104,33 @@ It contains only the one attribute name that represents the vendor name.
 
 \subsection{Aircraft Model}\label{subsec:aircraft-model}
 This entity represents an aircraft model that belongs to a vendor.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item name - represents the model name,
-    \item weight - represents the weight of the model,
-    \item vendor\_id - represents a relationship to a Vendor.
+    \item \textbf{Name} - represents the model name,
+    \item \textbf{Weight} - represents the weight of the model,
+    \item \textbf{Vendor ID} - represents a relationship to a Vendor.
 \end{itemize}
 
 \subsection{Airspace Zone}\label{subsec:airspace-zone}
 This entity represents an airspace zone.
-
-All attributes are described like this:
+Attributes of this entity are the following:
 \begin{itemize}
-    \item name - represents a name of the zone,
-    \item country - represents a country where the zone belongs,
-    \item region\_geojson - represents a region in GeoJSON format~\cite{geoJson}.
+    \item \textbf{Name} - represents a name of the zone,
+    \item \textbf{Country} - represents a country where the zone belongs,
+    \item \textbf{Region GeoJSON} - represents a region in GeoJSON format~\cite{geoJson}.
 \end{itemize}
 
 \subsection{User Preference}\label{subsec:user-preference}
-This entity represents a user preference that is needed to store and share among various clients.
-
-All attributes are described like this:
+This entity represents a user preference that is needed to store and share among various client applications.
+Attributes of this entity are the following:
 \begin{itemize}
-    \item property - represents an identification of the property,
-    \item value - represents the preference value.
-\end{itemize}
-
-\subsection{Organization Preference}\label{subsec:organization-preference}
-This entity represents an organization preference that needs to store and share among various clients.
-
-All attributes are described like this:
-\begin{itemize}
-    \item property - represents the identification of the property,
-    \item value - represents the preference value.
+    \item \textbf{Property} - represents an identification of the property,
+    \item \textbf{Value} - represents the preference value.
 \end{itemize}
 
 \subsection{Live Service Database Model}\label{subsec:live-service-database-model}
-Besides, during the development, it had been found out the current \textbf{Backend} is not sufficient for Dronetag needs.
-So it was decided to divide the backend model into the \textbf{Backend} and \textbf{Live Service} model.
+Besides, during the development, it had been found out the current Backend is not sufficient for Dronetag needs.
+So it was decided to divide the backend model into the Backend and Live Service model.
 Because there are only live real-time temporary data, so a Redis database was deployed.
 
 "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
@@ -158,6 +138,5 @@ It supports data structures such as strings, hashes, lists, sets, sorted sets wi
 Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."~\cite{redis}
 It means that the Redis is real-time storage that persists data only for a short time.
 That is the reason why it is suitable for this purpose.
-
-The \textbf{Live Service} database model consists of a \textbf{Device} and \textbf{Telemetry} entity.
+The Live Service database model consists of a Device and Telemetry entity.
 

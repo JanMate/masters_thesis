@@ -21,16 +21,16 @@ There are libraries used for unit testing in Flutter:
     \item flutter\_test,
     \item Mockito,
     \item Bloc\_test,
-    \item others.
+    \item And others.
 \end{itemize}
 
 It was emphasized to functionalities that ensure to get data from remote sources.
 The correctness of these functionalities is necessary because the application must be stable even when the backend is out-of-service.
 Thus, these classes are tested to the three essential situations:
 \begin{itemize}
-    \item \textbf{success}, when the data are successfully received,
-    \item \textbf{failure}, when a failure occurs during loading,
-    \item \textbf{disconnected}, when a phone is in an out-of-service area.
+    \item \textbf{Success} - when the data are successfully received,
+    \item \textbf{Failure} - when a failure occurs during loading,
+    \item \textbf{Disconnected} - when a phone is in an out-of-service area.
 \end{itemize}
 So, Unit tests in the application cover the following repositories that are serving data from the remote sources:
 \begin{itemize}
@@ -53,7 +53,7 @@ The ntegration tests have not been implemented in the mobile application because
 
 \subsection{Mocker}\label{subsec:mocker}
 Mocker is used for flight drone simulations.
-Mocker is written in Python and sends messages to backend endpoint for the testing purpose.
+Mocker is written in Python~\cite{python} and sends messages to backend endpoint for the testing purpose.
 It expects a serial number parameter and allows to specify an optional take-off position parameter.
 It allows mocking more drones concurrently.
 The advantage of this Mocker is that it is not needed to have a flying physical drone with an attached Dronetag device in the air during the development.

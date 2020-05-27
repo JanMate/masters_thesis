@@ -36,12 +36,12 @@ In a summary, a structure of the concept consists of the following parts in Bloc
 \section{HydratedBloc}\label{sec:hydratedbloc}
 "\textit{hydrated\_bloc}~\cite{hydratedBlocPubDev} is an extension to the \textit{bloc state management library}~\cite{bloc} which automatically persists and restores bloc states.
 
-\textbf{hydrated\_bloc} exports a \textbf{HydratedStorage} interface which means it can work with any storage provider.
-Out of the box, it comes with its own implementation: \textbf{HydratedBlocStorage}.
+hydrated\_bloc exports a HydratedStorage interface which means it can work with any storage provider.
+Out of the box, it comes with its own implementation: HydratedBlocStorage.
 
-\textbf{HydratedBlocStorage} is built on top of \textit{path\_provider}~\cite{pathProvider} for a platform-agnostic storage layer.
-The out-of-the-box storage implementation reads/writes to file using the \textbf{toJson/fromJson} methods on \textbf{HydratedBloc} and should perform very well for most use-cases (performance reports coming soon).
-\textbf{HydratedBlocStorage} is supported for desktop (\textit{example}~\cite{hydratedBlocExample})."~\cite{hydratedBlocTut}
+HydratedBlocStorage is built on top of \textit{path\_provider}~\cite{pathProvider} for a platform-agnostic storage layer.
+The out-of-the-box storage implementation reads/writes to file using the \textbf{toJson/fromJson} methods on HydratedBloc and should perform very well for most use-cases (performance reports coming soon).
+HydratedBlocStorage is supported for desktop (\textit{example}~\cite{hydratedBlocExample})."~\cite{hydratedBlocTut}
 
 HydratedBloc works as well as common Bloc.
 The difference is in data storage.
@@ -49,5 +49,5 @@ Hydrated Bloc allows us to store data through a JSON object.
 So, whenever an application loads data, it is necessary to wait and show the user progress indicator, but it can show stored data immediately.
 When it receives data, it will simply render it into a screen.
 
-"\textbf{HydratedBlocStorage} is an implementation of \textit{HydratedStorage} which uses \textit{PathProvider} and \textit{dart.io} to persist and retrieve state changes from the local device."~\cite{hydratedBlocStorage}
+"HydratedBlocStorage is an implementation of \textit{HydratedStorage} which uses \textit{PathProvider} and \textit{dart.io} to persist and retrieve state changes from the local device."~\cite{hydratedBlocStorage}
 So, it is a part of Hydrated Bloc implementation.

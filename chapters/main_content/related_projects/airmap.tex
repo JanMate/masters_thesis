@@ -1,10 +1,10 @@
 \section{AirMap}\label{sec:airmap}
-\textbf{AirMap} is the~main competition application comparable with the Dronetag platform.~\cite{airMap}
+AirMap is the main competition application comparable with the Dronetag platform.~\cite{airMap}
 This application shows flight zones and restricted areas around almost the whole of world.
 Besides, it allows for easy flight planning.
 Unfortunately, this planning has no central management.
 Thus this solution is insufficient for ensuring aviation safety.
-\textbf{AirMap} ecosystem can divide into some branches:
+AirMap ecosystem can divide into some branches:
 \begin{itemize}
     \item AirMap UTM,
     \item AirMap Pilot,
@@ -12,20 +12,22 @@ Thus this solution is insufficient for ensuring aviation safety.
     \item AirMap Developers.
 \end{itemize}
 
+
 \subsection{AirMap UTM}\label{subsec:airmap-utm}
-\textbf{AirMap UTM} is a web application used for aviation flight dispatchers.
+AirMap UTM (Unmanned Traffic Management) is a web application used for aviation flight dispatchers.
 It allows approving planned flights of users in restricted areas by authorities - for example, CTR (Control zone).
 The manager of this zone can show a detail of the application form and request that he fill out the information about a flight.
+\newline
+\newline
 \newline
 \newline
 Advantages:
 \begin{itemize}
     \item An operator can see active flight plans and other flight operations and altitudes (airplanes and helicopters) simultaneously.
-    \item An operator can contact the pilot via SMS.
     \item An operator can see a DJI drone telemetry of a pilot in case that the pilot is using AirMap mobile application in-flight mode.
-    \item Whenever an operator can create a restricted zone for flights, he can notify a pilot via SMS.
+    \item Whenever an operator create a restricted zone for flights, pilots will be notified via SMS.
     \item An operator can filter received application forms.
-    \item It is used to using in the USA, the Czech Republic, Switzerland, Japan, New Zealand, \textellipsis
+    \item It is used to using in the USA, the Czech Republic, Switzerland, Japan, New Zealand,~\textellipsis
 \end{itemize}
 Disadvantages:
 \begin{itemize}
@@ -39,7 +41,7 @@ The main goal of this application is to force pilots to fly carefully according 
 Concurrently, it provides official authorization to the restricted airspace.
 Also, the application allows controlling DJI drones instead of the official DJI GO mobile application.
 
-After the launch of the application, the flight map is loaded with map data from \textbf{Mapbox}~\cite{mapBox}, and a current user location is focused on the map with available zones around.
+After the launch of the application, the flight map is loaded with map data from Mapbox~\cite{mapBox}, and a current user location is focused on the map with available zones around.
 There are immediately seen labels of every zone and advisories for flights in the given country on the map.
 The suggestion list does not look intuitive.
 In the bottom panel with advisories is also visible a temperature and wind speed in the location.
@@ -58,7 +60,7 @@ Advantages:
     \item In case of planning a mission in the web application, it is not able to see it in the mobile application in a minute.
     However, the mission date does not match.
     In the same case, when users cancel it in the mobile application, it can be seen it will disappear in the mobile and web application in a minute.
-    \item It contains Geofencing alerts - it notifies a pilot about the entrance int the managed flight zone.
+    \item It contains geofencing alerts - it notifies a pilot about the entrance int the managed flight zone.
 \end{itemize}
 Disadvantages:
 \begin{itemize}
@@ -77,11 +79,11 @@ Disadvantages:
 
 
 \subsection{AirMap Enterprise}\label{subsec:airmap-enterprise}
-\textbf{AirMap Enterprise} is a dashboard similar to \textbf{AirMap UTM}, but it is specialized to the narrow group of users.
-It is not possible to see visible differences against the \textbf{AirMap UTM}, but the screen looks similar.
+AirMap Enterprise is a dashboard similar to AirMap UTM, but it is specialized to the narrow group of users.
+It is not possible to see visible differences against the AirMap UTM, but the screen looks similar.
 For example, application form approval, real-time telemetry, pilot contacting.
 It is a fleet management solution.
 
 
 \subsection{AirMap Developers}\label{subsec:airmap-developers}
-\textbf{AirMap Developers} is a portal offering documentation about \textbf{AirMap} API and SDK, that can use for integration of the \textbf{AirMap} services into individual solutions.~\cite{airMapDevelopers}
+AirMap Developers is a portal offering documentation about AirMap API and SDK, that can use for integration of the AirMap services into individual solutions.~\cite{airMapDevelopers}

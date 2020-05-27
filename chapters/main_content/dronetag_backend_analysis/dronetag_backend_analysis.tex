@@ -1,32 +1,33 @@
 \chapter{Dronetag Web Infrastructure}\label{ch:dronetag-web-infrastructure}
-This chapter describes the \textbf{Dronetag web infrastructure} and contains a detailed description of the \textbf{Dronetag web platform}.
+This chapter describes the Dronetag web infrastructure and contains a detailed description of the Dronetag web platform.
 It consists of the all technical stack that ensures data providing and processing.
 It was needed to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
-The \textbf{Dronetag development lifecycle} has started with an IoT module and frontend web client written in JavaScript.
-It continues to implement Web Sockets in the \textbf{Live Service} implementation based on a \textbf{Kubernetes} cluster and the cross-platform mobile application.
+The Dronetag development lifecycle has started with an IoT module and frontend web client written in JavaScript.
+It continues to implement Web Sockets in the Live Service implementation based on a Kubernetes cluster and the cross-platform mobile application.
 Current parts of the stack are the following:
 \begin{itemize}
     \item \textbf{Load Balancer} - it ensures load balancing of received requests (It redirects the requests to an available node in cluster.),
-    \item \textbf{Backend} - it ensures communication with \textbf{Database storage} of data and provides API endpoints to allow drone security operation,
+    \item \textbf{Backend} - it ensures communication with Database storage of data and provides API endpoints to allow drone security operation,
     \item \textbf{Frontend} - it ensures managing and watching drones activity via a web browser,
-    \item \textbf{Private API endpoint} - it ensures an API endpoint to give into or get private data from \textbf{Dronetag platform} (It is a part of \textbf{Backend}.),
-    \item \textbf{Public API endpoint} - it ensures an API endpoint to give into or get public data from \textbf{Dronetag platform} (It is also a part of \textbf{Backend}.),
+    \item \textbf{Private API endpoint} - it ensures an API endpoint to give into or get private data from Dronetag platform (It is a part of Backend.),
+    \item \textbf{Public API endpoint} - it ensures an API endpoint to give into or get public data from Dronetag platform (It is also a part of Backend.),
     \item \textbf{Database Storage} that ensures persistent storing of data,
     \item \textbf{Live Service} - it ensures quick providing of live data from airspace by the given viewport.
 \end{itemize}
+\newpage
 It is needed to note the stack is still improved anytime when there is found out a problem with the insufficient and complexity of the all system.
 It is needed because the system complexity is still increasing.
 And in this case, it is needed to determine the cause and ensure load balancing among the parts of the stack.
 
 \section{API Separation}\label{sec:api-separation}
-Due to security reasons, the web API divides itself into \textbf{Private API} and \textbf{Public API endpoints}.
-\textbf{Public API} is allowed to use by third-party consumers.
-It can be anyone who would like using data from the \textbf{Backend} to ensure drone operation security.
+Due to security reasons, the web API divides itself into Private API and Public API endpoints.
+Public API is allowed to use by third-party consumers.
+It can be anyone who would like using data from the Backend to ensure drone operation security.
 
-In further determination, this infrastructure is divided into the \textbf{Staging} and \textbf{Production} environment.
-\textbf{Staging} is for development and testing purposes, and it usually runs on the same version as \textbf{Production}.
-In the infrastructure approach, \textbf{Production} is like a mirror of \textbf{Staging}.
-The difference is that the \textbf{Production} environment contains a previous version of the application that is released.
+In further determination, this infrastructure is divided into the Staging and Production environment.
+Staging is for development and testing purposes, and it usually runs on the same version as Production.
+In the infrastructure approach, Production is like a mirror of Staging.
+The difference is that the Production environment contains a previous version of the application that is released.
 
 \input{chapters/main_content/dronetag_backend_analysis/docker}
 

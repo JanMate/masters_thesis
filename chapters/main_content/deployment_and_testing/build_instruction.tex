@@ -1,12 +1,12 @@
 \section{Build Instructions}\label{sec:build-instructions}
-The build is divided into main three steps:
+The build is divided into main 4 steps:
 \begin{enumerate}
-    \item downloading dependencies via \textit{flutter pub upgrade} command,
-    \item launching generating of the classes that creates themselves by the annotation settings via \textit{flutter build -~-runner} command
-    \item launching generating APK file for Android via \textit{flutter build release} command and
+    \item downloading dependencies via \textbf{flutter pub get} command,
+    \item launching generating of the classes that creates themselves by the annotation settings via \textbf{flutter pub run build\_runner} command
+    \item launching generating APK file for Android via \textbf{flutter build apk \texttt{-{}-}release} command and
     \item launching generating APP file for iOS in ios/Runner bundle.
 \end{enumerate}
 The last two steps can be run concurrently because they are independent of each other.
-All this build process allows to be fully autonomous and connected to \textbf{Continuous Integration} (CI) and \textbf{Continuous Delivery} (CD).
-Thanks to this fact, the development speed up the whole software process, and it does not need any Information Technology Operators.
-This kind of development is called \textbf{DevOps} (abbreviation of development and information technology Operations), and now its popularity is increasing because of saving time and money.
+All this build process allows to be fully autonomous and connected to CI (Continuous Integration) and CD (Continuous Delivery).
+Thanks to this fact, the development speed up the whole software process, and it does not need any information technology operators.
+This kind of development is called DevOps (abbreviation of development and information technology operations), and now its popularity is increasing because of saving time and money.

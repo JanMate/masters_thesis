@@ -1,11 +1,11 @@
 \newpage
 \section{Configuration Files}\label{sec:configuration-files}
 
-For using \textbf{Continuous Integration} and \textbf{Continuous Delivery} is needed to set the right configuration.
+For using Continuous Integration and Continuous Delivery is needed to set the right configuration.
 Therefore, there is a need to create single configuration files for every environment.
-For this purpose, we used the \textbf{environment\_config} Flutter library that allows easy management and provides the generator.
+For this purpose, we used the environment\_config library that allows easy management and provides the generator.
 This generator allows to use these settings in the codebase by the given parameters.
-The configuration YAML file keeps the setting of these variables, where we choose the required configuration, and the generator makes available it via an interface in the codebase.
+The configuration YAML~\cite{yaml} file keeps the setting of these variables, where we choose the required configuration, and the generator makes available it via an interface in the codebase.
 There is needed to notice that the cross-platform frameworks like Flutter allow to set the separate configuration for every platform on iOS and Android.
 Unfortunately, there are even cases when the setting applies as similar as on both of the platforms.
 For example, it can be a URL (Uniform Resource Locator) addresses, client ID, client secrets, and a path to a log file.
@@ -37,7 +37,7 @@ This file is used for the security of the client access and in case it would be 
 }
 \end{verbatim}
 % @formatter:on
-This file is for access to the information, which are provided by \textbf{Google Cloud Platform API}.
+This file is for access to the information, which are provided by Google Cloud Platform API.
 In our project, we use Google Maps API for downloading map styles, data about a searching place, and the Autocomplete function that suggests accureate and close results by the given substring.
 All mentioned files meet the JSON format standard specification.
 
@@ -49,7 +49,7 @@ More information about the platform is able to find in the Dronetag web infrastr
 
 
 \subsection{Test Environment (Staging)}\label{subsec:test-environment}
-The test environment is called \textbf{Staging} and is used for testing and debugging new functionalities, features, and software quality assurance.\cite{sqa}
+The test environment is called Staging and is used for testing and debugging new functionalities, features, and software quality assurance.\cite{sqa}
 In this environment, is possible to simulate the arbitrary model situation and check how the application behaves in these edge case situations and if it is stable in each scenario.
 Also, it is possible to verify the fact if a fault occurs, that the clients can adequately respond to this situation and catch thrown exceptions.
 
