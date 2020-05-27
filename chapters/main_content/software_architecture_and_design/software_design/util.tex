@@ -5,8 +5,8 @@ It is separated into:
     \item Error directory,
     \item Extensions directory,
     \item Preferences directory,
-    \item Bloc Delegate class - it extends generic Bloc Delegate, and it logs all actions on every Bloc (on every Hydrated Bloc, too),
-    \item Network Info class - it checks internet connection (it uses DataConnectionChecker class) and
+    \item Bloc Delegate class - it extends generic Bloc Delegate, and it logs all actions on every Bloc and Hydrated Bloc,
+    \item Network Info class - it checks internet connection (it uses DataConnectionChecker class),
     \item Validator class - it defines validation rules for e-mail address, password and full name.
 \end{itemize}
 
@@ -15,7 +15,7 @@ It is separated into:
 This directory contains classes:
 \begin{itemize}
     \item error\_handling - it contains a method that maps an error to action,
-    \item Server Exception - it extends the general exception and
+    \item Server Exception - it extends the general exception,
     \item Server Failure - it represents a returned fail message with the HTTP status code.
 \end{itemize}
 
@@ -27,11 +27,11 @@ The Extensions directory contains:
 \begin{itemize}
     \item Polygon Extension,
     \item Circle Extension,
-    \item Number Extension and
+    \item Number Extension,
     \item String Extension.
 \end{itemize}
 \textbf{Polygon Extension} offers to find out if a \textbf{point} consisted of latitude and longitude is lying in the given \textbf{Polygon}~\cite{googleMapsPolygon}.
-It is based on the mathematical problem when we are looking for the result if y-axis of the given point goes through an even number of borderlines of the given Polygon.
+It is based on the mathematical problem when it is being looked for the result if y-axis of the given point goes through an even number of borderlines of the given Polygon.
 To solve how to find out if the y-axis goes through is based on the problem which deals with two lines go through each other.
 All the problem is described in this paper~\cite{geometricAlgorithms}.
 
@@ -47,19 +47,18 @@ Otherwise, it returns false.
 \textbf{String Extension} contains methods for simplified work with Strings.
 These methods are:
 \begin{itemize}
-    \item isValidEmail() - it checks if a given e-mail meets set Regular Expression,
+    \item isValidEmail() - it checks if a given e-mail meets set Regular Expression~\cite{regExp},
     \item isValidPassword() - it checks if a given password meets set Regular Expression,
-    \item isBlank() - it checks if a given string is empty or equal to an empty string and
+    \item isBlank() - it checks if a given string is empty or equal to an empty string,
     \item isValidFullName() - it checks if a given full name meets set Regular Expression.
 \end{itemize}
-
 \textbf{Number Extension} contains methods for the precision setting.
 The methods are:
 \begin{itemize}
     \item halfSize() - returns half of this number,
     \item toLatLonPrecision() - returns string of this number with precision on 6 decimal digits,
     \item toAltitudePrecision() - returns string of this number with precision on 4 decimal digits,
-    \item addLatitudeDistance(double distance) - adds a given distance to this in latitude axis and
+    \item addLatitudeDistance(double distance) - adds a given distance to this in latitude axis,
     \item addLongitudeDistance(double distance, double latitude) - adds a given distance to this in longitude axis.
 \end{itemize}
 
@@ -80,14 +79,14 @@ AppPreferences class contains public methods:
     \item getToken() - it gets a value by API\_TOKEN constant,
     \item getRefreshToken() - it gets a value by API\_REFRESH\_TOKEN constant,
     \item isUserLoggedIn() - it checks if getToken() and getRefreshToken() return not empty string (If so, user is still logged in, otherwise logged out.),
-    \item getRecentSearchResult() - it returns stored user search recent results and
+    \item getRecentSearchResult() - it returns stored user search recent results,
     \item updateRecentSearchResult(SearchObject currentSearchedResult) - it updates stored user search recent results.
 \end{itemize}
 AppPreferences class contains private methods:
 \begin{itemize}
     \item \_put(String key, value) - it puts a value by the given key into Box object storage,
     \item \_putToken(String token) - it calls \_put(String key, value) where the key is API\_TOKEN constant,
-    \item \_putRefreshToken(String token) - it calls \_put(String key, value) where thekey is API\_REFRESH\_TOKEN constant,
-    \item \_deleteToken() - it deletes a value by API\_TOKEN constant and
+    \item \_putRefreshToken(String token) - it calls \_put(String key, value) where the key is API\_REFRESH\_TOKEN constant,
+    \item \_deleteToken() - it deletes a value by API\_TOKEN constant,
     \item \_deleteRefreshToken() - it deletes a value by API\_REFRESH\_TOKEN constant.
 \end{itemize}

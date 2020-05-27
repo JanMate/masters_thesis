@@ -1,8 +1,13 @@
 \subsection{Dependencies}\label{subsec:dependencies}
 Flutter has a vast database of dependencies that are maintained by various developers.
-The database is called \textbf{pub.dev}~\cite{pubDev}  and offers a summary of every dependency on the score analysis to their users.
+The database is called \textbf{pub.dev}~\cite{pubDev} and offers a summary of every dependency on the score analysis to their users.
 This analysis consists of Popularity, Health, Maintenance and final Overall.
-The dependencies used in this mobile application are separated into the following categories:
+
+The advantage of these dependencies is in the convenient way of using.
+Developers can place their definition into \textbf{pubspec.yaml} file what is the dependency configuration file in the root directory of every Flutter project.
+The definition consists of name and specific version.
+
+The dependencies that are used in this mobile application are separated into the following categories:
 \begin{itemize}
     \item Icons,
     \item State management,
@@ -11,7 +16,7 @@ The dependencies used in this mobile application are separated into the followin
     \item Firebase,
     \item API,
     \item UI,
-    \item Map and
+    \item Map,
     \item Generator.
 \end{itemize}
 
@@ -19,10 +24,14 @@ The dependencies used in this mobile application are separated into the followin
 \textbf{Material Design icons} are already part of the \textbf{Flutter SDK} library.
 
 \textbf{State management} consists of \textbf{flutter\_bloc} and \textbf{hydrated\_bloc}.
+These dependencies contain the Bloc and Hydrated Bloc implementation.
+The implementation is described in the Bloc section~\ref{sec:bloc} of the Flutter Analysis chapter.
+The usage of the implementation is described in the Bloc and Hydrated Bloc section~\ref{subsec:bloc-and-hydrated-bloc} of this chapter.
 
 \textbf{NoSQL storage} contains \textbf{hive} and \textbf{hive\_flutter}.
-These dependencies ensure NoSQL storage that is for persistent data in the offline mode and store things like JWT token.\cite{jwtToken}
-
+These dependencies ensure NoSQL storage that is for persistent data in the offline mode and store things like JWT token.~\cite{jwtToken}
+\newline
+\newline
 \textbf{Tools} consist of:
 \begin{itemize}
     \item \textbf{intl} - it ensures internationalization,
@@ -31,14 +40,14 @@ These dependencies ensure NoSQL storage that is for persistent data in the offli
     \item \textbf{flutter\_i18n} - it ensures internationalization by the user phone settings,
     \item \textbf{path\_provider} - it ensures finding commonly used locations on the filesystem,
     \item \textbf{print\_lumberdash} - it ensures a convenient debug printing of an error message,
-    \item \textbf{get\_it} - it allows using of Dependency Injection in code - it supports IoC principle,\cite{iocPrinciple}
+    \item \textbf{get\_it} - it allows using of Dependency Injection in code - it supports IoC principle,~\cite{iocPrinciple}
     \item \textbf{dartz} - it allows using functional programming in Dart,
     \item \textbf{url\_launcher} - it ensures launching a URL in the mobile platform,
 \end{itemize}
-
 \textbf{Firebase} contains \textbf{firebase\_core} and \textbf{firebase\_messaging}.
 These dependecies ensure connecting to Firebase Cloud and allowing push notifications.
-
+\newline
+\newline
 \textbf{API} consists of:
 \begin{itemize}
     \item \textbf{http} - it ensures making HTTP requests,
@@ -49,21 +58,18 @@ These dependecies ensure connecting to Firebase Cloud and allowing push notifica
     \item \textbf{dio} - it offers support of Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout, etc.,
     \item \textbf{flutter\_screenutil} - it ensures adapting screen and font size.
 \end{itemize}
-
 \textbf{UI} consists of:
 \begin{itemize}
     \item \textbf{sliding\_up\_panel} - it offers using done Sliding up panel,
     \item \textbf{animations} - it contains pre-canned animations for commonly-desired effects,
     \item \textbf{flutter\_sfsymbols} - it supports all iOS and Android devices.
 \end{itemize}
-
 \textbf{Map} consists of:
 \begin{itemize}
     \item \textbf{google\_maps\_flutter} - it provides a Google Maps widget,
     \item \textbf{location} - it handles getting a location on Android and iOS,
     \item \textbf{google\_maps\_webservice} - it offers using Google Web Service API that including Geocoding, Places, Directions, and so on.
 \end{itemize}
-
 \textbf{Generator} consists of:
 \begin{itemize}
     \item \textbf{hive\_generator} - it generates storable object by Hive annotations,

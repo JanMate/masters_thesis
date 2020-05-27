@@ -1,11 +1,11 @@
 \subsection{IO}\label{subsec:io}
 IO directory contains components that ensure loading data from remote sources.
-Here we emphasize to the encapsulation and comprehension.
-Thus, we have created a single directory
-This directory is divided to:
+Here it is emphasized to the encapsulation and comprehension.
+Thus, it has been created a single directory
+This directory is divided into:
 \begin{itemize}
     \item Model,
-    \item Repositories and
+    \item Repositories,
     \item Services.
 \end{itemize}
 These nested directories are described in more detail in the following paragraphs.
@@ -28,7 +28,7 @@ The Repositories directory contains the following classes:
     \item Aircraft Repository,
     \item Device Repository,
     \item Flight Repository,
-    \item Search Repository and
+    \item Search Repository,
     \item Zone Repository.
 \end{itemize}
 
@@ -40,7 +40,7 @@ Thus, \textbf{api} directory is divided into:
     \item Dronetag Web Rest Client,
     \item Dronetag Live Service Client,
     \item Auth Config,
-    \item Google API Key Reader and
+    \item Google API Key Reader,
     \item Dronetag Dio.
 \end{itemize}
 \textbf{Dronetag Web Rest Client} is used for loading and sending data o the web platform, specifically the backend.
@@ -63,7 +63,7 @@ This client contains methods:
     \item fetchMyFlightStat() - it returns user's flight statistics,
     \item deleteFlight(String uuid) - it deletes a flight by the given uuid,
     \item fetchZones(String viewport) - it returns all zones by the given viewport,
-    \item fetchZone(String uuid) - it returns a zone detail by the given uuid and
+    \item fetchZone(String uuid) - it returns a zone detail by the given uuid,
     \item passwordReset(String email) - it resets a user's password by the given e-mail address.
 \end{itemize}
 
@@ -73,7 +73,7 @@ The reason is that the web infrastructure is separated into these two services, 
 This client contains methods:
 \begin{itemize}
     \item fetchAllTelemetries() - it returns all last live telemetries about all Drones in the airspace,
-    \item fetchDeviceDetail(String serialNumber) - it returns a device detail by a given serial number and
+    \item fetchDeviceDetail(String serialNumber) - it returns a device detail by a given serial number,
     \item fetchTelemetryDetail(String serialNumber) - it returns all live telemetries about a drone by a given serial number.
 \end{itemize}
 
@@ -82,7 +82,7 @@ However, it was suitable to keep these classes together with the Rest clients, b
 Auth config contains methods:
 \begin{itemize}
     \item initialize() - it loads auth\_config.json configuration file and stores the values from it by the clientId and clientSecret keys in~the~Map (data container as similar as List),
-    \item getClientId() - it returns a value from the Map container by the \textit{clientId} key and
+    \item getClientId() - it returns a value from the Map container by the \textit{clientId} key,
     \item getClientSecret() - it returns a value from the Map container by the \textit{clientSecret} key.
 \end{itemize}
 \textbf{Google API Key Reader} contains methods \textit{initialize()} and \textit{getApiKey()}.

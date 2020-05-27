@@ -1,64 +1,53 @@
 \setsecnumdepth{part}
 \chapter{Introduction}\label{ch:introduction}
-This thesis focuses on safer drone operations.
-In 2012, drones began to spread in the Czech Republic.
-At that time, they were toys that were built by hobby pilots' hands at home.
+In 2012, drones began to spread around the world.
+At that time, they were mainly toys built by hobby pilots in the home.
 Thus, there were technical problems with them.
 
-After a while, the big companies began to see potential and then have started to build their future vision.
-For example, Amazon introduced its autonomous drone concept to deliver goods from logistic warehouses directly to customers’ homes.
-This news was published in Forbes magazine by Jillian D'Onfro.\cite{amazonArticle}
-The customer could be more satisfied with this shopping because the time of delivery can be cut on as a tiny part of the time.
-Even Amazon has decided to produce its drone products.
-One of them is the Prime Air delivery drone.
+After a while, large companies began to see the commercial potential of drones and started to incorporate them into their visions for the future.
+\textbf{Amazon} introduced its autonomous drone concept to transport goods from logistics warehouses directly to customers.~\cite{amazonArticle}
+As customer satisfaction increases even with small improvements to delivery time, Amazon has decided to produce its drone products, including the Prime Air delivery drone.
 
-To make the delivery process more comfortable, Amazon is developing an autonomous drone application to minimize costs.
-Hence, we can expect a significant expansion of autonomous aircrafts.
-Potentially, it could be possible to use drones to deliver medical materials in case of a significant accident.
-Especially, after a hurricane, fight conflict, or even during epidemic diseases like Coronavirus this time.
+To make the delivery process more convenient and minimize costs, \textbf{Amazon} is developing an autonomous drone application.
+Hence, a significant increase in the number of autonomous aircrafts can be expected.
+Potentially, drones could be used to deliver medical materials in case of a major accident or disasters such as a hurricane, military conflict, or even during a disease epidemic like the current novel coronavirus pandemic.
 
-With the increasing number of drone owners, it has started to arise problems.
-Most of the hobby pilots broke the law and endangered the aviation safety when they were flying.
-The reason was ignorance of laws that were needed to know for crew flight pilots until that time.
-Hence, it has started to solve this problem.
-Although the laws for crew flight pilots are partly related to the drone pilot, too.
-On the other hand, the drone pilots know the symbols and restricted areas and do not have to be concentrated on the full course of instruction like crew flight pilots.
+With the increasing number of drone owners, problems have started to arise.
+Many hobby pilots have broken the law and endangered aviation safety when they were flying.
+Ignorance of laws was common because there had been no need for drone pilots to know any of the rules of aviation that traditional pilots must know.
+However, this problem has begun to be resolved.
+Some laws for traditional pilots are applicable to the drone pilot.
+Drone pilots need to know certain symbols and respect restricted areas, but they do not have to complete a full course of instruction like traditional pilots.
+For example, it is necessary for drone pilots to know the primary types and descriptions of zones for safe operation.
+These zones can be separated into different types based on their properties.
 
-
-It is needed to know the primary type and description of zones for safer operation.
-These zones separate into many types.
-They are FIS (Flight Information Region), CTR (Control Zone), TMA (Terminal Maneuvering Area), ATZ (Aerodrome Traffic Zone), airports, P (Prohibited Area), R (Restricted Area), D (Dangerous Area), TRA (Temporary Reserved Area) and TSA (Temporary Segregated Area).\cite{airspace}
-
-Besides, there are essential parameters in the zones.
-Lower and upper altitude level.
-These flight levels divide into some groups by the altitude given in feet units.
-Further, it is needed to realize that the given altitude can be one of two types.
-AMSL (Above Mean Sea Level) and AGL (Above Ground Level).
-It means we have to beware of the type of given altitudes, and in the case of AMSL, we have to realize our current altitude to avoid restricted areas.
+There are a variety of key parameters in the zones, for example, lower and upper altitude level.
+These flight levels are further divided into groups based on the altitude in feet.
+Furthermore, it is important to realize that the given altitude can be one of two types: \textbf{AMSL} (Above Mean Sea Level) and \textbf{AGL} (Above Ground Level).
+This means it is necessary to be clear about the type of given altitudes, and in the case of \textbf{AMSL}, to be aware of the current altitude to avoid restricted areas.
 
 
-Also, the airspace divides into A-G classes.\cite{airspace}
-There is an obligation to announce a flight for the A-E classes to authorities, and the Navigation Service of the Czech Republic approves the flight.
-The F and G classes are lower flight levels, so it is not needed to request an authorization on the Air Navigation Service of the Czech Republic.
+Overall, airspace is divided into 7 classes, \textbf{A}--\textbf{G}.~\cite{airspace}
+There is an obligation to announce a flight from through class \textbf{A}--\textbf{E} to the authorities, and the \textbf{Air Navigation Service of the Czech Republic} approves the flight.
+The \textbf{F} and \textbf{G} classes are lower flight levels, so it is not necessary to request an authorization for them.
 
-Air Navigation Service of the Czech Republic released a website L{\' e}tejte zodpov{\v e}dn{\v e} (Fly carefully) about drone problems and wrote advisories for hobby drone pilots in an understandable way.
-This website is closely described in Related projects chapter~\ref{sec:fly-carefully}.
+The \textbf{Air Navigation Service of the Czech Republic} hosts the website "\textbf{L{\' e}tejte zodpov{\v e}dn{\v e}} (Fly Carefully)" about drone problems and has written advisories for hobby drone pilots using clear, understandable language.
+This website is described in detail in the Related projects chapter~\ref{sec:fly-carefully}.
 
 
 \section{Motivation}\label{sec:motivation}
-There was a motivation to participate in this thesis because I wanted to realize myself in mobile application development.
-The reason was that I am interested in trying something new, and I have only been experienced in web development so far.
-The other reason was the successes in various competitions of both of the Dronetag company co-founders Luk{\' a}{\v s} Brchl and Marian Hlav{\' a}{\v c}.
-They won a hackathon, and even they won in the competitions on the European and world level.
-There was another motivation to participate in a product with huge potential, and we can call it a product of the future.
-There is a reason why business with drones is called exponential.
+One motivation for choosing this thesis was to gain experience with mobile application development.
+I was interested in trying something new, and I had previously only had experience with web development.
+The other reason was the success in various competitions of both Dronetag's company co-founders, Luk{\' a}{\v s} Brchl and Marian Hlav{\' a}{\v c}.
+They won the Space application hackathon, and they have won multiple competitions on the European and world levels.
+Finally, I wanted to work with a product with a great deal of potential, and drones are considered a product of the future;
+business with drones is expected to experience exponential growth.
 
 
 \section{Objectives}\label{sec:objectives}
 The goal of this thesis is to develop a cross-platform mobile application for safer drone operation.
-The application will be implemented with the best-practice principles in the Flutter framework.
-Concurrently, this thesis contains a description fo the basic Flutter framework concepts in the Flutter Analysis chapter.\ref{ch:flutter-analysis}
-The implementation contains partly testing by unit tests and deployment specifications, too.
-The application will meet all functional requirements.
-These requirements are drawing of flight zones in the map, showing real-time data about flying drones attached to a Dronetag device, flight planning and management of aircrafts, devices and flight history.
+The application will be implemented the best-practice principles using the \textbf{Flutter} framework.
+In addition, this thesis contains a description of the basic \textbf{Flutter} framework concepts in the Flutter Analysis in Chapter~\ref{ch:flutter-analysis}.
+The implementation contains both testing by unit tests and deployment specifications, too.
+The application meets all functional requirements, specifically drawing flight zones on the map, showing real-time data about flying drones with a Dronetag device attached, and flight planning and management of aircrafts, devices and flight history.
 

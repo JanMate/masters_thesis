@@ -1,45 +1,60 @@
-\section{Code testing}\label{sec:code-testing}
-The testing has in the Software development the critical usage.
-If the development runs according to an agile methodology, it means that it is about small regular deliveries of software pieces that include certain functionality or bug fixing.
-In the case of these interferences, the already deployed application is needed to partly test its correct functionality to prevent potential problems in the future.
+\section{Code Testing}\label{sec:code-testing}
+The testing has in the Software Development the critical usage if the development runs according to an agile methodology.
+It means that it is about small regular deliveries of software pieces that include certain functionality or bug fixing.
+These interferences in the already deployed application are needed to test its correct functionality to prevent potential problems in the future.
 The biggest problem occurs where dependencies create.
-So, if the functionality breaks down at the beginning, the functionalities depending on the root functionality will give us bad results, causing even instability of the application.
-The advantage is the tests can repeatedly run, and in case of changes, we can easily change them.
-So, the testing is a phase in the Software development that allows us to automation in the Continuous Integration and Continuous Delivery.
+So, if a functionality breaks down at the beginning, the functionalities depending on that root functionality will return bad results or causing instability of the application.
+The advantage is that the tests can be repeatedly run, and if it is needed, they can be changed easily.
+So, the testing is a phase in the Software Development that allows the automation in the Continuous Integration and Continuous Delivery.
 
-Besides, this chapter describes kinds of tests and functionalities in the application, which are covered by these tests.
+Besides, this chapter describes types of tests and functionalities in the application, which are covered by these tests.
 It includes a description of how the given functions should behave in certain situations.
 
 
-\subsection{Unit testing}\label{subsec:unit-testing}
+\subsection{Unit Testing}\label{subsec:unit-testing}
 This section emphasizes to unit tests.
 In Flutter, unit tests run with~\textbf{flutter test} command from the console prompt.
-Thanks to this, it is easy to incorporate them into Continuous Integration and Continuous Delivery phase, where the test care run automatically.
+Thanks to this, it is easy to incorporate them into Continuous Integration and Continuous Delivery phase, where the test can run automatically.
 There are libraries used for unit testing in Flutter:
 \begin{itemize}
     \item test,
     \item flutter\_test,
     \item Mockito,
-    \item Bloc\_test and
+    \item Bloc\_test,
     \item others.
 \end{itemize}
 
-Unit tests cover the following functionalities in the application:
+It was emphasized to functionalities that ensure to get data from remote sources.
+The correctness of these functionalities is necessary because the application must be stable even when the backend is out-of-service.
+Thus, these classes are tested to the three essential situations:
 \begin{itemize}
-    \item %TODO:
+    \item \textbf{success}, when the data are successfully received,
+    \item \textbf{failure}, when a failure occurs during loading,
+    \item \textbf{disconnected}, when a phone is in an out-of-service area.
+\end{itemize}
+So, Unit tests in the application cover the following repositories that are serving data from the remote sources:
+\begin{itemize}
+    \item User Repository,
+    \item Device Repository,
+    \item Aircraft Repository,
+    \item Flight Repository,
+    \item Zone Repository,
+    \item Search Repository.
 \end{itemize}
 
 
-\subsection{Integration testing}\label{subsec:integration-testing}
-This section emphasizes to Integration tests.
+\subsection{Integration Testing}\label{subsec:integration-testing}
+This section clarifies what Integration tests are.
 These tests verify whether the individual parts tested by unit tests can cooperate and work well as a whole.
-We have implemented no integration test because we had no time to deal with these tests.
+For example, if an application has a multi-layer architecture, it is needed to verify if these layers passing data through by the expectation.
+So, an integration test consists of smaller parts tested by unit tests.
+The ntegration tests have not been implemented in the mobile application because there was no time to deal with this type of the tests.
 
 
 \subsection{Mocker}\label{subsec:mocker}
 Mocker is used for flight drone simulations.
-Mocker is written in Python and sends messages to backend endpoint for testing purpose.
-Mocker expects parameter serial number and allows to specify a take-off position (optional parameter).
-It allows us to mock more drones concurrently, too.
-The advantage of this Mocker is that we do not need to have a flying physical drone with an attached Dronetag device in the air during the development.
-It is enough to run this Mocker for a simulated behavior.
+Mocker is written in Python and sends messages to backend endpoint for the testing purpose.
+It expects a serial number parameter and allows to specify an optional take-off position parameter.
+It allows mocking more drones concurrently.
+The advantage of this Mocker is that it is not needed to have a flying physical drone with an attached Dronetag device in the air during the development.
+It is useful to run this Mocker for a simulated behavior because there is not needed anything else.

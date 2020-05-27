@@ -1,5 +1,5 @@
-\section{Database model}\label{sec:database-model}
-There is a database model to store data in Dronetag backend.
+\section{Database Model}\label{sec:database-model}
+There is a database model to store data in \textbf{Dronetag Backend}.
 The database model consists of followings entities:
 \begin{itemize}
     \item User,
@@ -12,10 +12,9 @@ The database model consists of followings entities:
     \item Aircraft vendor,
     \item Aircraft model,
     \item Airspace zone,
-    \item User preference and
+    \item User preference,
     \item Organization preference.
 \end{itemize}
-%A detailed diagram with relationships between entities is in the ERD Diagram of infrastructure in the picture~\ref{fig:erd-diagram}.
 
 \subsection{User}\label{subsec:user}
 This entity represents a user who signs up and logs in to the application.
@@ -23,11 +22,11 @@ It consists of user credentials and identification information.
 
 All attributes are described like this:
 \begin{itemize}
-    \item email - represents the e-mail that a user will be log in to the system and receive notifications,
+    \item email - represents the e-mail that the user will be log in to the system and receive notifications,
     \item full\_name - represents optional full name of the user,
     \item password\_hash - represents a hashed password,
-    \item phone\_number - represents a phone number that a user will be able to contact in case of emergency, and
-    \item country - represents a country where a user is used to be flying.
+    \item phone\_number - represents a phone number that the user will be able to contact in case of emergency,
+    \item country - represents a country where the user is used to fly.
 \end{itemize}
 
 \subsection{Aircraft}\label{subsec:aircraft}
@@ -35,8 +34,8 @@ This entity represents an aircraft that is connected with a Dronetag device.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents an aircraft name for easier recognition in My aircraft list,
-    \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft, and
+    \item name - represents the aircraft name for easier recognition in My aircraft list,
+    \item uas\_operator\_id - represents a unique code identifying a pilot who registered this aircraft,
     \item weight - represents the weight of the aircraft.
 \end{itemize}
 
@@ -45,10 +44,10 @@ This entity represents a physical device that sends live information to the Dron
 
 All attributes are described like this:
 \begin{itemize}
-    \item serial\_number - represents a serial number of a device,
-    \item name - represents a device name for easier recognition in My aircraft list,
-    \item type - represents
-    \item last\_battery - represents the last battery value in Volts, and
+    \item serial\_number - represents a serial number of the device,
+    \item name - represents the device name for easier recognition in My aircraft list,
+    \item type - represents the model type of the device,
+    \item last\_battery - represents the last battery value in Volts,
     \item last\_rsrp - represents the RSRP (Reference Signal Receive Power) value.
 \end{itemize}
 
@@ -57,24 +56,24 @@ This entity represents it represents a flight that a user has created.
 
 All attributes are described like this:
 \begin{itemize}
-    \item date\_planned\_start - represents a start date of planned flight,
-    \item date\_planned\_finish - represents a finish data of planned flight,
-    \item date\_started - represents a real start date of flight,
-    \item date\_finished - represents a real finish date of flight,
+    \item date\_planned\_start - represents a start date of planned the flight,
+    \item date\_planned\_finish - represents a finish data of planned the flight,
+    \item date\_started - represents a real start date of the flight,
+    \item date\_finished - represents a real finish date of the flight,
     \item status - represents a flight status - values can be "planned", "current", "finished" and "canceled",
-    \item distance - represents a distance of flight,
-    \item duration - represents a duration of flight,
-    \item region\_geojson - represents a reservation region in GeoJSON format \cite{geoJson},
+    \item distance - represents a distance of the flight,
+    \item duration - represents a duration of the flight,
+    \item region\_geojson - represents a reservation region in GeoJSON format~\cite{geoJson},
     \item max\_flight\_altitude - represents a maximum flight altitude,
-    \item takeoff\_latitude - represents a latitude of taking off position,
-    \item takeoff\_longitude - represents a longitude of taking off position,
-    \item takeoff\_geo\_alt - represents a geological altitude of taking off position,
-    \item takeoff\_pressure - represents a taking off pressure, and
-    \item public - represents a boolean flag if a flight is public (visible for everyone).
+    \item takeoff\_latitude - represents a latitude of a taking off position,
+    \item takeoff\_longitude - represents a longitude of a taking off position,
+    \item takeoff\_geo\_alt - represents a geological altitude of a taking off position,
+    \item takeoff\_pressure - represents a taking off pressure,
+    \item public - represents a boolean flag if the flight is public (visible for everyone).
 \end{itemize}
 
-\subsection{Telemetry measurement}\label{subsec:telemetry-measurement}
-This entity represents a telemetry measurement that the system receives and thanks so that we can draw a flight trajectory.
+\subsection{Telemetry Measurement}\label{subsec:telemetry-measurement}
+This entity represents a telemetry measurement that the system receives and thanks so that a flight trajectory can be drawn.
 
 All attributes are described like this:
 \begin{itemize}
@@ -84,7 +83,7 @@ All attributes are described like this:
     \item altitude - represents a measured altitude of a flying drone,
     \item geo\_altitude - represents a measured geological altitude of a flying drone,
     \item velocity\_x - represents a measured velocity in X-axis,
-    \item velocity\_y - represents a measured velocity in Y-axis, and
+    \item velocity\_y - represents a measured velocity in Y-axis,
     \item velocity\_z - represents a measured velocity in Z-axis.
 \end{itemize}
 
@@ -93,8 +92,8 @@ This entity represents an Organization for the maintenance of fleet management.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents the name of an organization, and
-    \item description - represents a text description of an organization.
+    \item name - represents the name of the organization,
+    \item description - represents a text description of the organization.
 \end{itemize}
 
 \subsection{Fleet}\label{subsec:fleet}
@@ -102,62 +101,63 @@ This entity represents an organization's fleet management properties.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents a name of a fleet,
-    \item color - represents a shown color of a fleet, and
-    \item deleted - represents a boolean flag if a fleet was deleted.
+    \item name - represents a name of the fleet,
+    \item color - represents a shown color of the fleet,
+    \item deleted - represents a boolean flag if the fleet was deleted.
 \end{itemize}
 
-\subsection{Aircraft vendor}\label{subsec:aircraft-vendor}
+\subsection{Aircraft Vendor}\label{subsec:aircraft-vendor}
 This entity represents an aircraft vendor who manufactures drones.
-It contains only the one attribute name that represents a vendor name.
+It contains only the one attribute name that represents the vendor name.
 
-\subsection{Aircraft model}\label{subsec:aircraft-model}
+\subsection{Aircraft Model}\label{subsec:aircraft-model}
 This entity represents an aircraft model that belongs to a vendor.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents a model name,
-    \item weight - represents the weight of a model, and
+    \item name - represents the model name,
+    \item weight - represents the weight of the model,
     \item vendor\_id - represents a relationship to a Vendor.
 \end{itemize}
 
-\subsection{Airspace zone}\label{subsec:airspace-zone}
+\subsection{Airspace Zone}\label{subsec:airspace-zone}
 This entity represents an airspace zone.
 
 All attributes are described like this:
 \begin{itemize}
-    \item name - represents a name of a zone,
-    \item country - represents a country where a zone belongs, and
-    \item region\_geojson - represents a region in GeoJSON format \cite{geoJson}.
+    \item name - represents a name of the zone,
+    \item country - represents a country where the zone belongs,
+    \item region\_geojson - represents a region in GeoJSON format~\cite{geoJson}.
 \end{itemize}
 
-\subsection{User preference}\label{subsec:user-preference}
+\subsection{User Preference}\label{subsec:user-preference}
 This entity represents a user preference that is needed to store and share among various clients.
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents an identification of the property, and
-    \item value - represents a preference value.
+    \item property - represents an identification of the property,
+    \item value - represents the preference value.
 \end{itemize}
 
-\subsection{Organization preference}\label{subsec:organization-preference}
+\subsection{Organization Preference}\label{subsec:organization-preference}
 This entity represents an organization preference that needs to store and share among various clients.
 
 All attributes are described like this:
 \begin{itemize}
-    \item property - represents the identification of the property, and
-    \item value - represents a preference value.
+    \item property - represents the identification of the property,
+    \item value - represents the preference value.
 \end{itemize}
 
-\subsection{Live Service database model}\label{subsec:live-service-database-model}
-Besides, during the development, we had found out the current Backend is not sufficient for our needs, so we decided to divide the backend model into the Backend one and Live Service model.
-Because there are only live real-time temporary data, so we deployed a Redis database.
+\subsection{Live Service Database Model}\label{subsec:live-service-database-model}
+Besides, during the development, it had been found out the current \textbf{Backend} is not sufficient for Dronetag needs.
+So it was decided to divide the backend model into the \textbf{Backend} and \textbf{Live Service} model.
+Because there are only live real-time temporary data, so a Redis database was deployed.
 
 "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.
-Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."\cite{redis}
+Redis has built-in replication, Lua scripting, LRU eviction, transactions and different levels of on-disk persistence, and provides high availability via Redis Sentinel and automatic partitioning with Redis Cluster."~\cite{redis}
 It means that the Redis is real-time storage that persists data only for a short time.
 That is the reason why it is suitable for this purpose.
 
-The Live Service database model consists of a \textbf{Device} and \textbf{Telemetry} entity.
+The \textbf{Live Service} database model consists of a \textbf{Device} and \textbf{Telemetry} entity.
 

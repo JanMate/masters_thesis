@@ -1,22 +1,23 @@
 \section{AirMap}\label{sec:airmap}
-AirMap is the~main competition application comparable with the Dronetag platform.\cite{airMap}
-This application shows flight zones and restricted areas around the whole of Europe.
+\textbf{AirMap} is the~main competition application comparable with the Dronetag platform.~\cite{airMap}
+This application shows flight zones and restricted areas around almost the whole of world.
 Besides, it allows for easy flight planning.
 Unfortunately, this planning has no central management.
 Thus this solution is insufficient for ensuring aviation safety.
-AirMap ecosystem can divide into some branches:
+\textbf{AirMap} ecosystem can divide into some branches:
 \begin{itemize}
     \item AirMap UTM,
     \item AirMap Pilot,
-    \item AirMap Enterprise and
+    \item AirMap Enterprise,
     \item AirMap Developers.
 \end{itemize}
 
 \subsection{AirMap UTM}\label{subsec:airmap-utm}
-AirMap UTM is a web application used for aviation flight dispatchers.
-It allows approving users’ planned flights in restricted areas (for example, CTR) by authorities.
+\textbf{AirMap UTM} is a web application used for aviation flight dispatchers.
+It allows approving planned flights of users in restricted areas by authorities - for example, CTR (Control zone).
 The manager of this zone can show a detail of the application form and request that he fill out the information about a flight.
-
+\newline
+\newline
 Advantages:
 \begin{itemize}
     \item An operator can see active flight plans and other flight operations and altitudes (airplanes and helicopters) simultaneously.
@@ -38,22 +39,25 @@ The main goal of this application is to force pilots to fly carefully according 
 Concurrently, it provides official authorization to the restricted airspace.
 Also, the application allows controlling DJI drones instead of the official DJI GO mobile application.
 
-After the launch of the application, the flight map is loaded with map data from Mapbox~\cite{mapBox}, and a current user location is focused on the map with available zones around.
+After the launch of the application, the flight map is loaded with map data from \textbf{Mapbox}~\cite{mapBox}, and a current user location is focused on the map with available zones around.
 There are immediately seen labels of every zone and advisories for flights in the given country on the map.
 The suggestion list does not look intuitive.
 In the bottom panel with advisories is also visible a temperature and wind speed in the location.
 Unfortunately, it misses various values for arbitrary flight levels.
 That is it all the functionality for a user, nothing else.
-
+\newline
+\newline
 Advantages:
 \begin{itemize}
     \item It is used to using in the USA, the Czech Republic, Switzerland, Japan, New Zealand, \textellipsis
-    \item The application shows flight zones of all countries (data from EUROCONTROL EAD).\cite{eurocontrol}
-    \item Pilots can get authorization of airspace (LAANC) in real-time.
-    \item Flights can also be planned in the future, and it is not allowed to change them after that. (remove only)
+    \item The application shows flight zones of all countries.
+    It loads data from the EUROCONTROL EAD (European AIS Database).~\cite{eurocontrol}
+    \item Pilots can get authorization of airspace via the LAANC (Low Altitude Authorization and Notification Capability) system in real-time.
+    \item Flights can also be planned in the future, and it is not allowed to change them after that.
+    It is allowed only to remove it.
     \item In case of planning a mission in the web application, it is not able to see it in the mobile application in a minute.
     However, the mission date does not match.
-    In the same case, when we cancel it in the mobile application, we can see it will disappear in the mobile and web application in a minute.
+    In the same case, when users cancel it in the mobile application, it can be seen it will disappear in the mobile and web application in a minute.
     \item It contains Geofencing alerts - it notifies a pilot about the entrance int the managed flight zone.
 \end{itemize}
 Disadvantages:
@@ -61,23 +65,23 @@ Disadvantages:
     \item In mobile application is missing the option to click on the requested zone and do anything with it or get information.
     It is quite inconvenient in the case of many intersected zones at one point.
     The web application allows it.
-    \item Many times we have got a timeout request, and sometimes something was showing inconsistent.
-    For example, we have not seen any rules in the Flight Briefing section while planning the first flight mission.
-    In another attempt, we have already seen it.
+    \item Many times it has been got a timeout request, and sometimes something was showing inconsistent.
+    For example, it has not seen any rules in the Flight Briefing section while planning the first flight mission.
+    In another attempt, it has been already seen the rules.
     Generally, all loading or submitting takes a long time.
     \item It can provide no flight log export nor other data.
     \item It supports no flight plan storage for the future nor repeating.
     \item It contains a few amateur bugs.
-    For example, in the web application, if we draw a trajectory and press ESC key on the keyboard, we will not be able to draw again without the need to choose a tool and then the default again.
+    For example, in the web application, if users draw a trajectory and press ESC key on the keyboard, the users will not be able to draw again without the need to choose a tool and then the default again.
 \end{itemize}
 
 
 \subsection{AirMap Enterprise}\label{subsec:airmap-enterprise}
-AirMap Enterprise is a dashboard similar to AirMap UTM, but it is specialized to the narrow group of users.
-It is not able to find accurately, what is precisely means, but the screen looks similar to AirMap UTM.
+\textbf{AirMap Enterprise} is a dashboard similar to \textbf{AirMap UTM}, but it is specialized to the narrow group of users.
+It is not possible to see visible differences against the \textbf{AirMap UTM}, but the screen looks similar.
 For example, application form approval, real-time telemetry, pilot contacting.
-It is a kind of fleet management solution.
+It is a fleet management solution.
 
 
 \subsection{AirMap Developers}\label{subsec:airmap-developers}
-AirMap Developers is a portal offering documentation about AirMap API and SDK, that can use for integration of the AirMap services into individual solutions.\cite{airMapDevelopers}
+\textbf{AirMap Developers} is a portal offering documentation about \textbf{AirMap} API and SDK, that can use for integration of the \textbf{AirMap} services into individual solutions.~\cite{airMapDevelopers}
