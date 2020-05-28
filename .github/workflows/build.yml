@@ -27,6 +27,9 @@ jobs:
     - name: Run pdflatex - rendering for sure
       run: pdflatex main
 
+    - name: Run makeglossaries
+      run: makeglossaries main
+
     - name: Run pdflatex - final rendering
       run: pdflatex main
 

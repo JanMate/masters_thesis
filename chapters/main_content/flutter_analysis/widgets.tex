@@ -1,6 +1,6 @@
 \section{Widgets}\label{sec:widgets}
 How the founders of Flutter say: "Everything is a Widget".
-In the following part, it will be clarified this statement.
+In the following part, this statement will be clarified.
 
 "Widgets are the basic building blocks of a Flutter app's user interface.
 Each widget is an immutable declaration of part of the user interface.
@@ -13,8 +13,8 @@ A~widget can define:
     \item And so on \textellipsis"~\cite{flutterTechnicalOverview}
 \end{itemize}
 So each component of UI in Flutter is a descendent of the widget.
-Many classes that inherit from a widget, but there are the essential descendants.
-They are the following:
+There are many classes that inherit from a widget.
+The essential descendants are the following:
 \begin{itemize}
     \item StatelessWidget,
     \item StatefulWidget,
@@ -24,7 +24,6 @@ They are the following:
 
 \subsection{StatelessWidget}\label{subsec:statelesswidget}
 "A widget that does not require mutable state.
-
 A stateless widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
 The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of
 \textit{RenderObjectWidgets}~\cite{renderObjectWidget}, which describe concrete \textit{RenderObjects}~\cite{renderObject})."~\cite{statelessWidget}
@@ -38,7 +37,6 @@ For compositions that can change dynamically, e.g. due to having an internal clo
 
 \subsection{StatefulWidget}\label{subsec:statefulwidget}
 "A widget that has mutable state.
-
 State is information that (1) can be read synchronously when the widget is built and (2) might change during the lifetime of the widget.
 It is the responsibility of the widget implementer to ensure that the \textit{State}~\cite{state} is promptly notified when such state changes, using \textit{State.setState}~\cite{setState}."~\cite{statefulWidget}
 It means that StatefulWidget is a useful component to render graphics elements that change until they are disposed of.
@@ -49,11 +47,6 @@ The initState method is called before the widget tree is rendered, and the build
 
 Due to this fact, the Stateful widget has worse performance than StatelessWidget, and often it is difficult to keep a sustainable design of a component.
 On the other hand, it offers a convenient way to create a widget with few states that will not be changed in the future development cycle.
-
-"A stateful widget is a widget that describes part of the user interface by building a constellation of other widgets that describe the user interface more concretely.
-The building process continues recursively until the description of the user interface is fully concrete (e.g., consists entirely of
-\textit{RenderObjectWidgets}~\cite{renderObjectWidget}, which describe concrete \textit{RenderObjects}~\cite{renderObject})."~\cite{statefulWidget}
-
 
 "Stateful widgets are useful when the part of the user interface you are describing can change dynamically, e.g. due to having an internal clock-driven state, or depending on some system state.
 For compositions that depend only on the configuration information in the object itself and the BuildContext in which the widget is inflated, consider using StatelessWidget."~\cite{statefulWidget}

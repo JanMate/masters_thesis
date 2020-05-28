@@ -4,7 +4,7 @@ Here it is emphasized to the encapsulation and comprehension.
 Thus, it has been created a single directory that is divided into, Model, Repositories and Services directories.
 These nested directories are described in more detail in the following paragraphs.
 
-\textbf{Model} directory contains objects that are produced by API endpoint of Dronetag backend.
+\textbf{Model} directory contains objects that are produced by \acrshort{api} endpoint of Dronetag backend.
 It is divided into request and response classes.
 Model contains entities that are used for data objects
 So, their primary purpose is to keep data consistently.
@@ -27,14 +27,14 @@ The Repositories directory contains the following classes:
 \end{itemize}
 
 \textbf{Services} directory contains a subdirectory \textbf{api}.
-This subdirectory contains classes that ensure receiving from and sending data to API endpoints that are part of the Dronetag infrastructure.
-The Backend instance and Live Service ensure the API interface in this infrastructure.
+This subdirectory contains classes that ensure receiving from and sending data to \acrshort{api} endpoints that are part of the Dronetag infrastructure.
+The Backend instance and Live Service ensure the \acrshort{api} interface in this infrastructure.
 Thus, \textbf{api} directory is divided into:
 \begin{itemize}
     \item Dronetag Web Rest Client,
     \item Dronetag Live Service Client,
     \item Auth Config,
-    \item Google API Key Reader,
+    \item Google \acrshort{api} Key Reader,
     \item Dronetag Dio.
 \end{itemize}
 \newpage
@@ -42,7 +42,7 @@ Thus, \textbf{api} directory is divided into:
 This client contains methods:
 \begin{itemize}
     \item \textbf{fetchMyUserProfile()} - it returns a user profile data,
-    \item \textbf{authorize(String email, String password)} - it authorizes a user via a JWT token endpoint,
+    \item \textbf{authorize(String email, String password)} - it authorizes a user via a \acrshort{jwt} token endpoint,
     \item \textbf{registerUser(RegisterRequest request)} - it registers a new user,
     \item \textbf{fetchFlightInfo(String id)} - it returns a flight data by the given id,
     \item \textbf{fetchAircrafts()} - it returns all aircrafts that a user has granted access to see them,
@@ -72,7 +72,7 @@ This client contains methods:
     \item \textbf{fetchTelemetryDetail(String serialNumber)} - it returns all live telemetries about a drone by a given serial number.
 \end{itemize}
 
-\textbf{Auth Config}, \textbf{Google API Key Reader} and \textbf{Dronetag Dio} ensure another mechanism and are used to provide data from the remote sources directly.
+\textbf{Auth Config}, \textbf{Google \acrshort{api} Key Reader} and \textbf{Dronetag Dio} ensure another mechanism and are used to provide data from the remote sources directly.
 However, it was suitable to keep these classes together with the Rest clients, because they are closely related to each other.
 Auth config contains methods:
 \begin{itemize}

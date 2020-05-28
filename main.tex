@@ -28,13 +28,13 @@
 % \usepackage{xevlna}
 
 % % list of acronyms
-% \usepackage[acronym,nonumberlist,toc,numberedsection=autolabel]{glossaries}
+\usepackage[acronym]{glossaries}
 % \iflanguage{czech}{\renewcommand*{\acronymname}{Seznam pou{\v z}it{\' y}ch zkratek}}{}
-% \makeglossaries
+\makeglossaries
 
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 % EDIT THIS
-% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % 
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 \department{Department of Software Engineering}
 \title{Cross-platform mobile application for safer drone operations}
@@ -73,12 +73,13 @@ Z{\' a}rove{\v n} obsahuje popis d{\r u}le{\v z}it{\' y}ch konfigura{\v c}n{\' i
 \placeForDeclarationOfAuthenticity{Prague}
 \keywordsCS{Multiplatformn{\' i}, mobiln{\' i}, aplikace, dron, {\v r}{\' i}zen{\' i}, Flutter}
 \keywordsEN{Cross-platform, mobile, application, drone, operation, Flutter}
-\declarationOfAuthenticityOption{1} %select as appropriate, according to the desired license (integer 1-6)
+\declarationOfAuthenticityOption{6} %select as appropriate, according to the desired license (integer 1-6)
 % \website{http://site.example/thesis} %optional thesis URL
 
 
 \begin{document}
 
+\input{chapters/formal/glossaries.tex}
 % \newacronym{CVUT}{{\v C}VUT}{{\v C}esk{\' e} vysok{\' e} u{\v c}en{\' i} technick{\' e} v Praze}
 % \newacronym{FIT}{FIT}{Fakulta informa{\v c}n{\' i}ch technologi{\' i}}
 

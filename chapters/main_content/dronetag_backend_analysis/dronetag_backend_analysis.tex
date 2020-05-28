@@ -2,15 +2,15 @@
 This chapter describes the Dronetag web infrastructure and contains a detailed description of the Dronetag web platform.
 It consists of the all technical stack that ensures data providing and processing.
 It was needed to determine a convenient and reliable way of how to construct a useful architecture of infrastructure gradually.
-The Dronetag development lifecycle has started with an IoT module and frontend web client written in JavaScript.
+The Dronetag development lifecycle has started with an \acrshort{iot} module and frontend web client written in JavaScript.
 It continues to implement Web Sockets in the Live Service implementation based on a Kubernetes cluster and the cross-platform mobile application.
 Current parts of the stack are the following:
 \begin{itemize}
     \item \textbf{Load Balancer} - it ensures load balancing of received requests (It redirects the requests to an available node in cluster.),
     \item \textbf{Backend} - it ensures communication with Database storage of data and provides API endpoints to allow drone security operation,
     \item \textbf{Frontend} - it ensures managing and watching drones activity via a web browser,
-    \item \textbf{Private API endpoint} - it ensures an API endpoint to give into or get private data from Dronetag platform (It is a part of Backend.),
-    \item \textbf{Public API endpoint} - it ensures an API endpoint to give into or get public data from Dronetag platform (It is also a part of Backend.),
+    \item \textbf{Private \acrshort{api} endpoint} - it ensures an \acrshort{api} endpoint to give into or get private data from Dronetag platform (It is a part of Backend.),
+    \item \textbf{Public \acrshort{api} endpoint} - it ensures an \acrshort{api} endpoint to give into or get public data from Dronetag platform (It is also a part of Backend.),
     \item \textbf{Database Storage} that ensures persistent storing of data,
     \item \textbf{Live Service} - it ensures quick providing of live data from airspace by the given viewport.
 \end{itemize}
@@ -20,8 +20,8 @@ It is needed because the system complexity is still increasing.
 And in this case, it is needed to determine the cause and ensure load balancing among the parts of the stack.
 
 \section{API Separation}\label{sec:api-separation}
-Due to security reasons, the web API divides itself into Private API and Public API endpoints.
-Public API is allowed to use by third-party consumers.
+Due to security reasons, the web \acrshort{api} divides itself into Private \acrshort{api} and Public \acrshort{api} endpoints.
+Public \acrshort{api} is allowed to use by third-party consumers.
 It can be anyone who would like using data from the Backend to ensure drone operation security.
 
 In further determination, this infrastructure is divided into the Staging and Production environment.

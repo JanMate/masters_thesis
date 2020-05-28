@@ -32,7 +32,7 @@ This entity represents an aircraft that is connected with a Dronetag device.
 Attributes of this entity are the following:
 \begin{itemize}
     \item \textbf{Name} - represents the aircraft name for easier recognition in My aircraft list,
-    \item \textbf{UAS Operator ID} - represents a unique code identifying a pilot who registered this aircraft in the UAS (Unmanned aircraft systems)~\cite{uas},
+    \item \textbf{\acrshort{uas} Operator ID} - represents a unique code identifying a pilot who registered this aircraft in the \acrshort{uas}~(\acrlong{uas})~\cite{uas},
     \item \textbf{Weight} - represents the weight of the aircraft.
 \end{itemize}
 
@@ -44,7 +44,7 @@ Attributes of this entity are the following:
     \item \textbf{Name} - represents the device name for easier recognition in My aircraft list,
     \item \textbf{Type} - represents the model type of the device,
     \item \textbf{Last battery} - represents the last battery value in Volts,
-    \item \textbf{Last RSRP} - represents the RSRP (Reference Signal Receive Power) value.
+    \item \textbf{Last \acrshort{rsrp}} - represents the \acrshort{rsrp}~(\acrlong{rsrp}) value.
 \end{itemize}
 
 \subsection{Flight}\label{subsec:flight}
@@ -58,7 +58,7 @@ Attributes of this entity are the following:
     \item \textbf{Status} - represents a flight status - values can be planned, current, finished and canceled,
     \item \textbf{Distance} - represents a distance of the flight,
     \item \textbf{Duration} - represents a duration of the flight,
-    \item \textbf{Region GeoJSON} - represents a reservation region in GeoJSON format~\cite{geoJson},
+    \item \textbf{Region \acrshort{geojson}} - represents a reservation region in \acrshort{geojson} format~\cite{geoJson},
     \item \textbf{Max flight altitude} - represents a maximum flight altitude,
     \item \textbf{Takeoff latitude} - represents a latitude of a taking off position,
     \item \textbf{Takeoff longitude} - represents a longitude of a taking off position,
@@ -82,7 +82,7 @@ Attributes of this entity are the following:
 \end{itemize}
 
 \subsection{Organization}\label{subsec:organization}
-This entity represents an Organization for the maintenance of fleet management.
+This entity represents an Organization for the fleet management functionality.
 Attributes of this entity are the following:
 \begin{itemize}
     \item \textbf{Name} - represents the name of the organization,
@@ -117,7 +117,7 @@ Attributes of this entity are the following:
 \begin{itemize}
     \item \textbf{Name} - represents a name of the zone,
     \item \textbf{Country} - represents a country where the zone belongs,
-    \item \textbf{Region GeoJSON} - represents a region in GeoJSON format~\cite{geoJson}.
+    \item \textbf{Region \acrshort{geojson}} - represents a region in \acrshort{geojson} format~\cite{geoJson}.
 \end{itemize}
 
 \subsection{User Preference}\label{subsec:user-preference}
@@ -129,9 +129,9 @@ Attributes of this entity are the following:
 \end{itemize}
 
 \subsection{Live Service Database Model}\label{subsec:live-service-database-model}
-Besides, during the development, it had been found out the current Backend is not sufficient for Dronetag needs.
+During the development, it had been found out the current Backend is not sufficient for Dronetag needs.
 So it was decided to divide the backend model into the Backend and Live Service model.
-Because there are only live real-time temporary data, so a Redis database was deployed.
+The Live Service contains only live real-time temporary data, so a Redis database was deployed.
 
 "Redis is an open source (BSD licensed), in-memory data structure store, used as a database, cache and message broker.
 It supports data structures such as strings, hashes, lists, sets, sorted sets with range queries, bitmaps, hyperloglogs, geospatial indexes with radius queries and streams.

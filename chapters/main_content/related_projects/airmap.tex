@@ -14,8 +14,8 @@ AirMap ecosystem can divide into some branches:
 
 
 \subsection{AirMap UTM}\label{subsec:airmap-utm}
-AirMap UTM (Unmanned Traffic Management) is a web application used for aviation flight dispatchers.
-It allows approving planned flights of users in restricted areas by authorities - for example, CTR (Control zone).
+AirMap \acrshort{utm} (\acrlong{utm}) is a web application used for aviation flight dispatchers.
+It allows approving planned flights of users in restricted areas by authorities - for example, \acrshort{ctr}~(\acrlong{ctr}).
 The manager of this zone can show a detail of the application form and request that he fill out the information about a flight.
 \newline
 \newline
@@ -25,7 +25,7 @@ Advantages:
 \begin{itemize}
     \item An operator can see active flight plans and other flight operations and altitudes (airplanes and helicopters) simultaneously.
     \item An operator can see a DJI drone telemetry of a pilot in case that the pilot is using AirMap mobile application in-flight mode.
-    \item Whenever an operator create a restricted zone for flights, pilots will be notified via SMS.
+    \item Whenever an operator create a restricted zone for flights, pilots will be notified via \acrshort{sms}.
     \item An operator can filter received application forms.
     \item It is used to using in the USA, the Czech Republic, Switzerland, Japan, New Zealand,~\textellipsis
 \end{itemize}
@@ -53,8 +53,8 @@ Advantages:
 \begin{itemize}
     \item It is used to using in the USA, the Czech Republic, Switzerland, Japan, New Zealand, \textellipsis
     \item The application shows flight zones of all countries.
-    It loads data from the EUROCONTROL EAD (European AIS Database).~\cite{eurocontrol}
-    \item Pilots can get authorization of airspace via the LAANC (Low Altitude Authorization and Notification Capability) system in real-time.
+    It loads data from the EUROCONTROL EAD (\acrlong{ead}).~\cite{eurocontrol}
+    \item Pilots can get authorization of airspace via the \acrshort{laanc}~(\acrlong{laanc}) system in real-time.
     \item Flights can also be planned in the future, and it is not allowed to change them after that.
     It is allowed only to remove it.
     \item In case of planning a mission in the web application, it is not able to see it in the mobile application in a minute.
@@ -73,17 +73,17 @@ Disadvantages:
     Generally, all loading or submitting takes a long time.
     \item It can provide no flight log export nor other data.
     \item It supports no flight plan storage for the future nor repeating.
-    \item It contains a few amateur bugs.
+    \item It contains a few layperson bugs.
     For example, in the web application, if users draw a trajectory and press ESC key on the keyboard, the users will not be able to draw again without the need to choose a tool and then the default again.
 \end{itemize}
 
 
 \subsection{AirMap Enterprise}\label{subsec:airmap-enterprise}
-AirMap Enterprise is a dashboard similar to AirMap UTM, but it is specialized to the narrow group of users.
-It is not possible to see visible differences against the AirMap UTM, but the screen looks similar.
+AirMap Enterprise is a dashboard similar to AirMap \acrshort{utm}, but it is specialized to the narrow group of users.
+It is not possible to see visible differences against the AirMap \acrshort{utm}, but the screen looks similar.
 For example, application form approval, real-time telemetry, pilot contacting.
-It is a fleet management solution.
+It is mainly used as a fleet management system.
 
 
-\subsection{AirMap Developers}\label{subsec:airmap-developers}
-AirMap Developers is a portal offering documentation about AirMap API and SDK, that can use for integration of the AirMap services into individual solutions.~\cite{airMapDevelopers}
+\subsection{AirMap Developers}\label{subsec:airmap-developers}a
+AirMap Developers is a portal offering documentation about AirMap \acrshort{api} and \acrshort{sdk}, that can use for integration of the AirMap services into individual solutions.~\cite{airMapDevelopers}

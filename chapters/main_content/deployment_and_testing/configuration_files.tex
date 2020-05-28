@@ -8,9 +8,9 @@ This generator allows to use these settings in the codebase by the given paramet
 The configuration YAML~\cite{yaml} file keeps the setting of these variables, where we choose the required configuration, and the generator makes available it via an interface in the codebase.
 There is needed to notice that the cross-platform frameworks like Flutter allow to set the separate configuration for every platform on iOS and Android.
 Unfortunately, there are even cases when the setting applies as similar as on both of the platforms.
-For example, it can be a URL (Uniform Resource Locator) addresses, client ID, client secrets, and a path to a log file.
+For example, it can be a \acrshort{url}~(\acrlong{url}) addresses, client ID, client secrets, and a path to a log file.
 This change will be performed in the specific bundle if it is needed to distinguish a configuration for each of the platforms alone.
-A typical example could be differentiated setting of Google Maps widget, where it is needed to set activated Google Maps API key.
+A typical example could be differentiated setting of Google Maps widget, where it is needed to set activated Google Maps \acrshort{api} key.
 Although these platforms have different architecture, so its configuration is different.
 
 Immediately at the beginning of the development phase, when new members join the team, they must clone \textbf{mobile-app} folder from the git repository on BitBucket server.
@@ -37,9 +37,9 @@ This file is used for the security of the client access and in case it would be 
 }
 \end{verbatim}
 % @formatter:on
-This file is for access to the information, which are provided by Google Cloud Platform API.
-In our project, we use Google Maps API for downloading map styles, data about a searching place, and the Autocomplete function that suggests accureate and close results by the given substring.
-All mentioned files meet the JSON format standard specification.
+This file is for access to the information, which are provided by Google Cloud Platform \acrshort{api}.
+In our project, we use Google Maps \acrshort{api} for downloading map styles, data about a searching place, and the Autocomplete function that suggests accurate and close results by the given substring.
+All mentioned files meet the \acrshort{json} format standard specification.
 
 
 \subsection{Develop Environment}\label{subsec:develop-environment}
