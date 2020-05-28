@@ -1,8 +1,8 @@
 \subsection{Bloc and Hydrated Bloc}\label{subsec:bloc-and-hydrated-bloc}
-In the beginning, it was counted on all of \acrshort{bloc}~(\acrlong{bloc}) will have been the descendants of the Bloc class.
-After a short time, it has been found out that the Hydrated Bloc storable pattern is more convenient for this purpose.
-So, some Bloc classes were changed to descendants of HydratedBloc.
-It has been created a list of the following classes:
+In the beginning of the development, all \acrshort{bloc}~(\acrlong{bloc})s were the descendants of the Bloc class.
+After a short time, it has been found out that the Hydrated Bloc pattern is more convenient for this purpose.
+Therefore, some Bloc classes were changed to descendants of HydratedBloc.
+This is a list of classes that has been created:
 \begin{itemize}
     \item User Profile Bloc,
     \item Authentication Bloc,
@@ -16,13 +16,11 @@ It has been created a list of the following classes:
     \item Map Drone Bloc,
     \item Map Place Bloc.
 \end{itemize}
-In the beginning, \textbf{User Profile Bloc} had extended common Bloc, but after increasing data traffic, it has changed to Hydrated Bloc.
+In the beginning, \textbf{User Profile Bloc} extended common Bloc, but after increasing data traffic, it has changed to Hydrated Bloc.
 The reason is simple.
 User properties are not changed so often.
 Due to it is better to store the data on the phone and update them when it changes.
 User Profile bloc ensures loading and updating user data.
-\newline
-\newline
 \newline
 \textbf{Authentication Bloc} extends Bloc and ensures:
 \begin{itemize}
@@ -54,9 +52,9 @@ User Profile bloc ensures loading and updating user data.
 \end{itemize}
 \textbf{Device Detail Bloc} extends Bloc and ensures:
 \begin{itemize}
-    \item Switching Battery icon,
-    \item Switching LTE icon,
-    \item Switching Bluetooth icon.
+    \item Switching from a Battery icon to a value in Volts, and vice versa,
+    \item Switching from a LTE icon to a RSRP value id \acrshort{db}s, and vice versa,
+    \item Switching from a Bluetooth icon to a RSRP value in \acrshort{db}s, and vice versa.
 \end{itemize}
 This Bloc is used for switching of icons in the Device detail screen.
 
@@ -89,7 +87,7 @@ These Blocs are the following:
     \item Map Drone Bloc,
     \item Map Place Bloc.
 \end{itemize}
-These Blocs react on the Map Bloc State changes, which means when a new State is created, a nested Bloc catches it and generate its new Event.
+These Blocs react on the Map Bloc State changes, which means when a new State is created, a nested Bloc catches it and generates a new Event.
 The Event ensures the real action on the level of the nested Bloc thanks to mapping methods.
 \newline
 \newline

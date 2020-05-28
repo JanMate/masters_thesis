@@ -20,82 +20,82 @@ This entity represents a user who signs up and logs in to the application.
 It consists of user credentials and identification information.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{E-mail} - represents the e-mail that the user will be log in to the system and receive notifications,
-    \item \textbf{Full name} - represents optional full name of the user,
-    \item \textbf{Password hash} - represents a hashed password,
-    \item \textbf{Phone number} - represents a phone number that the user will be able to contact in case of emergency,
-    \item \textbf{Country} - represents a country where the user is used to fly.
+    \item \textbf{E-mail} -- represents the e-mail that the user will be log in to the system and receive notifications,
+    \item \textbf{Full name} -- represents optional full name of the user,
+    \item \textbf{Password hash} -- represents a hashed password,
+    \item \textbf{Phone number} -- represents a phone number that the user will be able to contact in case of emergency,
+    \item \textbf{Country} -- represents a country where the user is used to fly.
 \end{itemize}
 
 \subsection{Aircraft}\label{subsec:aircraft}
 This entity represents an aircraft that is connected with a Dronetag device.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Name} - represents the aircraft name for easier recognition in My aircraft list,
-    \item \textbf{\acrshort{uas} Operator ID} - represents a unique code identifying a pilot who registered this aircraft in the \acrshort{uas}~(\acrlong{uas})~\cite{uas},
-    \item \textbf{Weight} - represents the weight of the aircraft.
+    \item \textbf{Name} -- represents the aircraft name for easier recognition in My aircraft list,
+    \item \textbf{\acrshort{uas} Operator ID} -- represents a unique code identifying a pilot who registered this aircraft in the \acrshort{uas}~(\acrlong{uas})~\cite{uas},
+    \item \textbf{Weight} -- represents the weight of the aircraft.
 \end{itemize}
 
 \subsection{Device}\label{subsec:device}
 This entity represents a physical device that sends live information to the Dronetag platform.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Serial number} - represents a serial number of the device,
-    \item \textbf{Name} - represents the device name for easier recognition in My aircraft list,
-    \item \textbf{Type} - represents the model type of the device,
-    \item \textbf{Last battery} - represents the last battery value in Volts,
-    \item \textbf{Last \acrshort{rsrp}} - represents the \acrshort{rsrp}~(\acrlong{rsrp}) value.
+    \item \textbf{Serial number} -- represents a serial number of the device,
+    \item \textbf{Name} -- represents the device name for easier recognition in My aircraft list,
+    \item \textbf{Type} -- represents the model type of the device,
+    \item \textbf{Last battery} -- represents the last battery value in Volts,
+    \item \textbf{Last \acrshort{rsrp}} -- represents the \acrshort{rsrp}~(\acrlong{rsrp}) value.
 \end{itemize}
 
 \subsection{Flight}\label{subsec:flight}
 This entity represents it represents a flight that a user has created.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Date planned start} - represents a start date of planned the flight,
-    \item \textbf{Date planned finish} - represents a finish data of planned the flight,
-    \item \textbf{Date started} - represents a real start date of the flight,
-    \item \textbf{Date finished} - represents a real finish date of the flight,
-    \item \textbf{Status} - represents a flight status - values can be planned, current, finished and canceled,
-    \item \textbf{Distance} - represents a distance of the flight,
-    \item \textbf{Duration} - represents a duration of the flight,
-    \item \textbf{Region \acrshort{geojson}} - represents a reservation region in \acrshort{geojson} format~\cite{geoJson},
-    \item \textbf{Max flight altitude} - represents a maximum flight altitude,
-    \item \textbf{Takeoff latitude} - represents a latitude of a taking off position,
-    \item \textbf{Takeoff longitude} - represents a longitude of a taking off position,
-    \item \textbf{Takeoff Geo altitude} - represents a geological altitude of a taking off position,
-    \item \textbf{Takeoff pressure} - represents a taking off pressure,
-    \item \textbf{Public} - represents a boolean flag if the flight is public (visible for everyone).
+    \item \textbf{Date planned start} -- represents a start date of planned the flight,
+    \item \textbf{Date planned finish} -- represents a finish data of planned the flight,
+    \item \textbf{Date started} -- represents a real start date of the flight,
+    \item \textbf{Date finished} -- represents a real finish date of the flight,
+    \item \textbf{Status} -- represents a flight status - values can be planned, current, finished and canceled,
+    \item \textbf{Distance} -- represents a distance of the flight,
+    \item \textbf{Duration} -- represents a duration of the flight,
+    \item \textbf{Region \acrshort{geojson}} -- represents a reservation region in \acrshort{geojson} format~\cite{geoJson},
+    \item \textbf{Max flight altitude} -- represents a maximum flight altitude,
+    \item \textbf{Takeoff latitude} -- represents a latitude of a taking off position,
+    \item \textbf{Takeoff longitude} -- represents a longitude of a taking off position,
+    \item \textbf{Takeoff Geo altitude} -- represents a geological altitude of a taking off position,
+    \item \textbf{Takeoff pressure} -- represents a taking off pressure,
+    \item \textbf{Public} -- represents a boolean flag if the flight is public (visible for everyone).
 \end{itemize}
 
 \subsection{Telemetry Measurement}\label{subsec:telemetry-measurement}
 This entity represents a telemetry measurement that the system receives and thanks so that a flight trajectory can be drawn.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Time} - represents a date with the time of measurement,
-    \item \textbf{Latitude} - represents a measured latitude of a flying drone,
-    \item \textbf{Longitude} - represents a measured longitude of a flying drone,
-    \item \textbf{Altitude} - represents a measured altitude of a flying drone,
-    \item \textbf{Geo altitude} - represents a measured geological altitude of a flying drone,
-    \item \textbf{Velocity X} - represents a measured velocity in X-axis,
-    \item \textbf{Velocity Y} - represents a measured velocity in Y-axis,
-    \item \textbf{Velocity Z} - represents a measured velocity in Z-axis.
+    \item \textbf{Time} -- represents a date with the time of measurement,
+    \item \textbf{Latitude} -- represents a measured latitude of a flying drone,
+    \item \textbf{Longitude} -- represents a measured longitude of a flying drone,
+    \item \textbf{Altitude} -- represents a measured altitude of a flying drone,
+    \item \textbf{Geo altitude} -- represents a measured geological altitude of a flying drone,
+    \item \textbf{Velocity X} -- represents a measured velocity in X-axis,
+    \item \textbf{Velocity Y} -- represents a measured velocity in Y-axis,
+    \item \textbf{Velocity Z} -- represents a measured velocity in Z-axis.
 \end{itemize}
 
 \subsection{Organization}\label{subsec:organization}
 This entity represents an Organization for the fleet management functionality.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Name} - represents the name of the organization,
-    \item \textbf{Description} - represents a text description of the organization.
+    \item \textbf{Name} -- represents the name of the organization,
+    \item \textbf{Description} -- represents a text description of the organization.
 \end{itemize}
 
 \subsection{Fleet}\label{subsec:fleet}
 This entity represents an organization's fleet management properties.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Name} - represents a name of the fleet,
-    \item \textbf{Color} - represents a shown color of the fleet,
-    \item \textbf{Deleted} - represents a boolean flag if the fleet was deleted.
+    \item \textbf{Name} -- represents a name of the fleet,
+    \item \textbf{Color} -- represents a shown color of the fleet,
+    \item \textbf{Deleted} -- represents a boolean flag if the fleet was deleted.
 \end{itemize}
 
 \subsection{Aircraft Vendor}\label{subsec:aircraft-vendor}
@@ -106,26 +106,26 @@ It contains only the one attribute name that represents the vendor name.
 This entity represents an aircraft model that belongs to a vendor.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Name} - represents the model name,
-    \item \textbf{Weight} - represents the weight of the model,
-    \item \textbf{Vendor ID} - represents a relationship to a Vendor.
+    \item \textbf{Name} -- represents the model name,
+    \item \textbf{Weight} -- represents the weight of the model,
+    \item \textbf{Vendor ID} -- represents a relationship to a Vendor.
 \end{itemize}
 
 \subsection{Airspace Zone}\label{subsec:airspace-zone}
 This entity represents an airspace zone.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Name} - represents a name of the zone,
-    \item \textbf{Country} - represents a country where the zone belongs,
-    \item \textbf{Region \acrshort{geojson}} - represents a region in \acrshort{geojson} format~\cite{geoJson}.
+    \item \textbf{Name} -- represents a name of the zone,
+    \item \textbf{Country} -- represents a country where the zone belongs,
+    \item \textbf{Region \acrshort{geojson}} -- represents a region in \acrshort{geojson} format~\cite{geoJson}.
 \end{itemize}
 
 \subsection{User Preference}\label{subsec:user-preference}
 This entity represents a user preference that is needed to store and share among various client applications.
 Attributes of this entity are the following:
 \begin{itemize}
-    \item \textbf{Property} - represents an identification of the property,
-    \item \textbf{Value} - represents the preference value.
+    \item \textbf{Property} -- represents an identification of the property,
+    \item \textbf{Value} -- represents the preference value.
 \end{itemize}
 
 \subsection{Live Service Database Model}\label{subsec:live-service-database-model}

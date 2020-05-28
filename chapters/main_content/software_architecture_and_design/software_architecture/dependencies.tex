@@ -1,20 +1,21 @@
 \subsection{Dependencies}\label{subsec:dependencies}
 Flutter has a vast database of dependencies that are maintained by various developers.
 The database is called pub.dev~\cite{pubDev} and offers a summary of every dependency on the score analysis to their users.
-This analysis consists of popularity, health, maintenance and final overall.
+This analysis consists of popularity, health, maintenance and overall.
 
-The advantage of these dependencies is in the convenient way of using.
-Developers can place their definition into \textbf{pubspec.yaml} file what is the dependency configuration file in the root directory of every Flutter project.
+The advantage of these dependencies is that they can be easily integrated.
+Developers can place their definition into \textbf{pubspec.yaml} file that describes the dependency configuration.
+The file is placed in the root directory of every Flutter project.
 The definition consists of name and specific version.
 
 The dependencies that are used in this mobile application are separated into the following categories:
 \begin{itemize}
     \item Icons,
     \item State management,
-    \item NoSQL storage,
     \item Tools,
     \item Firebase,
     \item \acrshort{api},
+    \item \acrshort{nosql} storage,
     \item \acrshort{ui},
     \item Map,
     \item Generator.
@@ -27,55 +28,57 @@ Material Design icons are already part of the Flutter \acrshort{sdk} library.
 These dependencies contain the Bloc and Hydrated Bloc implementation.
 The implementation is described in the Bloc section~\ref{sec:bloc} of the Flutter Analysis chapter.
 The usage of the implementation is described in the Bloc and Hydrated Bloc section~\ref{subsec:bloc-and-hydrated-bloc} of this chapter.
-
-\textbf{\acrshort{nosql} storage} contains \textbf{hive} and \textbf{hive\_flutter}.
-These dependencies ensure \acrshort{nosql} storage that is for persistent data in the offline mode and store things like \acrshort{jwt} token.~\cite{jwtToken}
 \newline
 \newline
 \textbf{Tools} consist of:
 \begin{itemize}
-    \item \textbf{intl} - it ensures internationalization,
-    \item \textbf{equatable} - it ensures that object extending it can be easily comparable by properties of that object,
-    \item \textbf{flutter\_svg} - it ensures drawing SVG image as a widget,
-    \item \textbf{flutter\_i18n} - it ensures internationalization by the user phone settings,
-    \item \textbf{path\_provider} - it ensures finding commonly used locations on the filesystem,
-    \item \textbf{print\_lumberdash} - it ensures a convenient debug printing of an error message,
-    \item \textbf{get\_it} - it allows using of \acrshort{di}~(\acrlong{di}) in code - it supports \acrshort{ioc} principle,~\cite{iocPrinciple}
-    \item \textbf{dartz} - it allows using functional programming in Dart,
-    \item \textbf{url\_launcher} - it ensures launching a URL in the mobile platform,
+    \item \textbf{intl} -- it ensures internationalization,
+    \item \textbf{equatable} -- it ensures that object extending it can be easily comparable by properties of that object,
+    \item \textbf{flutter\_svg} -- it ensures drawing \acrshort{svg} image as a widget,
+    \item \textbf{flutter\_i18n} -- it ensures internationalization user phone settings,
+    \item \textbf{path\_provider} -- it ensures finding commonly used locations the filesystem,
+    \item \textbf{print\_lumberdash} -- it ensures a convenient debug printing of an error message,
+    \item \textbf{get\_it} -- it allows using of \acrshort{di}~(\acrlong{di}) in code - it supports \acrshort{ioc} principle,~\cite{iocPrinciple}
+    \item \textbf{dartz} -- it allows using functional programming in Dart,
+    \item \textbf{url\_launcher} -- it ensures launching a URL in the mobile platform,
 \end{itemize}
 \textbf{Firebase} contains \textbf{firebase\_core} and \textbf{firebase\_messaging}.
-These dependecies ensure connecting to Firebase Cloud and allowing push notifications.
+These dependecies ensure connecting to Firebase Cloud and allow push notification functionality.
+\newline
 \newline
 \textbf{API} consists of:
 \begin{itemize}
-    \item \textbf{http} - it ensures making \acrshort{http} requests,
-    \item \textbf{json\_annotation} - it ensures the definition of annotations used by \acrshort{json} serialization and deserialization,
-    \item \textbf{data\_connection\_checker} - it checks for an internet connection by opening a socket,
+    \item \textbf{http} -- it ensures making \acrshort{http} requests,
+    \item \textbf{json\_annotation} -- it ensures the definition of annotations used by \acrshort{json} serialization and deserialization,
+    \item \textbf{data\_connection\_checker} -- it checks for an internet connection by opening a socket,
+    \item \textbf{dio} -- it offers support of Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout, etc.,
     \item \textbf{retrofit} - it ensures type conversion dio client generator to create \acrshort{http} requests,
-    \item \textbf{pretty\_dio\_logger} - it ensures a convenient debug printing of \acrshort{http} requests and responses,
-    \item \textbf{dio} - it offers support of Interceptors, Global configuration, FormData, Request Cancellation, File downloading, Timeout, etc.,
-    \item \textbf{flutter\_screenutil} - it ensures adapting screen and font size.
+    \item \textbf{pretty\_dio\_logger} -- it ensures a convenient debug printing of \acrshort{http} requests and responses,
+    \item \textbf{flutter\_screenutil} -- it ensures adapting screen and font size.
 \end{itemize}
+\textbf{\acrshort{nosql} storage} contains \textbf{hive} and \textbf{hive\_flutter}.
+These dependencies ensure \acrshort{nosql} storage that is for storing persistent data in the offline mode, \acrshort{jwt} token and user preferences.~\cite{jwtToken}
+\newline
+\newline
 \textbf{\acrshort{ui}} consists of:
 \begin{itemize}
-    \item \textbf{sliding\_up\_panel} - it offers using done Sliding up panel,
-    \item \textbf{animations} - it contains pre-canned animations for commonly-desired effects,
-    \item \textbf{flutter\_sfsymbols} - it supports all iOS and Android devices.
+    \item \textbf{sliding\_up\_panel} -- it offers using done Sliding up panel,
+    \item \textbf{animations} -- it contains pre-canned animations for commonly-desired effects,
+    \item \textbf{flutter\_sfsymbols} -- it supports all iOS and Android devices.
 \end{itemize}
 \textbf{Map} consists of:
 \begin{itemize}
-    \item \textbf{google\_maps\_flutter} - it provides a Google Maps widget,
-    \item \textbf{location} - it handles getting a location on Android and iOS,
-    \item \textbf{google\_maps\_webservice} - it offers using Google Web Service \acrshort{api} that including Geocoding, Places, Directions, and so on.
+    \item \textbf{google\_maps\_flutter} -- it provides a Google Maps widget,
+    \item \textbf{location} -- it handles getting a location on Android and iOS,
+    \item \textbf{google\_maps\_webservice} -- it offers using Google Web Service \acrshort{api} that including Geocoding, Places, Directions, and so on.
 \end{itemize}
 \textbf{Generator} consists of:
 \begin{itemize}
-    \item \textbf{hive\_generator} - it generates storable object by Hive annotations,
-    \item \textbf{retrofit\_generator} - it generates an implementation of \acrshort{http} requests due to set annotations,
-    \item \textbf{bloc\_test} - it generates testing blocs for unit testing,
-    \item \textbf{mockito} - it generates Mocks for unit testing,
-    \item \textbf{pedantic} - it ensures a linter that is looking after to meet best practices,
-    \item \textbf{build\_runner} - it provides a concrete way of generating files using Dart code,
-    \item \textbf{json\_serializable} - it generates a serializable object by \acrshort{json} annotation.
+    \item \textbf{hive\_generator} -- it generates storable object by Hive annotations,
+    \item \textbf{retrofit\_generator} -- it generates an implementation of \acrshort{http} requests due to set annotations,
+    \item \textbf{bloc\_test} -- it generates testing blocs for unit testing,
+    \item \textbf{mockito} -- it generates Mocks for unit testing,
+    \item \textbf{pedantic} -- it ensures a linter that is looking after to meet best practices,
+    \item \textbf{build\_runner} -- it provides a concrete way of generating files using Dart code,
+    \item \textbf{json\_serializable} -- it generates a serializable object by \acrshort{json} annotation.
 \end{itemize}
