@@ -5,18 +5,18 @@ It is separated into:
     \item \textbf{Error directory},
     \item \textbf{Extensions directory},
     \item \textbf{Preferences directory},
-    \item \textbf{Bloc Delegate class} - it extends generic Bloc Delegate, and it logs all actions on every Bloc and Hydrated Bloc,
-    \item \textbf{Network Info class} - it checks internet connection (it uses DataConnectionChecker class),
-    \item \textbf{Validator class} - it defines validation rules for e-mail address, password and full name.
+    \item \textbf{Bloc Delegate class} -- it extends generic Bloc Delegate, and it logs all actions on every Bloc and Hydrated Bloc,
+    \item \textbf{Network Info class} -- it checks internet connection (it uses DataConnectionChecker class),
+    \item \textbf{Validator class} -- it defines validation rules for e-mail address, password and full name.
 \end{itemize}
 
 
 \subsubsection{Error}\label{subsubsec:error}
 This directory contains classes:
 \begin{itemize}
-    \item \textbf{Error\_handling} - it contains a method that maps an error to action,
-    \item \textbf{Server Exception} - it extends the general exception,
-    \item \textbf{Server Failure} - it represents a returned fail message with the \acrshort{http} status code.
+    \item \textbf{Error\_handling} -- it contains a method that maps an error to action,
+    \item \textbf{Server Exception} -- it extends the general exception,
+    \item \textbf{Server Failure} -- it represents a returned fail message with the \acrshort{http} status code.
 \end{itemize}
 
 
@@ -30,6 +30,7 @@ The Extensions directory contains:
     \item Number Extension,
     \item String Extension.
 \end{itemize}
+
 \textbf{Polygon Extension} offers to find out if a point consisted of latitude and longitude is lying in the given Polygon~\cite{googleMapsPolygon}.
 It is based on the mathematical problem when it is being looked for the result if y-axis of the given point goes through an even number of borderlines of the given Polygon.
 To solve how to find out if the y-axis goes through is based on the problem which deals with two lines go through each other.
@@ -47,19 +48,20 @@ Otherwise, it returns false.
 \textbf{String Extension} contains methods for simplified work with Strings.
 These methods are:
 \begin{itemize}
-    \item \textbf{isValidEmail()} - it checks if a given e-mail meets set Regular Expression~\cite{regExp},
-    \item \textbf{isValidPassword()} - it checks if a given password meets set Regular Expression,
-    \item \textbf{isBlank()} - it checks if a given string is empty or equal to an empty string,
-    \item \textbf{isValidFullName()} - it checks if a given full name meets set Regular Expression.
+    \item \textbf{isValidEmail()} -- it checks if a given e-mail meets set Regular Expression~\cite{regExp},
+    \item \textbf{isValidPassword()} -- it checks if a given password meets set Regular Expression,
+    \item \textbf{isBlank()} -- it checks if a given string is empty or equal to an empty string,
+    \item \textbf{isValidFullName()} -- it checks if a given full name meets set Regular Expression.
 \end{itemize}
+
 \textbf{Number Extension} contains methods for the precision setting.
 The methods are:
 \begin{itemize}
-    \item \textbf{halfSize()} - returns half of this number,
-    \item \textbf{toLatLonPrecision()} - returns string of this number with precision on 6 decimal digits,
-    \item \textbf{toAltitudePrecision()} - returns string of this number with precision on 4 decimal digits,
-    \item \textbf{addLatitudeDistance(double distance)} - adds a given distance to this in latitude axis,
-    \item \textbf{addLongitudeDistance(double distance, double latitude)} - adds a given distance to this in longitude axis.
+    \item \textbf{halfSize()} -- returns half of this number,
+    \item \textbf{toLatLonPrecision()} -- returns string of this number with precision on 6 decimal digits,
+    \item \textbf{toAltitudePrecision()} -- returns string of this number with precision on 4 decimal digits,
+    \item \textbf{addLatitudeDistance(double distance)} -- adds a given distance to this in latitude axis,
+    \item \textbf{addLongitudeDistance(double distance, double latitude)} -- adds a given distance to this in longitude axis.
 \end{itemize}
 
 \textbf{Date Extension} extends the base interface of the Date class and contains the get method \textit{suffix}, which returns a suffix in English for the number of the day of the given date.
@@ -74,19 +76,19 @@ The Hive library has a simple interface for work with the nested Box class.
 Further, it allows using Hive Annotations and define the objects for storing via an entity.
 AppPreferences class contains public methods:
 \begin{itemize}
-    \item \textbf{saveTokens(String apiToken, String refreshToken)} - it calls \_putToken(String token) and \_putRefreshToken(String token) methods,
-    \item \textbf{destroyTokens()} - it calls \_deleteToken() and \_deleteRefreshToken() methods,
-    \item \textbf{getToken()} - it gets a value by API\_TOKEN constant,
-    \item \textbf{getRefreshToken()} - it gets a value by API\_REFRESH\_TOKEN constant,
-    \item \textbf{isUserLoggedIn()} - it checks if getToken() and getRefreshToken() return not empty string (If so, user is still logged in, otherwise logged out.),
-    \item \textbf{getRecentSearchResult()} - it returns stored user search recent results,
-    \item \textbf{updateRecentSearchResult(SearchObject currentSearchedResult)} - it updates stored user search recent results.
+    \item \textbf{saveTokens(String apiToken, String refreshToken)} -- it calls \newline\_putToken(String token) and \_putRefreshToken(String token) methods,
+    \item \textbf{destroyTokens()} -- it calls \_deleteToken() and \_deleteRefreshToken() methods,
+    \item \textbf{getToken()} -- it gets a value by API\_TOKEN constant,
+    \item \textbf{getRefreshToken()} -- it gets a value by API\_REFRESH\_TOKEN constant,
+    \item \textbf{isUserLoggedIn()} -- it checks if getToken() and getRefreshToken() return not empty string (If so, user is still logged in, otherwise logged out.),
+    \item \textbf{getRecentSearchResult()} -- it returns stored user search recent results,
+    \item \textbf{updateRecentSearchResult(SearchObject currentSearchedResult)} -- it updates stored user search recent results.
 \end{itemize}
 AppPreferences class contains private methods:
 \begin{itemize}
-    \item \textbf{\_put(String key, value)} - it puts a value by the given key into Box object storage,
-    \item \textbf{\_putToken(String token)} - it calls \_put(String key, value) where the key is API\_TOKEN constant,
-    \item \textbf{\_putRefreshToken(String token)} - it calls \_put(String key, value) where the key is API\_REFRESH\_TOKEN constant,
-    \item \textbf{\_deleteToken()} - it deletes a value by API\_TOKEN constant,
-    \item \textbf{\_deleteRefreshToken()} - it deletes a value by API\_REFRESH\_TOKEN constant.
+    \item \textbf{\_put(String key, value)} -- it puts a value by the given key into Box object storage,
+    \item \textbf{\_putToken(String token)} -- it calls \_put(String key, value) where the key is API\_TOKEN constant,
+    \item \textbf{\_putRefreshToken(String token)} -- it calls \_put(String key, value) where the key is API\_REFRESH\_TOKEN constant,
+    \item \textbf{\_deleteToken()} -- it deletes a value by API\_TOKEN constant,
+    \item \textbf{\_deleteRefreshToken()} -- it deletes a value by API\_REFRESH\_TOKEN constant.
 \end{itemize}
